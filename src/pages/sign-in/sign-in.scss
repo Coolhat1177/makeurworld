@@ -1,0 +1,83 @@
+page-sign-in {
+    .reomve-signIn
+    {
+        letter-spacing: 1px;
+        text-transform: none;
+
+    }
+
+    .sign-input
+    {
+        border:solid 1px #333;
+        border-radius: 20px;
+    }
+
+    ion-input:focus
+    {
+        outline: none;
+    }
+
+
+    .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .normal-padding
+      {
+          padding: 10px;
+      }
+
+
+      .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner
+      {
+          border:0px;
+          -webkit-box-shadow:inset 0px 0px 0px;
+          box-shadow:inset 0px 0px 0px;
+
+      }
+
+      .item-md .sign-button
+      {
+          height: 46px;
+          font-size: 1.6rem;
+          text-transform: none;
+
+      }
+
+
+    .header-sign-Up
+    {
+        
+        font-weight: bold;
+        letter-spacing: 0.8px;
+    }
+     
+
+    .scroll-content
+    {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .bg-white
+    {
+        background-color: white;
+    }
+
+
+    .sign-Up-starter
+    {
+        letter-spacing: 0.7px
+    }
+
+    .sign-Up-starter span{
+        color:#488aff;
+    }
+
+     
+}

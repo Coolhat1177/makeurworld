@@ -1,0 +1,172 @@
+page-cover {
+
+    .profileImgDisplay
+    {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .profileImgDisplayIn
+    {
+        width: 100%;
+        position: relative;
+    }
+
+    .coverBgAr
+    {
+        width: 100%;
+        position: relative;
+       
+        
+    }
+    .coverBgArIn
+    {
+        width: 100%;
+        position: relative;
+    }
+
+    .coverPrAr
+    {
+        width: 100%;
+        height: 70px;
+        
+    }
+
+    .coverPrArIN
+    {
+        width: 100%;
+        height: 70px;
+        display:inline-flex;
+        flex-flow: row;
+    }
+
+    .coverPrImgAr
+    {
+        flex:0 1 110px;
+        position: relative;
+       
+    }
+
+    .coverPrImg
+    {
+        border-radius: 8px;
+    }
+
+    .coverPrInfoAr
+    {
+        flex:1;
+       
+        padding: 5px;
+    }
+    .coverPrImgArIn
+    {
+        position: absolute;
+        bottom: 0px;
+        width: 100px;
+        height: 100px;
+        left: 10px;
+    }
+
+    .coverPrInfoArIn
+    {
+        width: 100%;
+        height: 100%;
+        border-bottom:solid 3px #eee;
+    }
+
+    .coverPrNameAr
+    {
+        padding: 2px;
+        width: 100%;;
+    }
+
+    .coverPrNameArIn
+    {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    .coverPrSubArIn
+    {
+        font-size: .9em;
+    }
+
+    .updateRow1
+    {
+        padding: 10px;
+    }
+
+    .updatebox
+    {
+        width: 50vw;
+        height: 40vw;
+       position: relative;
+    }
+    .updateboxIn0
+    {
+        width: 100%;
+        height: 100%;
+        background-color: #2394bc;
+        border-radius: 8px;
+    }
+
+    .updateboxIn1
+    {
+        width: 100%;
+        height: 100%;
+        background-color:#3db39e;
+        border-radius: 8px;
+    }
+
+    .updateboxIn2
+    {
+        width: 100%;
+        height: 100%;
+        background-color: #f4b459;
+        border-radius: 8px;
+    }
+    .updateboxIn3
+    {
+        width: 100%;
+        height: 100%;
+        background-color: #ea6248;
+        border-radius: 8px;
+    }
+
+    .changeBgIcon,.changePrIcon
+    {
+        position: absolute;
+        z-index: 1;
+        right:5px;
+        bottom: 5px;
+    }
+
+
+    .bgChIcon
+    {
+        font-size: 1.9em;
+    }
+
+    .prChIcon
+    {
+        font-size: 1.7em;
+    }
+
+    .changeBgIconB
+    {
+        padding: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+
+    .changePrIconB
+    {
+        padding: 6px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    
+    
+
+}

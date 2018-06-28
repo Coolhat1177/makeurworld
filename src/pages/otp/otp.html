@@ -1,0 +1,98 @@
+
+
+<ion-header no-border>
+
+  <ion-navbar>
+  
+    <button ion-button clear class='reomve-signIn' (click)="goToBack()"> Cancel</button>
+
+    
+  </ion-navbar>
+
+
+  
+
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <div>
+  <form #otpForm="ngForm" (ngSubmit)="otp(otpForm)">
+
+      <ion-list>
+   
+      <ion-item  no-lines>
+        
+          <h1 class='header-sign-Up'>Enter your otp.</h1>
+        
+      </ion-item>
+
+     
+
+      
+          <ion-grid>
+              <ion-row >
+                  <ion-col >
+                          <ion-item  no-lines>
+        
+                                  <ion-label color="primary" floating>OTP</ion-label>
+                                  <ion-input type="text" focus-me text-center name="otpNumber" ngModel required></ion-input>
+                              </ion-item>
+                         
+                  </ion-col>
+                
+              </ion-row>
+          </ion-grid>
+        
+      
+
+          
+                          <ion-row>
+                                  <ion-col>
+                                          <ion-item no-lines >
+                                                  <button type="submit" ion-button block round  class='sign-button' [disabled]="!otpForm.valid">
+                                                      Submit
+                                                    </button>
+                                              </ion-item>
+                                      </ion-col>
+                                 
+                              </ion-row>
+
+
+                              <ion-row>
+                                <ion-col>
+                                        <ion-item no-lines  text-center>
+                                            <button ion-button clear class='resend-Otp' (click)="goToBack()"> Resend Otp</button>
+                                            </ion-item>
+                                    </ion-col>
+                               
+                            </ion-row>
+
+                         
+     
+      
+      
+     
+      
+
+     
+
+    </ion-list>
+        
+         
+         
+         
+        
+      
+      
+
+  </form>
+</div>
+
+
+
+</ion-content>
+
+

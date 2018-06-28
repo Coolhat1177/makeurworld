@@ -1,0 +1,115 @@
+
+
+<ion-header no-border>
+
+    <ion-navbar>
+        <button ion-button clear class='reomve-signIn' (click)="goToRoot()"> Cancel</button>
+    </ion-navbar>
+  
+  </ion-header>
+  
+<ion-content padding>
+  
+
+  
+    <div>
+    <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+
+        <ion-list>
+     
+        <ion-item  no-lines>
+          
+            <h1 class='header-sign-Up'>Log in to your World</h1>
+          
+        </ion-item>
+        <ion-item no-lines >
+          
+            <p class='sign-Up-starter'>New User? <span (click)="goToSignUp()">Sign Up</span></p>
+          
+        </ion-item>
+        <ion-item no-lines class='normal-padding' *ngIf="email">
+          
+           
+            <ion-input type="email"
+             placeholder="Email"
+              text-center class='sign-input'
+              name="signInEmail"
+              ngModel required
+              pattern="^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$" focus-me></ion-input>
+          
+        </ion-item>
+
+        <ion-item no-lines class='normal-padding' *ngIf="!email">
+          
+            <ion-input type="number" 
+            placeholder="Phone number" 
+            text-center class='sign-input'
+            name="signInPhone"
+              ngModel
+            required maxlength='10' focus-me></ion-input>
+          
+        </ion-item>
+
+        <ion-item no-lines class='normal-padding'>
+          
+           
+            <ion-input type="password"
+             placeholder="Password"
+              text-center class='sign-input'
+              name="signInPassword"
+              ngModel
+            required  minlength='7'></ion-input>
+            
+           
+          
+        </ion-item>
+
+        <ion-item no-lines text-right>
+          
+            <button ion-button clear class='reomve-signIn' (click)="goToForgetPassword()">Forget Password</button>
+          
+        </ion-item>
+        
+        <ion-item no-lines *ngIf="!email">
+            <button type="submit"
+             ion-button block round 
+              class='sign-button'
+              [disabled]="!signInForm.valid">
+                Log In
+              </button>
+        </ion-item>
+
+        <ion-item no-lines *ngIf="email">
+            <button type="submit"
+             ion-button block round 
+              class='sign-button'
+              [disabled]="!signInForm.valid">
+                Log In
+              </button>
+        </ion-item>
+       
+        
+
+       
+
+      </ion-list>
+          
+           
+           
+           
+          
+        
+        
+
+    </form>
+  </div>
+
+  
+
+</ion-content>
+
+
+<ion-footer>
+    <button ion-button clear class='reomve-signIn' (click)="changeSubmitWithEmail()" *ngIf="!email"> Use Email instead</button>
+    <button ion-button clear class='reomve-signIn' (click)="chanegSubmitWithNumber()" *ngIf="email"> Use Phone Number instead</button>
+</ion-footer>

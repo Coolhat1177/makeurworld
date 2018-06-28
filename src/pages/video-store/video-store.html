@@ -1,0 +1,34 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>videoStore</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content >
+  
+      <ion-segment  class="SwipedTabs-tabs"  >
+        <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+          {{tab}}
+        </ion-segment-button>
+      </ion-segment>
+    
+      <!-- here is our dynamic line  "indicator"-->
+      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+    
+      <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+                  (ionSlideWillChange)="updateIndicatorPosition()"
+                  (ionSlideDidChange)="updateIndicatorPosition()"
+                  (pan)="updateIndicatorPosition()"
+                  [pager]="false"
+            >
+        <ion-slide>
+          <h1>Video Play </h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Favourite</h1>
+        </ion-slide>
+      </ion-slides>
+  </ion-content>

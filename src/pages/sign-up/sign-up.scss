@@ -1,0 +1,58 @@
+page-sign-up {
+
+    .reomve-signIn
+    {
+        letter-spacing: 1px;
+        text-transform: none;
+
+    }
+
+    .item-md .sign-button
+    {
+        height: 46px;
+        font-size: 1.6rem;
+        text-transform: none;
+        margin-top: 20px;
+
+    }
+
+
+    .header-sign-Up
+    {
+        
+        font-weight: bold;
+        letter-spacing: 0.8px;
+    }
+    
+
+    
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner,.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner
+    {
+        border:0px;
+        -webkit-box-shadow:inset 0px 0px 0px;
+        box-shadow:inset 0px 0px 0px;
+
+    }
+    .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child{
+        border-bottom-color: #dedede;
+    -webkit-box-shadow: inset 0 -1px 0 0 #dedede;
+    box-shadow: inset 0 -1px 0 0 #dedede;
+    }
+
+    .list-md .item-select,.list-md .item-datetime
+    {
+        border-bottom:1px solid #dedede;
+    }
+
+    .list-md .item-block .item-inner
+    {
+        border: 0px;
+    }
+
+    .important-note
+    {
+        font-size: 1rem;
+        color:#333;
+    }
+    
+}

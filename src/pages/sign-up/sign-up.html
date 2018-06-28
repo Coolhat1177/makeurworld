@@ -1,0 +1,195 @@
+
+
+<ion-header no-border>
+
+    <ion-navbar>
+        <button ion-button clear class='reomve-signIn' (click)="goToBack()"> Cancel</button>
+    </ion-navbar>
+  
+  </ion-header>
+  
+<ion-content padding>
+  
+
+  
+    <div>
+    <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm)">
+
+        <ion-list>
+     
+        <ion-item  no-lines>
+          
+            <h1 class='header-sign-Up'>Create your world.</h1>
+          
+        </ion-item>
+
+       
+
+        
+            <ion-grid>
+                <ion-row >
+                    <ion-col width-40>
+                            <ion-item  no-lines>
+          
+                                    <ion-label color="primary" floating>First Name</ion-label>
+                                    <ion-input type="text" focus-me text-center name="signUpFirstName" ngModel required></ion-input>
+                                    
+                                   
+                                  
+                                </ion-item>
+                           
+                    </ion-col>
+                    <ion-col width-40>
+                            <ion-item  no-lines>
+          
+                                    <ion-label color="primary" floating>Last Name</ion-label>
+                                    <ion-input type="text" text-center name="signUpLastName" ngModel required></ion-input>
+                                    
+                                   
+                                  
+                                </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+          
+            
+            
+           
+          
+        
+
+            <ion-row *ngIf="!email">
+                    <ion-col>
+                            <ion-item no-lines >
+          
+                                    <ion-label color="primary" floating>Phone Number</ion-label>
+                                    <ion-input type="tel" text-center name="signUpPhoneNumber" ngModel required maxlength="10"></ion-input>
+
+                                </ion-item>
+                            </ion-col>
+            </ion-row>
+            <ion-row  *ngIf="email">
+                                <ion-col>
+
+                               
+
+                                <ion-item no-lines>
+          
+                                        <ion-label color="primary" floating>Email</ion-label>
+                                        <ion-input type="email" text-center name="signUpEmail" ngModel
+                                         required pattern="^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$"></ion-input>
+    
+                                 </ion-item>
+
+                        </ion-col>
+                   
+                </ion-row>
+        
+       
+                <ion-row>
+                        <ion-col>
+                                <ion-item no-lines>
+                                       
+                                                        
+                                        <ion-label color="primary" floating>Password</ion-label>
+                                        <ion-input type="password" text-center name="signUpPassword" ngModel required minlength="7" ></ion-input>
+                                        <ion-note item-end class='important-note'>
+                                                        At lest 7 characters required
+                                                      </ion-note>
+                                        
+    
+                                    </ion-item>
+                            </ion-col>
+                       
+                    </ion-row>
+            
+       
+
+                    
+                    <ion-row >
+                            <ion-col>
+                                    <ion-item >
+                  
+                                           
+                                            <ion-label color="primary" floating >Birth Date</ion-label>
+                                            <ion-datetime displayFormat="MM/DD/YYYY" name="signUpBirthDay" ngModel required>
+                                            </ion-datetime>
+                
+        
+                                        </ion-item>
+                                </ion-col>
+                           
+                        </ion-row>
+
+                        
+      
+
+                        <ion-row >
+                                <ion-col>
+                                        <ion-item >
+                                                <ion-label color="primary" floating>Gender</ion-label>
+                                                <ion-select  no-lines name="signUpGender" ngModel required >
+                                                <ion-option
+                                                    *ngFor="let option of selectOptions"
+                                                    [value]="option">{{ option }}</ion-option>
+                                                </ion-select>
+            
+                                            </ion-item>
+                                    </ion-col>
+                               
+                            </ion-row>
+
+
+        
+
+            
+                            <ion-row *ngIf="!email">
+                                    <ion-col>
+                                            <ion-item no-lines >
+                                                    <button type="submit" ion-button block round  class='sign-button' [disabled]="!signUpForm.valid">
+                                                        Sign Up
+                                                      </button>
+                                                </ion-item>
+                                        </ion-col>
+                                   
+                                </ion-row>
+
+                                <ion-row *ngIf="email">
+                                        <ion-col>
+                                                <ion-item no-lines >
+                                                        <button type="submit" ion-button block round  class='sign-button' [disabled]="!signUpForm.valid">
+                                                            Sign Up
+                                                          </button>
+                                                    </ion-item>
+                                            </ion-col>
+                                       
+                                    </ion-row>
+    
+       
+        
+        
+       
+        
+
+       
+
+      </ion-list>
+          
+           
+           
+           
+          
+        
+        
+
+    </form>
+  </div>
+
+  
+
+</ion-content>
+
+<ion-footer>
+        <button ion-button clear class='reomve-signIn' (click)="changeSubmitWithEmail()" *ngIf="!email" > Use Email instead</button>
+        <button ion-button clear class='reomve-signIn' (click)="chanegSubmitWithNumber()" *ngIf="email"> Use Phone Number instead</button>
+</ion-footer>

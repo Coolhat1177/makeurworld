@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>musicStore</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+      <ion-segment [(ngModel)]="category">
+        <ion-segment-button value="Music_Play">
+          Music Play
+        </ion-segment-button>
+        <ion-segment-button value="Favourite">
+          Favourite
+        </ion-segment-button>
+      </ion-segment>
+    <div [ngSwitch]="category" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
+      <ion-list *ngSwitchCase="'Music_Play'">
+        <ion-item>
+          Music PLay
+        </ion-item>
+      </ion-list>
+  
+      <ion-list *ngSwitchCase="'Favourite'">
+        <ion-item>
+          Favourite
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
