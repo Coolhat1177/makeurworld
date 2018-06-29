@@ -14,7 +14,7 @@
     <div class='profileImgDisplayIn'>
       <div class='coverBgAr'>
           <div class='coverBgArIn'>
-        <img src="../../assets/imgs/ter1.jpg">
+        <img src="assets/imgs/ter1.jpg">
         </div>
         <div class='changeBgIcon'>
             <button clear ion-botton class='changeBgIconB' (click)="choseForBg()">
@@ -30,9 +30,9 @@
           <div class='coverPrArIN'>
             <div class='coverPrImgAr'>
               <div class='coverPrImgArIn'>
-                  <img src='../../assets/imgs/ter2.jpg' class="coverPrImg">
+                  <img *ngIf="image" [src]="image" class="coverPrImg">
               </div>
-
+              <!-- src='assets/imgs/ter2.jpg' -->
               <div class='changePrIcon'>
                   <button clear ion-botton class='changePrIconB' (click)="choseForPr()">
                     <ion-icon name='camera' class='prChIcon'>

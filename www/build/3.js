@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 718:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27,7 +27,7 @@ var ViralImagePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */]),
             ],
         })
     ], ViralImagePageModule);

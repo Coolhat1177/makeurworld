@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 714:
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27,7 +27,7 @@ var SearchPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
             ],
         })
     ], SearchPageModule);
