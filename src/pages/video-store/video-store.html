@@ -16,7 +16,7 @@
       </ion-segment>
     
       <!-- here is our dynamic line  "indicator"-->
-      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+      <div id='indicator2' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
     
       <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
                   (ionSlideWillChange)="updateIndicatorPosition()"

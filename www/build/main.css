@@ -25939,6 +25939,12 @@ page-image-store .SwipedTabs-tabs {
   border-bottom: solid 1px #e6e6e6  !important;
 }
 
+page-image-store .segment-md .segment-button {
+  height: 2rem;
+  line-height: 1rem;
+  text-transform: capitalize;
+}
+
 page-landing .slider-wraper {
   display: block;
   width: 100%;
@@ -26003,48 +26009,48 @@ page-main-tab ion-icon[class*="custom-"] {
 }
 
 page-main-tab ion-icon[class*="custom-icon1"] {
-  -webkit-mask-image: url(../../assets/icon/home.svg);
-  mask-image: url(../../assets/icon/home.svg);
+  -webkit-mask-image: url(../assets/icon/home.svg);
+  mask-image: url(../assets/icon/home.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon2"] {
-  -webkit-mask-image: url(../../assets/icon/music.svg);
-  mask-image: url(../../assets/icon/music.svg);
+  -webkit-mask-image: url(../assets/icon/music.svg);
+  mask-image: url(../assets/icon/music.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon3"] {
-  -webkit-mask-image: url(../../assets/icon/viral.svg);
-  mask-image: url(../../assets/icon/viral.svg);
+  -webkit-mask-image: url(../assets/icon/viral.svg);
+  mask-image: url(../assets/icon/viral.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon4"] {
-  -webkit-mask-image: url(../../assets/icon/mystore.svg);
-  mask-image: url(../../assets/icon/mystore.svg);
+  -webkit-mask-image: url(../assets/icon/mystore.svg);
+  mask-image: url(../assets/icon/mystore.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon5"] {
-  -webkit-mask-image: url(../../assets/icon/adda.svg);
-  mask-image: url(../../assets/icon/adda.svg);
+  -webkit-mask-image: url(../assets/icon/adda.svg);
+  mask-image: url(../assets/icon/adda.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon6"] {
-  -webkit-mask-image: url(../../assets/icon/search.svg);
-  mask-image: url(../../assets/icon/search.svg);
+  -webkit-mask-image: url(../assets/icon/search.svg);
+  mask-image: url(../assets/icon/search.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon7"] {
-  -webkit-mask-image: url(../../assets/icon/notification.svg);
-  mask-image: url(../../assets/icon/notification.svg);
+  -webkit-mask-image: url(../assets/icon/notification.svg);
+  mask-image: url(../assets/icon/notification.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon8"] {
-  -webkit-mask-image: url(../../assets/icon/friendrequest.svg);
-  mask-image: url(../../assets/icon/friendrequest.svg);
+  -webkit-mask-image: url(../assets/icon/friendrequest.svg);
+  mask-image: url(../assets/icon/friendrequest.svg);
 }
 
 page-main-tab ion-icon[class*="custom-icon9"] {
-  -webkit-mask-image: url(../../assets/icon/chat.svg);
-  mask-image: url(../../assets/icon/chat.svg);
+  -webkit-mask-image: url(../assets/icon/chat.svg);
+  mask-image: url(../assets/icon/chat.svg);
 }
 
 page-music-store .SwipedTabs-indicatorSegment {
@@ -26070,6 +26076,12 @@ page-music-store .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
 
 page-music-store .SwipedTabs-tabs {
   border-bottom: solid 1px #e6e6e6  !important;
+}
+
+page-music-store .segment-md .segment-button {
+  height: 2rem;
+  line-height: 1rem;
+  text-transform: capitalize;
 }
 
 page-otp .reomve-signIn {
@@ -26100,6 +26112,36 @@ page-otp .item-md .sign-button {
   height: 46px;
   font-size: 1.6rem;
   text-transform: none;
+}
+
+page-search .SwipedTabs-indicatorSegment {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-transform-origin: top 0 left 0;
+  transform-origin: top 0 left 0;
+  height: 1px;
+  position: relative;
+  top: -2px;
+  background-color: black !important;
+}
+
+page-search .SwipedTabs-tabs ion-segment-button {
+  border: none !important;
+  color: gray !important;
+  background-color: white !important;
+}
+
+page-search .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
+  color: black !important;
+}
+
+page-search .SwipedTabs-tabs {
+  border-bottom: solid 1px #e6e6e6  !important;
+}
+
+page-search .segment-md .segment-button {
+  height: 2rem;
+  line-height: 1rem;
 }
 
 page-search ion-searchbar .searchbar-input-container .searchbar-input {
@@ -26225,6 +26267,10 @@ page-sign-up .important-note {
   color: #333;
 }
 
+page-store-tab .storageHeader .tabs-md .tab-button {
+  min-height: 4rem;
+}
+
 page-video-store .SwipedTabs-indicatorSegment {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -26248,4 +26294,14 @@ page-video-store .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab {
 
 page-video-store .SwipedTabs-tabs {
   border-bottom: solid 1px #e6e6e6  !important;
+}
+
+page-video-store .segment-md .segment-button {
+  height: 2rem;
+  line-height: 1rem;
+  text-transform: capitalize;
+}
+
+page-viral-tab .viralHeader .tabs-md .tab-button {
+  min-height: 4rem;
 }
