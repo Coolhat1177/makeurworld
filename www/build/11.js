@@ -1,25 +1,14 @@
 webpackJsonp([11],{
 
-<<<<<<< HEAD
-/***/ 717:
-=======
-/***/ 711:
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicplayerPageModule", function() { return MusicplayerPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__musicplayer__ = __webpack_require__(172);
-=======
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicStorePageModule", function() { return MusicStorePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__music_store__ = __webpack_require__(166);
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__musicplayer__ = __webpack_require__(173);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +18,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-<<<<<<< HEAD
 var MusicplayerPageModule = /** @class */ (function () {
     function MusicplayerPageModule() {
     }
@@ -39,7 +27,7 @@ var MusicplayerPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */]),
             ],
         })
     ], MusicplayerPageModule);
@@ -47,25 +35,6 @@ var MusicplayerPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=musicplayer.module.js.map
-=======
-var MusicStorePageModule = /** @class */ (function () {
-    function MusicStorePageModule() {
-    }
-    MusicStorePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__music_store__["a" /* MusicStorePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__music_store__["a" /* MusicStorePage */]),
-            ],
-        })
-    ], MusicStorePageModule);
-    return MusicStorePageModule;
-}());
-
-//# sourceMappingURL=music-store.module.js.map
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
 
 /***/ })
 

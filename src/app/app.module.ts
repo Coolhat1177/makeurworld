@@ -122,16 +122,13 @@ import { UploadPage } from '../pages/upload/upload';
     AlertServices,
     NativeStorage,
     CreditService,
-<<<<<<< HEAD
+
     TopHeaderServices,
     NotifiService,
     RequestService,
     MessageService,
-    SearchService
-
-=======
+    SearchService,
     Camera
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
   
 
   ]

@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreditService } from '../../services/CreditService';
 import { TopHeaderServices } from '../../services/TopHeaderService';
 import { SearchService } from '../../services/SearchServices';
 
-=======
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
 
 @IonicPage()
 @Component({
@@ -21,20 +16,12 @@ export class SearchPage {
   SwipedTabsIndicator :any= null;
   tabs:any=[];
 
-<<<<<<< HEAD
   constructor(public navCtrl: NavController,
        public navParams: NavParams,
         private credit:CreditService,
         private topHeader:TopHeaderServices,
         private sService:SearchService,
         private searchService:SearchService ) {
-=======
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.tabs=["People","Adda"];
-  }
-  ionViewWillEnter(){
-    this.SwipedTabsSlider.slideTo(0,100);
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');

@@ -1,10 +1,6 @@
 webpackJsonp([7],{
 
-<<<<<<< HEAD
-/***/ 721:
-=======
-/***/ 716:
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31,11 +27,7 @@ var SignInPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__sign_in__["a" /* SignInPage */],
             ],
             imports: [
-<<<<<<< HEAD
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_in__["a" /* SignInPage */]),
-=======
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__search__["a" /* SearchPage */]),
->>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_in__["a" /* SignInPage */]),
             ],
         })
     ], SignInPageModule);
