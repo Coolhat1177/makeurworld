@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { Camera } from '@ionic-native/camera';
 
 
 import { MainTabPage } from '../pages/main-tab/main-tab';
@@ -122,12 +122,16 @@ import { UploadPage } from '../pages/upload/upload';
     AlertServices,
     NativeStorage,
     CreditService,
+<<<<<<< HEAD
     TopHeaderServices,
     NotifiService,
     RequestService,
     MessageService,
     SearchService
 
+=======
+    Camera
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
   
 
   ]

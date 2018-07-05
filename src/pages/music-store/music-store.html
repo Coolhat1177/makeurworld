@@ -6,27 +6,29 @@
 
 </ion-header>
 
+<ion-content >
 
-<ion-content>
-      <ion-segment [(ngModel)]="category">
-        <ion-segment-button value="Music_Play">
-          Music Play
-        </ion-segment-button>
-        <ion-segment-button value="Favourite">
-          Favourite
-        </ion-segment-button>
-      </ion-segment>
-    <div [ngSwitch]="category" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
-      <ion-list *ngSwitchCase="'Music_Play'">
-        <ion-item>
-          Music PLay
-        </ion-item>
-      </ion-list>
-  
-      <ion-list *ngSwitchCase="'Favourite'">
-        <ion-item>
-          Favourite
-        </ion-item>
-      </ion-list>
-    </div>
-  </ion-content>
+  <ion-segment  class="SwipedTabs-tabs"  >
+    <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+      {{tab}}
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- here is our dynamic line  "indicator"-->
+  <div id='indicator1' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+
+  <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+              (ionSlideWillChange)="updateIndicatorPosition()"
+              (ionSlideDidChange)="updateIndicatorPosition()"
+              (pan)="updateIndicatorPosition()"
+              [pager]="false"
+        >
+    <ion-slide>
+      <h1>Image Page </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1> PlayList </h1>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,6 +1,10 @@
 webpackJsonp([10],{
 
+<<<<<<< HEAD
 /***/ 718:
+=======
+/***/ 713:
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27,7 +31,11 @@ var NotificationPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__notification__["a" /* NotificationPage */],
             ],
             imports: [
+<<<<<<< HEAD
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__notification__["a" /* NotificationPage */]),
+=======
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */]),
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
             ],
         })
     ], NotificationPageModule);

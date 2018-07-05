@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreditService } from '../../services/CreditService';
 import { TopHeaderServices } from '../../services/TopHeaderService';
 import { SearchService } from '../../services/SearchServices';
 
+=======
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
 
 @IonicPage()
 @Component({
@@ -11,19 +16,52 @@ import { SearchService } from '../../services/SearchServices';
   templateUrl: 'search.html',
 })
 export class SearchPage {
+  @ViewChild('SwipedTabsSlider') SwipedTabsSlider: Slides;
 
+  SwipedTabsIndicator :any= null;
+  tabs:any=[];
+
+<<<<<<< HEAD
   constructor(public navCtrl: NavController,
        public navParams: NavParams,
         private credit:CreditService,
         private topHeader:TopHeaderServices,
         private sService:SearchService,
         private searchService:SearchService ) {
+=======
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.tabs=["People","Adda"];
   }
-
+  ionViewWillEnter(){
+    this.SwipedTabsSlider.slideTo(0,100);
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
+  
+  ionViewDidEnter() {
+    this.SwipedTabsIndicator = document.getElementById("indicator3");
+  }
 
+  selectTab(index) {    
+    this.SwipedTabsIndicator.style.webkitTransform = 'translate3d('+(100*index)+'%,0,0)';
+    this.SwipedTabsSlider.slideTo(index, 500);
+  }
+
+  updateIndicatorPosition() {
+      // this condition is to avoid passing to incorrect index
+  	if( this.SwipedTabsSlider.length()> this.SwipedTabsSlider.getActiveIndex())
+  	{
+  		this.SwipedTabsIndicator.style.webkitTransform = 'translate3d('+(this.SwipedTabsSlider.getActiveIndex() * 100)+'%,0,0)';
+  	}
+    
+    }
+
+  animateIndicator($event) {
+  	if(this.SwipedTabsIndicator)
+   	    this.SwipedTabsIndicator.style.webkitTransform = 'translate3d(' + (($event.progress* (this.SwipedTabsSlider.length()-1))*100) + '%,0,0)';
+  }
 
   onInput(event)
   {

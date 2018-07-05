@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams,Slides } from 'ionic-angular';
+import { IonicPage, NavController,Slides } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-image-store',
@@ -15,6 +15,10 @@ export class ImageStorePage {
   constructor(public navCtrl: NavController) {
   	this.tabs=["Photo","Canvas"];
   }
+  ionViewWillEnter(){
+    this.SwipedTabsSlider.slideTo(0,100);
+}
+  
   ionViewDidEnter() {
     this.SwipedTabsIndicator = document.getElementById("indicator");
   }

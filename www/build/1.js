@@ -1,6 +1,10 @@
 webpackJsonp([1],{
 
+<<<<<<< HEAD
 /***/ 727:
+=======
+/***/ 722:
+>>>>>>> 5f2bec325e2abf90cfb4d84a7c83f24fe1a84366
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27,7 +31,7 @@ var ViralTabPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__viral_tab__["a" /* ViralTabPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_tab__["a" /* ViralTabPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_tab__["a" /* ViralTabPage */]),
             ],
         })
     ], ViralTabPageModule);

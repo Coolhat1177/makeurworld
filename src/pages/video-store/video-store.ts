@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams,Slides } from 'ionic-angular';
+import { IonicPage, NavController,Slides } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -16,8 +16,13 @@ export class VideoStorePage {
   constructor(public navCtrl: NavController) {
   	this.tabs=["Video Play","Favourite"];
   }
+
+  ionViewWillEnter(){
+      this.SwipedTabsSlider.slideTo(0,100);
+  }
+ 
   ionViewDidEnter() {
-    this.SwipedTabsIndicator = document.getElementById("indicator");
+    this.SwipedTabsIndicator = document.getElementById("indicator2");
   }
 
   selectTab(index) {    
