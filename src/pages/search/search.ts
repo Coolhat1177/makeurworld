@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CreditService } from '../../services/CreditService';
+import { TopHeaderServices } from '../../services/TopHeaderService';
+import { SearchService } from '../../services/SearchServices';
 
-/**
- * Generated class for the SearchPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,7 +12,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+       public navParams: NavParams,
+        private credit:CreditService,
+        private topHeader:TopHeaderServices,
+        private sService:SearchService,
+        private searchService:SearchService ) {
   }
 
   ionViewDidLoad() {
@@ -25,7 +27,44 @@ export class SearchPage {
 
   onInput(event)
   {
-    console.log("ok");
+
+
+      this.credit.check().then(data=>{
+
+        let word=event.target.value;
+        let filter=/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        if(!filter.test(word) )
+        {
+            let info={
+              search_w:word,
+              from:this.sService.lenList(),
+            
+            }
+            console.log(this.sService.lenList());
+            let info1=JSON.stringify(info);
+            this.topHeader.searchLoad(data[0],data[1],info1).subscribe(data=>{
+                   if(data['status'])
+                   {
+                     for(let key in data[0]){
+
+                      this.searchService.addList(data[0][key]);
+
+                     }
+
+                     console.log(this.searchService.getList());
+
+                   }
+               
+            });
+
+        }
+        else{
+                
+        }
+
+      });
+
+     
   }
 
 

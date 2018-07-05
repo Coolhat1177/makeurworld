@@ -9,6 +9,7 @@ import { SearchPage } from '../search/search';
 import { MessagePage } from '../message/message';
 import { RequestPage } from '../request/request';
 import { NotificationPage } from '../notification/notification';
+import { UploadPage } from '../upload/upload';
 
 /**
  * Generated class for the MainTabPage page.
@@ -27,6 +28,7 @@ export class MainTabPage {
   store = StoreTabPage;
   viral = ViralTabPage;
   adda = AddaPage;
+  upload=UploadPage;
   musicplayer = MusicplayerPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

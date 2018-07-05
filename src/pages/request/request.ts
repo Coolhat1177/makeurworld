@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CreditService } from '../../services/CreditService';
+import { TopHeaderServices } from '../../services/TopHeaderService';
+import { RequestService } from '../../services/RequestService';
 
-/**
- * Generated class for the RequestPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +12,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RequestPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private credit:CreditService,
+    private topHeader:TopHeaderServices,
+    private reqservice:RequestService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RequestPage');
+    this.requestLoad();
+  }
+
+  requestLoad()
+  {
+      this.credit.check().then(data=>{
+      
+        this.topHeader.requestLoad(data[0],data[1]).subscribe(data=>{
+
+          if(data['status'])
+          {
+            for(let key in data[0])
+              {
+                this.reqservice.addRequest(data[0][key]);
+              }
+          }
+              
+        });
+          
+      })
   }
 
 }

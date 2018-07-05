@@ -70,4 +70,40 @@ export class ConnectionServices{
             })
     }
 
+
+    postDataFetch(user:any,loged:any,url:string)
+    {
+        let headers=new Headers();
+        // let a=6;
+        headers.append("Content-Type","application/x-www-form-urlencoded");
+        const body = new HttpParams().set('user', user).set('loged',loged);
+        // body.set('info',info);
+        
+        return this.http.post(url,
+
+           body.toString(),{headers:headers})
+            .map((respose:Response)=>{
+                console.log(respose);
+                return respose.json();
+            })
+    }
+
+
+    postDataAsked(user:any,loged:any,info:any,url:string)
+    {
+        let headers=new Headers();
+        // let a=6;
+        headers.append("Content-Type","application/x-www-form-urlencoded");
+        const body = new HttpParams().set('user', user).set('loged',loged).set('info',info);
+        // body.set('info',info);
+        
+        return this.http.post(url,
+
+           body.toString(),{headers:headers})
+            .map((respose:Response)=>{
+                console.log(respose);
+                return respose.json();
+            })
+    }
+
 }

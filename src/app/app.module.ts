@@ -39,6 +39,12 @@ import { MessagePage } from '../pages/message/message';
 import { NotificationPage } from '../pages/notification/notification';
 import { RequestPage } from '../pages/request/request';
 import { SearchPage } from '../pages/search/search';
+import { TopHeaderServices } from '../services/TopHeaderService';
+import { NotifiService } from '../services/NotifiService';
+import { RequestService } from '../services/RequestService';
+import { MessageService } from '../services/MessageService';
+import { SearchService } from '../services/SearchServices';
+import { UploadPage } from '../pages/upload/upload';
 
 
 
@@ -66,7 +72,8 @@ import { SearchPage } from '../pages/search/search';
     MessagePage,
     NotificationPage,
     RequestPage,
-    SearchPage
+    SearchPage,
+    UploadPage
    
   ],
   imports: [
@@ -99,7 +106,8 @@ import { SearchPage } from '../pages/search/search';
     MessagePage,
     NotificationPage,
     RequestPage,
-    SearchPage
+    SearchPage,
+    UploadPage
     
 
    
@@ -113,7 +121,12 @@ import { SearchPage } from '../pages/search/search';
     ConnectionServices,
     AlertServices,
     NativeStorage,
-    CreditService
+    CreditService,
+    TopHeaderServices,
+    NotifiService,
+    RequestService,
+    MessageService,
+    SearchService
 
   
 

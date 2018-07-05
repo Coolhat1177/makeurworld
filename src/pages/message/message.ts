@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CreditService } from '../../services/CreditService';
+import { TopHeaderServices } from '../../services/TopHeaderService';
+import { MessageService } from '../../services/MessageService';
 
-/**
- * Generated class for the MessagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +12,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MessagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams,
+     private credit:CreditService,
+     private topHeader:TopHeaderServices,
+     private messService:MessageService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MessagePage');
+    this.messageLoad();
+  }
+
+  messageLoad()
+  {
+      this.credit.check().then(data=>{
+      
+        this.topHeader.messageLaod(data[0],data[1]).subscribe(data=>{
+
+          if(data['status'])
+          {
+            for( let key in data[0] )
+            {
+              this.messService.addMessage(data[0][key]);
+            }
+
+          }
+          
+        });
+          
+      })
   }
 
 }

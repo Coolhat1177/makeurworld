@@ -41,4 +41,13 @@ export class ImageStorePage {
     console.log('ionViewDidLoad ImageStorePage');
   }
 
+
+  loadStor()
+  {
+    
+  }
+
+
+
+
 }
