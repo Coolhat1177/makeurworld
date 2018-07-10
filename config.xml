@@ -87,3 +87,6 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <engine name="android" spec="7.0.0" />
 </widget>
+in name="cordova-plugin-telerik-imagepicker" spec="^2.2.2" />
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+</widget>
