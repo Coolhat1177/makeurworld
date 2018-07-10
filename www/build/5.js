@@ -1,14 +1,25 @@
 webpackJsonp([5],{
 
+<<<<<<< HEAD
 /***/ 731:
+=======
+/***/ 737:
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoStorePageModule", function() { return VideoStorePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__video_store__ = __webpack_require__(171);
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoGalPageModule", function() { return VideoGalPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__video_gal__ = __webpack_require__(183);
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,6 +29,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< HEAD
 var VideoStorePageModule = /** @class */ (function () {
     function VideoStorePageModule() {
     }
@@ -35,6 +47,25 @@ var VideoStorePageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=video-store.module.js.map
+=======
+var VideoGalPageModule = /** @class */ (function () {
+    function VideoGalPageModule() {
+    }
+    VideoGalPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__video_gal__["a" /* VideoGalPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__video_gal__["a" /* VideoGalPage */]),
+            ],
+        })
+    ], VideoGalPageModule);
+    return VideoGalPageModule;
+}());
+
+//# sourceMappingURL=video-gal.module.js.map
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 
 /***/ })
 

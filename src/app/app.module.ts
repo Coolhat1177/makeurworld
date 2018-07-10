@@ -4,7 +4,12 @@ import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-a
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
+<<<<<<< HEAD
 import { Crop } from '@ionic-native/crop';
+=======
+import { ImagePicker } from '@ionic-native/image-picker';
+
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 import { MainTabPage } from '../pages/main-tab/main-tab';
 import { StoreTabPage } from '../pages/store-tab/store-tab';
 import { AddaPage } from '../pages/adda/adda';
@@ -18,6 +23,7 @@ import { ViralVideoPage } from '../pages/viral-video/viral-video';
 import { CoverPage } from '../pages/cover/cover';
 import { SwipeSegmentDirective } from '../directives/SwipeSegmentDirective';
 import { MusicStorePage } from "../pages/music-store/music-store";
+import { ImgGalPage } from '../pages/img-gal/img-gal';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
@@ -44,10 +50,18 @@ import { RequestService } from '../services/RequestService';
 import { MessageService } from '../services/MessageService';
 import { SearchService } from '../services/SearchServices';
 import { UploadPage } from '../pages/upload/upload';
+<<<<<<< HEAD
 import { ImageStoreService } from '../services/ImageStoreService';
 import { ImagePickPage } from '../pages/image-pick/image-pick';
 import { BgProSetServices } from '../services/BgProSetServices';
 
+=======
+import { VideoGalPage } from '../pages/video-gal/video-gal';
+import { MusicGalPage } from '../pages/music-gal/music-gal';
+import { FileOpener } from '@ionic-native/file-opener';
+import { AngularCropperjsModule } from 'angular-cropperjs';
+import { ImgCrpPage } from '../pages/img-crp/img-crp';
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 
 
 @NgModule({
@@ -76,7 +90,14 @@ import { BgProSetServices } from '../services/BgProSetServices';
     RequestPage,
     SearchPage,
     UploadPage,
+<<<<<<< HEAD
     ImagePickPage
+=======
+    ImgGalPage,
+    VideoGalPage,
+    MusicGalPage,
+    ImgCrpPage
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
    
   ],
   imports: [
@@ -84,7 +105,8 @@ import { BgProSetServices } from '../services/BgProSetServices';
     HttpClientModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularCropperjsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -111,8 +133,15 @@ import { BgProSetServices } from '../services/BgProSetServices';
     RequestPage,
     SearchPage,
     UploadPage,
+<<<<<<< HEAD
     ImagePickPage
     
+=======
+    ImgGalPage,
+    VideoGalPage,
+    MusicGalPage,
+    ImgCrpPage
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 
    
   ],
@@ -133,8 +162,13 @@ import { BgProSetServices } from '../services/BgProSetServices';
     MessageService,
     SearchService,
     Camera,
+<<<<<<< HEAD
     Crop,
     BgProSetServices
+=======
+    ImagePicker,
+    FileOpener
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
   
 
   ]

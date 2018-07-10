@@ -1,14 +1,25 @@
 webpackJsonp([4],{
 
+<<<<<<< HEAD
 /***/ 732:
+=======
+/***/ 738:
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViralImagePageModule", function() { return ViralImagePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viral_image__ = __webpack_require__(173);
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoStorePageModule", function() { return VideoStorePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__video_store__ = __webpack_require__(172);
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,8 +32,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var ViralImagePageModule = /** @class */ (function () {
     function ViralImagePageModule() {
     }
+<<<<<<< HEAD
     ViralImagePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+=======
+    VideoStorePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */],
             ],

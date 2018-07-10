@@ -21,28 +21,45 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
-    "@ionic-native/camera": "^4.9.0",
+    "@ionic-native/camera": "^4.9.1",
     "@ionic-native/core": "4.7.0",
+<<<<<<< HEAD
     "@ionic-native/crop": "^4.9.0",
+=======
+<<<<<<< HEAD
+    "@ionic-native/file-opener": "^4.9.0",
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
     "@ionic-native/http": "^4.7.0",
+    "@ionic-native/image-picker": "^4.9.0",
     "@ionic-native/native-storage": "^4.8.0",
+=======
+    "@ionic-native/http": "^4.9.1",
+    "@ionic-native/native-storage": "^4.9.1",
+>>>>>>> master
     "@ionic-native/splash-screen": "4.7.0",
     "@ionic-native/status-bar": "4.7.0",
     "@ionic/pro": "1.0.20",
     "@ionic/storage": "^2.1.3",
+    "angular-cropperjs": "^0.1.5",
     "cordova-android": "7.0.0",
     "cordova-plugin-advanced-http": "^1.11.1",
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-crop": "^0.4.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-opener2": "^2.0.19",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^1.2.1",
     "cordova-plugin-nativestorage": "^2.3.1",
     "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-telerik-imagepicker": "^2.2.2",
     "cordova-plugin-whitelist": "^1.3.3",
+<<<<<<< HEAD
     "cordova-sqlite-storage": "^2.3.2",
     "croppie": "^2.6.2",
+=======
+    "cordova-sqlite-storage": "^2.3.3",
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "rxjs": "5.5.11",
@@ -69,7 +86,12 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-camera": {},
+<<<<<<< HEAD
       "cordova-plugin-crop": {}
+=======
+      "cordova-plugin-telerik-imagepicker": {},
+      "cordova-plugin-file-opener2": {}
+>>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
     },
     "platforms": [
       "android"
