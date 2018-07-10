@@ -1,5 +1,9 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController,Slides } from 'ionic-angular';
+import { AlertServices } from '../../services/AlertServices';
+import { CreditService } from '../../services/CreditService';
+import { ImageStoreService } from '../../services/ImageStoreService';
+
 @IonicPage()
 @Component({
   selector: 'page-image-store',
@@ -10,9 +14,14 @@ export class ImageStorePage {
 
   SwipedTabsIndicator :any= null;
   tabs:any=[];
+  imageArray:any=[];
 
  
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+            private alertCtrl:AlertServices, 
+            private credit:CreditService,
+            private imgStore:ImageStoreService
+              ) {
   	this.tabs=["Photo","Canvas"];
   }
   ionViewWillEnter(){
@@ -43,11 +52,30 @@ export class ImageStorePage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ImageStorePage');
+    this.loadStor();
   }
 
 
   loadStor()
   {
+
+    this.credit.check().then(data=>{
+
+      // console.log(data);
+
+      this.imgStore.firstLoad(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.imgStore.addToList(data[0][key]);
+              }
+              this.imageArray=this.imgStore.getList();
+
+            }
+      });
+    
+    });
     
   }
 

@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <div class='modalHeader'>
+        <div class='modalDis'>
+            <button ion-button clear  (click)="dismissModel()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+        <ion-title text-center>imagePick</ion-title>
+    </div>
+     
+   
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row >
+       
+        <ion-col col-md-3 col-4 col-sm-3   >
+            <div class="image-container" >
+            Hello
+            </div>
+          </ion-col>
+
+      <ion-col col-md-3 col-4 col-sm-3  *ngFor="let image of imageArray let i = index" >
+          <div class="image-container" [style.background-image]="'url(' + image['image_url'] + ')'" (click)="choseImg(i)" >
+           
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

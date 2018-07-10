@@ -25914,6 +25914,50 @@ page-forget-password .sign-Up-starter span {
   color: #488aff;
 }
 
+page-image-pick .modalHeader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+page-image-pick .modalDis {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  z-index: 1;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+}
+
+page-image-pick .imgSelect {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+page-image-pick .unSel {
+  color: black;
+}
+
+page-image-pick .select {
+  color: green;
+}
+
+page-image-pick .modalDis button {
+  color: white;
+  font-weight: bolder;
+}
+
+page-image-pick .image-container {
+  min-height: 150px;
+  background-size: cover;
+  border: solid 1px black;
+  position: relative;
+}
+
 page-image-store .SwipedTabs-indicatorSegment {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;

@@ -4,8 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-a
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
-
-
+import { Crop } from '@ionic-native/crop';
 import { MainTabPage } from '../pages/main-tab/main-tab';
 import { StoreTabPage } from '../pages/store-tab/store-tab';
 import { AddaPage } from '../pages/adda/adda';
@@ -45,6 +44,9 @@ import { RequestService } from '../services/RequestService';
 import { MessageService } from '../services/MessageService';
 import { SearchService } from '../services/SearchServices';
 import { UploadPage } from '../pages/upload/upload';
+import { ImageStoreService } from '../services/ImageStoreService';
+import { ImagePickPage } from '../pages/image-pick/image-pick';
+import { BgProSetServices } from '../services/BgProSetServices';
 
 
 
@@ -73,7 +75,8 @@ import { UploadPage } from '../pages/upload/upload';
     NotificationPage,
     RequestPage,
     SearchPage,
-    UploadPage
+    UploadPage,
+    ImagePickPage
    
   ],
   imports: [
@@ -107,7 +110,8 @@ import { UploadPage } from '../pages/upload/upload';
     NotificationPage,
     RequestPage,
     SearchPage,
-    UploadPage
+    UploadPage,
+    ImagePickPage
     
 
    
@@ -122,13 +126,15 @@ import { UploadPage } from '../pages/upload/upload';
     AlertServices,
     NativeStorage,
     CreditService,
-
+    ImageStoreService,
     TopHeaderServices,
     NotifiService,
     RequestService,
     MessageService,
     SearchService,
-    Camera
+    Camera,
+    Crop,
+    BgProSetServices
   
 
   ]

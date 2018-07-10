@@ -1,0 +1,56 @@
+page-image-pick {
+
+
+    .modalHeader
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .modalDis
+    {
+        position: absolute;
+        left:20px;
+        top:0px;
+        z-index: 1;;
+        top:50%;
+        transform: translate(0%,-50%);
+        -webkit-transform:translate(0%,-50%);
+        -moz-transform:translate(0%,-50%);
+        -o-transform:translate(0%,-50%);
+       
+
+    }
+
+    .imgSelect
+    {
+        position: absolute;
+        top:10px;
+        right: 10px;
+        
+    }
+
+    .unSel{
+        color: black;
+    }
+
+    .select{
+        color:green;
+    }
+
+    .modalDis button
+    {
+        color:white;
+        font-weight: bolder;
+        
+
+    }
+    .image-container {
+        min-height: 150px;
+        background-size: cover;
+        border:solid 1px black;
+        position: relative;
+    }
+
+}
