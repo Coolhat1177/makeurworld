@@ -79,5 +79,20 @@
       <img [src]="croppedImage">
     </ion-card-content>
   </ion-card>
+
+  <ion-buttons start>
+    <button ion-button color="danger" (click)="reset()">
+      Reset
+    </button>
+  </ion-buttons>
+  <ion-title>Ionic CropperJS</ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only color="danger" (click)="clear()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+    <button ion-button icon-only color="secondary" (click)="save()">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+  </ion-buttons>
  
 </ion-content>

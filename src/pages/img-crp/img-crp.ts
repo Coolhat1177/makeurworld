@@ -14,14 +14,14 @@ export class ImgCrpPage {
   cropperOptions: any;
   croppedImage = null;
  
-  myImage = null;
+  myImage :string= null;
   scaleValX = 1;
   scaleValY = 1;
  
   constructor(public navCtrl: NavController, private camera: Camera) {
     this.cropperOptions = {
       dragMode: 'crop',
-      aspectRatio: 1,
+      aspectRatio: 2,
       autoCrop: true,
       movable: true,
       zoomable: true,
@@ -30,20 +30,22 @@ export class ImgCrpPage {
     };
   }
  
-  captureImage() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      sourceType: this.camera.PictureSourceType.CAMERA
-    }
+  // captureImage() {
+  //   const options: CameraOptions = {
+  //     quality: 100,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     mediaType: this.camera.MediaType.PICTURE,
+  //     sourceType: this.camera.PictureSourceType.CAMERA
+  //   }
  
-    this.camera.getPicture(options).then((imageData) => {
-      this.myImage = 'data:image/jpeg;base64,' + imageData;
-    });
+  //   this.camera.getPicture(options).then((imageData) => {
+  //     this.myImage = 'data:image/jpeg;base64,' + "https://jpeg.org/images/jpeg-home.jpg ";
+  //   });
+  // }
+  captureImage(){
+  this.myImage="../assets/imgs/ter1.jpg";
   }
- 
   reset() {
     this.angularCropper.cropper.reset();
   }
