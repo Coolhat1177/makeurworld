@@ -12,13 +12,13 @@
     <ion-row class='updateRow1'>
         <div class="col col-50 updatebox">
           <div class='updateboxIn0'>
-             <button ion-button clear class='uploadButton'>Image</button>
+             <button ion-button clear class='uploadButton' (click)="chooseImg()">Image</button>
           </div>
           </div>
       
           <div class="col col-50 updatebox">
              <div class='updateboxIn1'>
-                <button ion-button clear class='uploadButton'>Music</button>
+                <button ion-button clear class='uploadButton' (click)="audioChoose()">Music</button>
              </div>
              </div>
       </ion-row>
@@ -26,7 +26,7 @@
       <ion-row class='updateRow1'>
          <div class="col col-50 updatebox">
              <div class='updateboxIn2'>
-                <button ion-button clear class='uploadButton'>Video</button>
+                <button ion-button clear class='uploadButton' (click)="chooseVid()">Video</button>
              </div>
              </div>
        
@@ -40,7 +40,7 @@
        <ion-row class='updateRow1'>
           <div class="col col-50 updatebox">
             <div class='updateboxIn0'>
-                <button ion-button clear class='uploadButton'>Playlist</button>
+                <button ion-button clear class='uploadButton' (click)="pushCropPage()">Playlist</button>
             </div>
             </div>
         

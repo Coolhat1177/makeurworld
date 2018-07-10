@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController, ToastController, ModalController } from 'ionic-angular';
 import { Camera,CameraOptions } from '@ionic-native/camera';
-import { Crop } from '@ionic-native/crop';
+
 import { AlertServices } from '../../services/AlertServices';
-import * as crop from "croppie";
+
 import { ImagePickPage } from '../image-pick/image-pick';
 
 @IonicPage()
@@ -17,7 +17,7 @@ export class CoverPage {
     public navParams: NavParams,
     private actionSheetController: ActionSheetController,
     public camera: Camera,
-    private crop:Crop,
+   
     private toastCtrl: ToastController,
     private altCtrl:AlertServices,
     private modelCtr:ModalController
@@ -27,7 +27,7 @@ export class CoverPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoverPage');
-    console.log(crop);
+    
   }
 
 
@@ -113,17 +113,7 @@ export class CoverPage {
    
     // actionsheet.present();
 
-    var el = document.getElementById('vanilla-demo');
-    var vanilla = new crop.Croppie(el, {
-        viewport: { width: 100, height: 100 },
-        boundary: { width: 300, height: 300 },
-        showZoomer: false,
-        enableOrientation: true
-    });
-    vanilla.bind({
-        url: 'assets/imgs/ter1.jpg',
-        orientation: 4
-    });
+   
   //o
   }
 
