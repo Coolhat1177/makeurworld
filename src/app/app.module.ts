@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-a
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
-
+import { ImagePicker } from '@ionic-native/image-picker';
 
 import { MainTabPage } from '../pages/main-tab/main-tab';
 import { StoreTabPage } from '../pages/store-tab/store-tab';
@@ -19,6 +19,7 @@ import { ViralVideoPage } from '../pages/viral-video/viral-video';
 import { CoverPage } from '../pages/cover/cover';
 import { SwipeSegmentDirective } from '../directives/SwipeSegmentDirective';
 import { MusicStorePage } from "../pages/music-store/music-store";
+import { ImgGalPage } from '../pages/img-gal/img-gal';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
@@ -45,7 +46,11 @@ import { RequestService } from '../services/RequestService';
 import { MessageService } from '../services/MessageService';
 import { SearchService } from '../services/SearchServices';
 import { UploadPage } from '../pages/upload/upload';
-
+import { VideoGalPage } from '../pages/video-gal/video-gal';
+import { MusicGalPage } from '../pages/music-gal/music-gal';
+import { FileOpener } from '@ionic-native/file-opener';
+import { AngularCropperjsModule } from 'angular-cropperjs';
+import { ImgCrpPage } from '../pages/img-crp/img-crp';
 
 
 @NgModule({
@@ -73,7 +78,11 @@ import { UploadPage } from '../pages/upload/upload';
     NotificationPage,
     RequestPage,
     SearchPage,
-    UploadPage
+    UploadPage,
+    ImgGalPage,
+    VideoGalPage,
+    MusicGalPage,
+    ImgCrpPage
    
   ],
   imports: [
@@ -81,7 +90,8 @@ import { UploadPage } from '../pages/upload/upload';
     HttpClientModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularCropperjsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -107,8 +117,11 @@ import { UploadPage } from '../pages/upload/upload';
     NotificationPage,
     RequestPage,
     SearchPage,
-    UploadPage
-    
+    UploadPage,
+    ImgGalPage,
+    VideoGalPage,
+    MusicGalPage,
+    ImgCrpPage
 
    
   ],
@@ -128,7 +141,9 @@ import { UploadPage } from '../pages/upload/upload';
     RequestService,
     MessageService,
     SearchService,
-    Camera
+    Camera,
+    ImagePicker,
+    FileOpener
   
 
   ]

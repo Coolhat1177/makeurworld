@@ -26083,6 +26083,20 @@ page-image-store .swiper-container .segment-md .segment-button {
   text-transform: capitalize;
 }
 
+page-img-gal .block {
+  position: relative;
+}
+
+page-img-gal .block .deleteIcon {
+  position: absolute !important;
+  color: #ffffff !important;
+  margin-left: 80% !important;
+}
+
+page-img-gal .block .deleteIcon:before {
+  font-size: 30px !important;
+}
+
 page-landing .slider-wraper {
   display: block;
   width: 100%;
