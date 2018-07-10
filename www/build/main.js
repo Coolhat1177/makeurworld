@@ -444,7 +444,11 @@ var ImgCrpPage = /** @class */ (function () {
         this.scaleValY = 1;
         this.cropperOptions = {
             dragMode: 'crop',
+<<<<<<< HEAD
             aspectRatio: 2,
+=======
+            aspectRatio: 1,
+>>>>>>> master
             autoCrop: true,
             movable: true,
             zoomable: true,
@@ -452,6 +456,7 @@ var ImgCrpPage = /** @class */ (function () {
             autoCropArea: 0.8,
         };
     }
+<<<<<<< HEAD
     // captureImage() {
     //   const options: CameraOptions = {
     //     quality: 100,
@@ -466,6 +471,20 @@ var ImgCrpPage = /** @class */ (function () {
     // }
     ImgCrpPage.prototype.captureImage = function () {
         this.myImage = "../assets/imgs/ter1.jpg";
+=======
+    ImgCrpPage.prototype.captureImage = function () {
+        var _this = this;
+        var options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE,
+            sourceType: this.camera.PictureSourceType.CAMERA
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            _this.myImage = 'data:image/jpeg;base64,' + imageData;
+        });
+>>>>>>> master
     };
     ImgCrpPage.prototype.reset = function () {
         this.angularCropper.cropper.reset();
@@ -497,6 +516,7 @@ var ImgCrpPage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('angularCropper'),
+<<<<<<< HEAD
         __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular_cropperjs__["AngularCropperjsComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular_cropperjs__["AngularCropperjsComponent"]) === "function" && _a || Object)
     ], ImgCrpPage.prototype, "angularCropper", void 0);
     ImgCrpPage = __decorate([
@@ -507,6 +527,17 @@ var ImgCrpPage = /** @class */ (function () {
     ], ImgCrpPage);
     return ImgCrpPage;
     var _a, _b, _c;
+=======
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_angular_cropperjs__["AngularCropperjsComponent"])
+    ], ImgCrpPage.prototype, "angularCropper", void 0);
+    ImgCrpPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-img-crp',template:/*ion-inline-start:"E:\muwVer1.1\makeurworld\src\pages\img-crp\img-crp.html"*/'\n\n<ion-header>\n\n  <ion-toolbar>\n\n    <ion-buttons start>\n\n      <button ion-button color="danger" (click)="reset()">\n\n        Reset\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Ionic CropperJS</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="danger" (click)="clear()">\n\n        <ion-icon name="close"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only color="secondary" (click)="save()">\n\n        <ion-icon name="checkmark"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-header>\n\n \n\n<ion-content>\n\n  <button ion-button full (click)="captureImage()" *ngIf="!myImage">Capture Image</button>\n\n  \n\n  <angular-cropper #angularCropper [cropperOptions]="cropperOptions" [imageUrl]="myImage" *ngIf="myImage"></angular-cropper>\n\n \n\n  <ion-row *ngIf="myImage">\n\n    <ion-col col-4>\n\n      <button ion-button outline icon-left color="primary" (click)="zoom(true)">\n\n        <ion-icon name="add"></ion-icon> Zoom\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-4>\n\n      <button ion-button outline icon-left color="primary" (click)="zoom(false)">\n\n        <ion-icon name="remove"></ion-icon> Zoom\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-4>\n\n      <button ion-button outline icon-left (click)="rotate()">\n\n        <ion-icon name="refresh"></ion-icon> 90 deg\n\n      </button>\n\n    </ion-col>\n\n \n\n    <ion-col col-2>\n\n      <button ion-button clear (click)="scaleX()">\n\n        Flip X\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-2>\n\n      <button ion-button clear (click)="scaleY()">\n\n        Flip Y\n\n      </button>\n\n    </ion-col>\n\n \n\n    <ion-col col-2>\n\n      <button ion-button clear icon-only (click)="move(0, -10)">\n\n        <ion-icon name="arrow-round-up"></ion-icon>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-2>\n\n      <button ion-button clear icon-only (click)="move(0, 10)">\n\n        <ion-icon name="arrow-round-down"></ion-icon>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-2>\n\n      <button ion-button clear icon-only (click)="move(-10, 0)">\n\n        <ion-icon name="arrow-round-back"></ion-icon>\n\n      </button>\n\n    </ion-col>\n\n    <ion-col col-2>\n\n      <button ion-button clear icon-only (click)="move(10, 0)">\n\n        <ion-icon name="arrow-round-forward"></ion-icon>\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n \n\n  <ion-card *ngIf="croppedImage">\n\n    <ion-card-header>My Result</ion-card-header>\n\n    <ion-card-content>\n\n      <img [src]="croppedImage">\n\n    </ion-card-content>\n\n  </ion-card>\n\n \n\n</ion-content>'/*ion-inline-end:"E:\muwVer1.1\makeurworld\src\pages\img-crp\img-crp.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */]])
+    ], ImgCrpPage);
+    return ImgCrpPage;
+>>>>>>> master
 }());
 
 //# sourceMappingURL=img-crp.js.map
@@ -1843,11 +1874,19 @@ var map = {
 		3
 	],
 	"../pages/viral-music/viral-music.module": [
+<<<<<<< HEAD
 		741,
 		2
 	],
 	"../pages/viral-tab/viral-tab.module": [
 		740,
+=======
+		740,
+		2
+	],
+	"../pages/viral-tab/viral-tab.module": [
+		741,
+>>>>>>> master
 		1
 	],
 	"../pages/viral-video/viral-video.module": [

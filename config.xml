@@ -89,3 +89,6 @@
     <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.2.2" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
 </widget>
+in name="cordova-plugin-telerik-imagepicker" spec="^2.2.2" />
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+</widget>
