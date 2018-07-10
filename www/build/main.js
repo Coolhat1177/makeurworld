@@ -1604,9 +1604,10 @@ var UploadPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-upload',template:/*ion-inline-start:"/home/coolhat/hybride/makeurworld/src/pages/upload/upload.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>upload</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-row class=\'updateRow1\'>\n        <div class="col col-50 updatebox">\n          <div class=\'updateboxIn0\'>\n             <button ion-button clear class=\'uploadButton\'>Image</button>\n          </div>\n          </div>\n      \n          <div class="col col-50 updatebox">\n             <div class=\'updateboxIn1\'>\n                <button ion-button clear class=\'uploadButton\'>Music</button>\n             </div>\n             </div>\n      </ion-row>\n   \n      <ion-row class=\'updateRow1\'>\n         <div class="col col-50 updatebox">\n             <div class=\'updateboxIn2\'>\n                <button ion-button clear class=\'uploadButton\'>Video</button>\n             </div>\n             </div>\n       \n             <div class="col col-50 updatebox">\n                 <div class=\'updateboxIn3\'>\n                    <button ion-button clear class=\'uploadButton\'>Canvas</button>\n                 </div>\n                 </div>\n       </ion-row>\n\n       <ion-row class=\'updateRow1\'>\n          <div class="col col-50 updatebox">\n            <div class=\'updateboxIn0\'>\n                <button ion-button clear class=\'uploadButton\'>Playlist</button>\n            </div>\n            </div>\n        \n            <div class="col col-50 updatebox">\n               <div class=\'updateboxIn1\'>\n                  <button ion-button clear class=\'uploadButton\'>Favorite</button>\n               </div>\n               </div>\n        </ion-row>\n\n</ion-content>\n'/*ion-inline-end:"/home/coolhat/hybride/makeurworld/src/pages/upload/upload.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
     ], UploadPage);
     return UploadPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=upload.js.map
@@ -1636,87 +1637,87 @@ webpackEmptyAsyncContext.id = 192;
 var map = {
 	"../pages/adda/adda.module": [
 		715,
-		20
+		43
 	],
 	"../pages/cover/cover.module": [
 		716,
-		19
+		42
 	],
 	"../pages/forget-password/forget-password.module": [
 		717,
-		18
+		41
 	],
 	"../pages/image-pick/image-pick.module": [
 		718,
-		0
+		40
 	],
 	"../pages/image-store/image-store.module": [
 		719,
-		17
+		39
 	],
 	"../pages/landing/landing.module": [
 		720,
-		16
+		38
 	],
 	"../pages/main-tab/main-tab.module": [
 		721,
-		15
+		37
 	],
 	"../pages/message/message.module": [
 		722,
-		14
+		36
 	],
 	"../pages/music-store/music-store.module": [
 		723,
-		13
+		35
 	],
 	"../pages/musicplayer/musicplayer.module": [
 		724,
-		12
+		34
 	],
 	"../pages/notification/notification.module": [
 		725,
-		11
+		33
 	],
 	"../pages/request/request.module": [
 		726,
-		10
+		32
 	],
 	"../pages/search/search.module": [
 		727,
-		9
+		31
 	],
 	"../pages/sign-in/sign-in.module": [
 		728,
-		8
+		30
 	],
 	"../pages/store-tab/store-tab.module": [
 		729,
-		7
+		29
 	],
 	"../pages/upload/upload.module": [
 		730,
-		6
+		28
 	],
 	"../pages/video-store/video-store.module": [
 		731,
-		5
+		27
 	],
 	"../pages/viral-image/viral-image.module": [
 		732,
-		4
+		26
 	],
 	"../pages/viral-music/viral-music.module": [
 		733,
-		3
+		25
 	],
 	"../pages/viral-tab/viral-tab.module": [
 		734,
-		2
+		24
 	],
 	"../pages/viral-video/viral-video.module": [
 		735,
-		1
+		23
 	]
 };
 function webpackAsyncContext(req) {
@@ -2128,12 +2129,15 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_upload_upload__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__services_ImageStoreService__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_image_pick_image_pick__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices__ = __webpack_require__(736);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2222,7 +2226,6 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/adda/adda.module#AddaPageModule', name: 'AddaPage', segment: 'adda', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cover/cover.module#CoverPageModule', name: 'CoverPage', segment: 'cover', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/forget-password/forget-password.module#ForgetPasswordPageModule', name: 'ForgetPasswordPage', segment: 'forget-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/image-pick/image-pick.module#ImagePickPageModule', name: 'ImagePickPage', segment: 'image-pick', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/image-store/image-store.module#ImageStorePageModule', name: 'ImageStorePage', segment: 'image-store', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/landing/landing.module#LandingPageModule', name: 'LandingPage', segment: 'landing', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/main-tab/main-tab.module#MainTabPageModule', name: 'MainTabPage', segment: 'main-tab', priority: 'low', defaultHistory: [] },
@@ -2239,7 +2242,12 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/viral-image/viral-image.module#ViralImagePageModule', name: 'ViralImagePage', segment: 'viral-image', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/viral-music/viral-music.module#ViralMusicPageModule', name: 'ViralMusicPage', segment: 'viral-music', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/viral-tab/viral-tab.module#ViralTabPageModule', name: 'ViralTabPage', segment: 'viral-tab', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/viral-video/viral-video.module#ViralVideoPageModule', name: 'ViralVideoPage', segment: 'viral-video', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/viral-video/viral-video.module#ViralVideoPageModule', name: 'ViralVideoPage', segment: 'viral-video', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/image-pick/image-pick.module#ImagePickPageModule', name: 'ImagePickPage', segment: 'image-pick', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/img-crp/img-crp.module#ImgCrpPageModule', name: 'ImgCrpPage', segment: 'img-crp', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/img-gal/img-gal.module#ImgGalPageModule', name: 'ImgGalPage', segment: 'img-gal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/music-gal/music-gal.module#MusicGalPageModule', name: 'MusicGalPage', segment: 'music-gal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/video-gal/video-gal.module#VideoGalPageModule', name: 'VideoGalPage', segment: 'video-gal', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_32__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -2288,7 +2296,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_42__services_MessageService__["a" /* MessageService */],
                 __WEBPACK_IMPORTED_MODULE_43__services_SearchServices__["a" /* SearchService */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_6__ionic_native_crop__["a" /* Crop */]
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_crop__["a" /* Crop */],
+                __WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices__["BgProSetServices"]
             ]
         })
     ], AppModule);
@@ -2645,6 +2654,13 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 736:
+/***/ (function(module, exports) {
+
+//# sourceMappingURL=BgProSetServices.js.map
 
 /***/ }),
 
