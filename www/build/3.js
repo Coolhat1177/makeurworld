@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 732:
+/***/ 733:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViralImagePageModule", function() { return ViralImagePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViralMusicPageModule", function() { return ViralMusicPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viral_image__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__viral_music__ = __webpack_require__(174);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ViralImagePageModule = /** @class */ (function () {
-    function ViralImagePageModule() {
+var ViralMusicPageModule = /** @class */ (function () {
+    function ViralMusicPageModule() {
     }
-    ViralImagePageModule = __decorate([
+    ViralMusicPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */],
+                __WEBPACK_IMPORTED_MODULE_2__viral_music__["a" /* ViralMusicPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_image__["a" /* ViralImagePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__viral_music__["a" /* ViralMusicPage */]),
             ],
         })
-    ], ViralImagePageModule);
-    return ViralImagePageModule;
+    ], ViralMusicPageModule);
+    return ViralMusicPageModule;
 }());
 
-//# sourceMappingURL=viral-image.module.js.map
+//# sourceMappingURL=viral-music.module.js.map
 
 /***/ })
 

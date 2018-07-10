@@ -403,7 +403,7 @@ var CoverPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_CreditService__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_BgProSetServices__ = __webpack_require__(736);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_ImageStoreService__ = __webpack_require__(124);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,22 +442,22 @@ var ImagePickPage = /** @class */ (function () {
                     for (var key in data[0]) {
                         _this.imgStore.addToList(data[0][key]);
                     }
-                    console.log(_this.imgStore.getList());
                     _this.imageArray = _this.imgStore.getList();
                 }
             });
         });
     };
-    ImagePickPage.prototype.choseImg = function (i) {
-    };
     ImagePickPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-image-pick',template:/*ion-inline-start:"/home/coolhat/hybride/makeurworld/src/pages/image-pick/image-pick.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <div class=\'modalHeader\'>\n        <div class=\'modalDis\'>\n            <button ion-button clear  (click)="dismissModel()">\n            <ion-icon name="close"></ion-icon>\n          </button>\n        </div>\n        <ion-title text-center>imagePick</ion-title>\n    </div>\n     \n   \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row >\n       \n        <ion-col col-md-3 col-4 col-sm-3   >\n            <div class="image-container" >\n            Hello\n            </div>\n          </ion-col>\n\n      <ion-col col-md-3 col-4 col-sm-3  *ngFor="let image of imageArray let i = index" >\n          <div class="image-container" [style.background-image]="\'url(\' + image[\'image_url\'] + \')\'" (click)="choseImg(i)" >\n           \n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/home/coolhat/hybride/makeurworld/src/pages/image-pick/image-pick.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_CreditService__["a" /* CreditService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_CreditService__["a" /* CreditService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_BgProSetServices__["a" /* BgProSetServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_BgProSetServices__["a" /* BgProSetServices */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2__services_CreditService__["a" /* CreditService */],
+            __WEBPACK_IMPORTED_MODULE_3__services_ImageStoreService__["a" /* ImageStoreService */]])
     ], ImagePickPage);
     return ImagePickPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=image-pick.js.map
@@ -1648,75 +1648,75 @@ var map = {
 	],
 	"../pages/image-pick/image-pick.module": [
 		718,
-		17
+		0
 	],
 	"../pages/image-store/image-store.module": [
 		719,
-		16
+		17
 	],
 	"../pages/landing/landing.module": [
 		720,
-		15
+		16
 	],
 	"../pages/main-tab/main-tab.module": [
 		721,
-		14
+		15
 	],
 	"../pages/message/message.module": [
 		722,
-		13
+		14
 	],
 	"../pages/music-store/music-store.module": [
 		723,
-		12
+		13
 	],
 	"../pages/musicplayer/musicplayer.module": [
 		724,
-		11
+		12
 	],
 	"../pages/notification/notification.module": [
 		725,
-		10
+		11
 	],
 	"../pages/request/request.module": [
 		726,
-		9
+		10
 	],
 	"../pages/search/search.module": [
 		727,
-		8
+		9
 	],
 	"../pages/sign-in/sign-in.module": [
 		728,
-		7
+		8
 	],
 	"../pages/store-tab/store-tab.module": [
 		729,
-		6
+		7
 	],
 	"../pages/upload/upload.module": [
 		730,
-		5
+		6
 	],
 	"../pages/video-store/video-store.module": [
 		731,
-		4
+		5
 	],
 	"../pages/viral-image/viral-image.module": [
 		732,
-		3
+		4
 	],
 	"../pages/viral-music/viral-music.module": [
 		733,
-		2
+		3
 	],
 	"../pages/viral-tab/viral-tab.module": [
 		734,
-		1
+		2
 	],
 	"../pages/viral-video/viral-video.module": [
 		735,
-		0
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -2128,14 +2128,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_upload_upload__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__services_ImageStoreService__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__pages_image_pick_image_pick__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices__ = __webpack_require__(736);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -2290,8 +2288,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_42__services_MessageService__["a" /* MessageService */],
                 __WEBPACK_IMPORTED_MODULE_43__services_SearchServices__["a" /* SearchService */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_6__ionic_native_crop__["a" /* Crop */],
-                __WEBPACK_IMPORTED_MODULE_47__services_BgProSetServices__["a" /* BgProSetServices */]
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_crop__["a" /* Crop */]
             ]
         })
     ], AppModule);
@@ -2648,51 +2645,6 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 736:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BgProSetServices; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ServerConnection__ = __webpack_require__(47);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var BgProSetServices = /** @class */ (function () {
-    function BgProSetServices(con) {
-        this.con = con;
-        this.imgArr = [];
-    }
-    BgProSetServices.prototype.addToList = function (data) {
-        this.imgArr.push(data);
-    };
-    BgProSetServices.prototype.getList = function () {
-        return this.imgArr;
-    };
-    BgProSetServices.prototype.bgProImg = function (user, loged) {
-        var url = "http://coolhat//home/image/imgGal_load_bg";
-        return this.con.postDataFetch(user, loged, url);
-    };
-    BgProSetServices = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ServerConnection__["a" /* ConnectionServices */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ServerConnection__["a" /* ConnectionServices */]) === "function" && _a || Object])
-    ], BgProSetServices);
-    return BgProSetServices;
-    var _a;
-}());
-
-//# sourceMappingURL=BgProSetServices.js.map
 
 /***/ }),
 

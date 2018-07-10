@@ -1,14 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 723:
+/***/ 724:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicStorePageModule", function() { return MusicStorePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicplayerPageModule", function() { return MusicplayerPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__music_store__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__musicplayer__ = __webpack_require__(176);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MusicStorePageModule = /** @class */ (function () {
-    function MusicStorePageModule() {
+var MusicplayerPageModule = /** @class */ (function () {
+    function MusicplayerPageModule() {
     }
-    MusicStorePageModule = __decorate([
+    MusicplayerPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__music_store__["a" /* MusicStorePage */],
+                __WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__music_store__["a" /* MusicStorePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */]),
             ],
         })
-    ], MusicStorePageModule);
-    return MusicStorePageModule;
+    ], MusicplayerPageModule);
+    return MusicplayerPageModule;
 }());
 
-//# sourceMappingURL=music-store.module.js.map
+//# sourceMappingURL=musicplayer.module.js.map
 
 /***/ })
 
