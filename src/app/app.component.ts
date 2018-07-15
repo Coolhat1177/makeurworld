@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // import { LandingPage } from '../pages/landing/landing';
 import { MainTabPage } from '../pages/main-tab/main-tab';
-import { ImageStorePage } from '../pages/image-store/image-store';
+import { MusicStorePage } from '../pages/music-store/music-store';
+// import { ImageStorePage } from '../pages/image-store/image-store';
 // import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
 // import { SignInPage } from '../pages/sign-in/sign-in';
 
@@ -13,7 +14,7 @@ import { ImageStorePage } from '../pages/image-store/image-store';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage= ImageStorePage;
+  rootPage= MusicStorePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

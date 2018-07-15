@@ -1,6 +1,8 @@
 
 import { Component,ViewChild } from '@angular/core';
 import { NavController,IonicPage,Slides } from 'ionic-angular';
+import { ImageStoreService } from '../../services/ImageStoreService';
+import { CreditService } from '../../services/CreditService';
 @IonicPage()
 @Component({
   selector: 'page-music-store',
@@ -8,13 +10,16 @@ import { NavController,IonicPage,Slides } from 'ionic-angular';
 })
 export class MusicStorePage {
   @ViewChild('SwipedTabsSlider') SwipedTabsSlider: Slides ;
+  musicArray:any=[];
 
   SwipedTabsIndicator :any= null;
   tabs:any=[];
 
  
-  constructor(public navCtrl: NavController) {
-  	this.tabs=["Music Play","Playlist"];
+  constructor(public navCtrl: NavController,
+              private storeS:ImageStoreService,
+              private credit:CreditService) {
+  	this.tabs=["Music","Playlist"];
   }
   ionViewWillEnter(){
     this.SwipedTabsSlider.slideTo(0,100);
@@ -44,6 +49,30 @@ export class MusicStorePage {
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ImageStorePage');
+  }
+
+
+  loadMusic(){
+
+
+    this.credit.check().then(data=>{
+
+      // console.log(data);
+
+      this.storeS.firstLoad(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.storeS.addToList(data[0][key]);
+              }
+              this.musicArray=this.storeS.getList();
+
+            }
+      });
+    
+    });
+
   }
 
 }

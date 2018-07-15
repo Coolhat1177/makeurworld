@@ -65,6 +65,10 @@ import { ReactionServices } from '../services/InteractionServices';
 import { ReactPage } from '../pages/react/react';
 import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
 
+import { ImCrpPage } from '../pages/im-crp/im-crp';
+//import { ImgCrpServices } from '../services/imgCrpServices';
+
+
 
 @NgModule({
   declarations: [
@@ -103,8 +107,8 @@ import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
     ReactionPage,
     ReactionCenterPage,
     ReactPage,
-    AddCnavasPage
-    
+    AddCnavasPage,
+    ImCrpPage
    
   ],
   imports: [
@@ -150,7 +154,8 @@ import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
     CommentPage,
     ReactionPage,
     ReactPage,
-    AddCnavasPage
+    AddCnavasPage,
+    ImCrpPage
 
    
   ],
@@ -176,7 +181,9 @@ import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
     BgProSetServices,
     ImageZoomServices,
     SuggestionServices,
-    ReactionServices
+    ReactionServices,
+    BgProSetServices,
+    //ImgCrpServices
   
 
   ]

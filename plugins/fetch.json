@@ -83,6 +83,7 @@
   "cordova-plugin-crop": {
     "source": {
       "type": "registry",
+<<<<<<< HEAD
       "id": "cordova-plugin-crop"
 =======
   "cordova-plugin-telerik-imagepicker": {
@@ -98,6 +99,9 @@
       "type": "registry",
       "id": "cordova-plugin-file-opener2"
 >>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
+=======
+      "id": "cordova-plugin-crop@^0.4.0"
+>>>>>>> f038aedac418556f74764dc4a087ea1ce11dfd8a
     },
     "is_top_level": true,
     "variables": {}

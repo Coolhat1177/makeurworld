@@ -87,6 +87,7 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 <<<<<<< HEAD
     <plugin name="cordova-plugin-crop" spec="^0.4.0" />
+<<<<<<< HEAD
     <engine name="android" spec="7.0.0" />
 =======
     <engine name="android" spec="~7.0.0" />
@@ -96,4 +97,7 @@
 in name="cordova-plugin-telerik-imagepicker" spec="^2.2.2" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
 >>>>>>> 2179f6022d99b48ddbebb683cbce8af474a81ef6
+=======
+    <engine name="android" spec="~7.0.0" />
+>>>>>>> f038aedac418556f74764dc4a087ea1ce11dfd8a
 </widget>
