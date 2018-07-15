@@ -1,0 +1,49 @@
+page-imagesuggest {
+    
+    .suc
+    {
+        color:#333;
+    }
+
+
+    ion-searchbar{        
+        .searchbar-input-container{            
+            .searchbar-input{
+                border-radius: 20px;
+            }
+        }
+     }
+
+  
+}
+
+
+ion-list
+{
+    width: 100%;
+}
+
+
+.button-md
+{
+    text-transform: none;
+}
+   
+
+
+.viewerTopOpt
+    {
+        position: absolute;
+        left: 10px;
+        bottom: -10px;
+        z-index: 1;
+        
+    }
+
+
+
+    .viewerTopOpt button
+    {
+        font-size: 1.1em;
+        color: white;
+    }

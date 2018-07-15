@@ -1,0 +1,69 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title text-center>
+          <div class='viewerTopOpt'>
+              <button ion-button clear (click)="dismissView()"  class='viewClose'>
+                  <ion-icon name="arrow-back"></ion-icon>
+                </button>
+          </div>
+       Comment
+  
+      </ion-title>
+    </ion-navbar>
+
+    
+  
+  </ion-header>
+
+
+<ion-content>
+    <div class='commentBox'>
+        <div class='commentBox0'>
+            <ion-row padding>
+                <ion-list>
+                    <ion-item *ngFor="let user of commentArr; let i=index">
+                      <ion-avatar item-start>
+                        <img [src]="user['image_url']">
+                      </ion-avatar>
+                      <h4>{{user['full_name']}}</h4>
+                      <p class='commentT'>{{user['review']}}</p>
+                      <p class='commentTime'>{{user['rev_t']}}</p>
+                     
+                    </ion-item>
+                  </ion-list>
+            </ion-row>
+    
+        </div>
+     
+    
+      </div>
+
+</ion-content>
+<ion-footer>
+    <div class='commentBox1'>
+        <form #commentForm="ngForm" (ngSubmit)="submitComment(commentForm)">
+        <div class='commentText'>
+          <div class='commentText0'>
+            <ion-textarea class='commentTextbox'
+            palceholder="Leave Comment"
+             name="commentArea"
+              ngModel required (keyup)="checkStatus($event)">
+
+            </ion-textarea>
+
+          </div>
+          <div class='commentText1'>
+            <button ion-button clear  [disabled]="!isenabled">
+                <ion-icon name='custom-icon11' class='iconSend'></ion-icon>
+            </button>
+
+          </div>
+
+        </div>
+   </form>
+
+    </div>
+  
+</ion-footer>

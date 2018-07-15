@@ -1,8 +1,9 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController,Slides } from 'ionic-angular';
+import { IonicPage, NavController,Slides, ModalController } from 'ionic-angular';
 import { AlertServices } from '../../services/AlertServices';
 import { CreditService } from '../../services/CreditService';
 import { ImageStoreService } from '../../services/ImageStoreService';
+import { ImageviewerPage } from '../imageviewer/imageviewer';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ export class ImageStorePage {
   constructor(public navCtrl: NavController,
             private alertCtrl:AlertServices, 
             private credit:CreditService,
-            private imgStore:ImageStoreService
+            private imgStore:ImageStoreService,
+            private modelCtrl:ModalController
               ) {
   	this.tabs=["Photo","Canvas"];
   }
@@ -80,6 +82,73 @@ export class ImageStorePage {
   }
 
 
+  doInfinite(event)
+  {
+    this.loadStorMore(event);
+    
+  }
+
+
+  loadStorMore(event?)
+  {
+
+    this.credit.check().then(data=>{
+
+    
+      let info={'l_t':this.imgStore.last_time()}
+      this.imgStore.moreLoad(data[0],data[1],info).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.imgStore.addToList(data[0][key]);
+              }
+              // this.imageArray=this.imgStore.getList();
+
+            }
+
+            if(event)
+            {
+              event.complete();
+            }
+      });
+    
+    });
+    
+  }
+
+
+  imageZoom(id){
+
+    let image=[];
+    this.credit.check().then(data=>{
+
+    
+     
+      this.imgStore.imageAll(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                image.push(data[0][key]);
+              }
+
+              const profilePick=this.modelCtrl.create(ImageviewerPage,{imgArr:image,
+                image_id:id});
+             profilePick.present();
+             
+              
+
+            }
+
+           
+      });
+    
+    });
+
+    
+
+  }
 
 
 }

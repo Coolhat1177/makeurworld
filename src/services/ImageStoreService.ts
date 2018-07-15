@@ -12,11 +12,29 @@ export class ImageStoreService{
     }
 
     firstLoad(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/image/imgGal_load";
+        let url="http://coolhat/home/image/imgGal_load";
 
         return this.con.postDataFetch(user,loged,url);
 
     }
+
+    moreLoad(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/image/imgGal_load_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    imageAll(user:any,loged:any){
+        let url="http://coolhat/home/image/own_image";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
 
     addToList(data:any)
     {
@@ -27,10 +45,8 @@ export class ImageStoreService{
         return this.imgArr;
     }
 
-    bgProImg(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/image/imgGal_load";
-
-        return this.con.postDataFetch(user,loged,url);
+    last_time(){
+            return this.imgArr[this.imgArr.length -1]['image_time'];
 
     }
 

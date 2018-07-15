@@ -10,4 +10,7 @@ import { ViralVideoPage } from './viral-video';
     IonicPageModule.forChild(ViralVideoPage),
   ],
 })
+
+
+
 export class ViralVideoPageModule {}

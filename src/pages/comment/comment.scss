@@ -1,0 +1,108 @@
+page-comment {
+
+    .commentBox
+    {
+        width: 100%;;
+        height: 100%;
+        position: relative;
+      
+    }
+
+
+    .commentBox1
+    {
+        flex:0 1 60px;
+        border-top:solid 1px #cac4c4;
+        border-bottom:solid 1px #cac4c4;
+    }
+
+    .commentText
+    {
+        display: flex;
+        position: relative;
+        flex-flow: row;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .commentText0
+    {
+        flex:1;
+        height: 40px;
+    }
+
+    .commentText1
+    {
+        flex:0 1 50px;
+        height: 40px;
+    }
+
+    .iconSend
+    {
+        color:#333;
+        font-size: 1.8em;
+    }
+
+    .commentTextbox
+    {
+        border-radius: 20px;
+        border:solid 1px #333;
+        height: 40px;
+        overflow-y: auto;
+    }
+
+    ion-list
+    {
+        width: 100%;
+      
+    }
+
+    .item-inner
+    {
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-top:5px;
+        padding-left:15px; 
+      
+       
+        border-width: 0px;
+        margin-left: -5px;
+    }
+
+    .list-md .item-block .item-inner
+    {
+        margin-bottom: 10px;
+    
+    }
+
+    .commentT
+    {
+        padding: 5px;
+
+    }
+
+    .commentTime{
+        padding: 5px;
+        font-size: .7em;
+
+    }
+
+   
+
+    .label-md
+    {
+        margin-bottom: 0px;
+    }
+   
+}
+
+[padding] h4:first-child
+{
+    margin-top:0px;
+}
+
+
+.list-md > .item-block:last-child .item-inner{
+    border-bottom:1px solid #dedede;
+    
+}

@@ -1,5 +1,5 @@
 import { Http, Response, Headers } from "@angular/http";
-import 'rxjs/Rx';
+import 'rxjs';
 import { Injectable } from '@angular/core';
 import { ReturnStatement } from "@angular/compiler";
 import { HttpParams } from "@angular/common/http";

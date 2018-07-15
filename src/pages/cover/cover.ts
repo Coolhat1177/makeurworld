@@ -5,6 +5,7 @@ import { Camera,CameraOptions } from '@ionic-native/camera';
 import { AlertServices } from '../../services/AlertServices';
 
 import { ImagePickPage } from '../image-pick/image-pick';
+import { CommentPage } from '../comment/comment';
 
 @IonicPage()
 @Component({
@@ -126,5 +127,8 @@ export class CoverPage {
 
     
   }
+
+
+ 
 
 }

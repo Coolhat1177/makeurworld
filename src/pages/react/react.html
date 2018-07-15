@@ -1,0 +1,12 @@
+
+
+
+<ion-content  >
+  <ion-row>
+    <ion-col *ngFor="let emo of reactIcon; let i=index">
+      <button ion-button clear (click)="reactOn(i)"><img [src]='emo' class='reactImg'></button>
+    </ion-col>
+   
+  </ion-row>
+
+</ion-content>

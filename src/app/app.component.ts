@@ -5,13 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // import { LandingPage } from '../pages/landing/landing';
 import { MainTabPage } from '../pages/main-tab/main-tab';
+import { ImageStorePage } from '../pages/image-store/image-store';
+// import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
 // import { SignInPage } from '../pages/sign-in/sign-in';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage= MainTabPage;
+  rootPage= ImageStorePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

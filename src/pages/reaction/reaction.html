@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <ion-title text-center>
+          <div class='viewerTopOpt'>
+              <button ion-button clear (click)="dismissView()"  class='viewClose'>
+                  <ion-icon name="arrow-back"></ion-icon>
+                </button>
+          </div>
+      Reaction
+  
+      </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+        <ion-row >
+                <ion-list>
+                    <ion-item *ngFor="let user of reactionArry; let i=index">
+                      <ion-avatar item-start>
+                        <img [src]="user['image_url']">
+                      </ion-avatar>
+                      <h4>{{user['full_name']}}</h4>
+                     
+                      <ion-icon [name]="iconArray[user['rating_val']]" item-end class='iconSend'></ion-icon>
+                     
+                    </ion-item>
+                  </ion-list>
+            </ion-row>
+
+</ion-content>

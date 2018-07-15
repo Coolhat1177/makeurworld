@@ -1,14 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 734:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicplayerPageModule", function() { return MusicplayerPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReactionPageModule", function() { return ReactionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__musicplayer__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reaction__ = __webpack_require__(191);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MusicplayerPageModule = /** @class */ (function () {
-    function MusicplayerPageModule() {
+var ReactionPageModule = /** @class */ (function () {
+    function ReactionPageModule() {
     }
-    MusicplayerPageModule = __decorate([
+    ReactionPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */],
+                __WEBPACK_IMPORTED_MODULE_2__reaction__["a" /* ReactionPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__musicplayer__["a" /* MusicplayerPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reaction__["a" /* ReactionPage */]),
             ],
         })
-    ], MusicplayerPageModule);
-    return MusicplayerPageModule;
+    ], ReactionPageModule);
+    return ReactionPageModule;
 }());
 
-//# sourceMappingURL=musicplayer.module.js.map
+//# sourceMappingURL=reaction.module.js.map
 
 /***/ })
 

@@ -54,6 +54,16 @@ import { ImageStoreService } from '../services/ImageStoreService';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { ImagePickPage } from '../pages/image-pick/image-pick';
 import { BgProSetServices } from '../services/BgProSetServices';
+import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
+import { ImagesuggestPage } from '../pages/imagesuggest/imagesuggest';
+import { ReactionPage } from '../pages/reaction/reaction';
+import { CommentPage } from '../pages/comment/comment';
+import { ImageZoomServices } from '../services/ImageZoomServices';
+import { SuggestionServices } from '../services/SuggestionServices';
+import { ReactionCenterPage} from '../component/reaction/reaction';
+import { ReactionServices } from '../services/InteractionServices';
+import { ReactPage } from '../pages/react/react';
+import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
 
 
 @NgModule({
@@ -86,7 +96,15 @@ import { BgProSetServices } from '../services/BgProSetServices';
     VideoGalPage,
     MusicGalPage,
     ImgCrpPage,
-    ImagePickPage
+    ImagePickPage,
+    ImageviewerPage,
+    ImagesuggestPage,
+    CommentPage,
+    ReactionPage,
+    ReactionCenterPage,
+    ReactPage,
+    AddCnavasPage
+    
    
   ],
   imports: [
@@ -126,7 +144,13 @@ import { BgProSetServices } from '../services/BgProSetServices';
     VideoGalPage,
     MusicGalPage,
     ImgCrpPage,
-    ImagePickPage
+    ImagePickPage,
+    ImageviewerPage,
+    ImagesuggestPage,
+    CommentPage,
+    ReactionPage,
+    ReactPage,
+    AddCnavasPage
 
    
   ],
@@ -149,7 +173,10 @@ import { BgProSetServices } from '../services/BgProSetServices';
     Camera,
     ImagePicker,
     FileOpener,
-    BgProSetServices
+    BgProSetServices,
+    ImageZoomServices,
+    SuggestionServices,
+    ReactionServices
   
 
   ]

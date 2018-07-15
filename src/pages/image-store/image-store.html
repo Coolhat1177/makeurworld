@@ -27,11 +27,16 @@
       <ion-slide>
         <ion-row padding>
           <div class="flexbin flexbin-margin">
-            <div *ngFor="let image of imageArray">
+            <div *ngFor="let image of imageArray" (click)="imageZoom(image['image_id'])">
                 <img src="{{image['image_url']}}" />
             </div>
            
         </div>
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+
         </ion-row>
       </ion-slide>
       <ion-slide>

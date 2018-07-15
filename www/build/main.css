@@ -25695,6 +25695,114 @@ ion-navbar.toolbar {
   color: white;
 }
 
+page-add-cnavas .suc {
+  color: #333;
+}
+
+page-add-cnavas ion-searchbar .searchbar-input-container .searchbar-input {
+  border-radius: 20px;
+}
+
+page-add-cnavas .item-md ion-avatar ion-img, page-add-cnavas .item-md ion-avatar img {
+  border-radius: 4px;
+}
+
+page-comment .commentBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+page-comment .commentBox1 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 60px;
+  -ms-flex: 0 1 60px;
+  flex: 0 1 60px;
+  border-top: solid 1px #cac4c4;
+  border-bottom: solid 1px #cac4c4;
+}
+
+page-comment .commentText {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  width: 100%;
+  padding: 10px;
+}
+
+page-comment .commentText0 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 40px;
+}
+
+page-comment .commentText1 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50px;
+  -ms-flex: 0 1 50px;
+  flex: 0 1 50px;
+  height: 40px;
+}
+
+page-comment .iconSend {
+  color: #333;
+  font-size: 1.8em;
+}
+
+page-comment .commentTextbox {
+  border-radius: 20px;
+  border: solid 1px #333;
+  height: 40px;
+  overflow-y: auto;
+}
+
+page-comment ion-list {
+  width: 100%;
+}
+
+page-comment .item-inner {
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 15px;
+  border-width: 0px;
+  margin-left: -5px;
+}
+
+page-comment .list-md .item-block .item-inner {
+  margin-bottom: 10px;
+}
+
+page-comment .commentT {
+  padding: 5px;
+}
+
+page-comment .commentTime {
+  padding: 5px;
+  font-size: .7em;
+}
+
+page-comment .label-md {
+  margin-bottom: 0px;
+}
+
+[padding] h4:first-child {
+  margin-top: 0px;
+}
+
+.list-md > .item-block:last-child .item-inner {
+  border-bottom: 1px solid #dedede;
+}
+
 page-cover .profileImgDisplay {
   padding: 0px;
   margin: 0px;
@@ -26127,6 +26235,201 @@ page-image-store .swiper-container .segment-md .segment-button {
   text-transform: capitalize;
 }
 
+page-imagesuggest .suc {
+  color: #333;
+}
+
+page-imagesuggest ion-searchbar .searchbar-input-container .searchbar-input {
+  border-radius: 20px;
+}
+
+ion-list {
+  width: 100%;
+}
+
+.button-md {
+  text-transform: none;
+}
+
+.viewerTopOpt {
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
+  z-index: 1;
+}
+
+.viewerTopOpt button {
+  font-size: 1.1em;
+  color: white;
+}
+
+page-imageviewer .viewerBg {
+  background: black;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+page-imageviewer .viewerTop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+}
+
+page-imageviewer .viewerTopIn {
+  height: 60px;
+  width: 100%;
+  position: relative;
+}
+
+page-imageviewer .viewerTopOpt {
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+}
+
+page-imageviewer .viewerTopOpt1 {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+
+page-imageviewer .viewClose {
+  color: white;
+  font-size: 1.6em;
+}
+
+page-imageviewer .viewerFooter {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+page-imageviewer .viewerFooteropt1 button {
+  width: 100%;
+}
+
+page-imageviewer .padding5 {
+  padding: 5px;
+}
+
+page-imageviewer .viewerCenter {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  color: wheat;
+}
+
+page-imageviewer .viewerCenterIn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+page-imageviewer .viewerCenterIn img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+page-imageviewer .viewerFooterOpt {
+  width: 100%;
+  position: relative;
+}
+
+page-imageviewer .viewerFooterOptIn {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  width: 100%;
+}
+
+page-imageviewer .picPro {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50px;
+  -ms-flex: 0 1 50px;
+  flex: 0 1 50px;
+  padding: 5px;
+}
+
+page-imageviewer .picPro img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50%;
+}
+
+page-imageviewer .infoPro {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px;
+  padding-left: 10px;
+  color: white;
+  font-size: 1.1em;
+}
+
+page-imageviewer .infoProIn {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  width: 100%;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+}
+
+page-imageviewer .infoProIn1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 5px;
+}
+
+page-imageviewer .infoProIn0 {
+  padding: 5px;
+}
+
+page-imageviewer .lwBorder {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+}
+
+page-imageviewer .infoProIn2 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50px;
+  -ms-flex: 0 1 50px;
+  flex: 0 1 50px;
+  padding: 5px;
+}
+
+page-imageviewer .viewInfo {
+  color: white;
+}
+
 page-img-gal .block {
   position: relative;
 }
@@ -26192,7 +26495,7 @@ page-landing .slider-wraper-getStart-Inner {
   text-align: center;
 }
 
-page-main-tab ion-icon[class*="custom-"] {
+ion-icon[class*="custom-"] {
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-position: 50% 50%;
@@ -26204,54 +26507,89 @@ page-main-tab ion-icon[class*="custom-"] {
   height: 1em;
 }
 
-page-main-tab ion-icon[class*="custom-icon1"] {
+ion-icon[class*="custom-icon1"] {
   -webkit-mask-image: url(../assets/icon/home.svg);
   mask-image: url(../assets/icon/home.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon2"] {
+ion-icon[class*="custom-icon2"] {
   -webkit-mask-image: url(../assets/icon/music.svg);
   mask-image: url(../assets/icon/music.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon3"] {
+ion-icon[class*="custom-icon3"] {
   -webkit-mask-image: url(../assets/icon/viral.svg);
   mask-image: url(../assets/icon/viral.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon4"] {
+ion-icon[class*="custom-icon4"] {
   -webkit-mask-image: url(../assets/icon/mystore.svg);
   mask-image: url(../assets/icon/mystore.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon5"] {
+ion-icon[class*="custom-icon5"] {
   -webkit-mask-image: url(../assets/icon/adda.svg);
   mask-image: url(../assets/icon/adda.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon6"] {
+ion-icon[class*="custom-icon6"] {
   -webkit-mask-image: url(../assets/icon/search.svg);
   mask-image: url(../assets/icon/search.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon7"] {
+ion-icon[class*="custom-icon7"] {
   -webkit-mask-image: url(../assets/icon/notification.svg);
   mask-image: url(../assets/icon/notification.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon8"] {
+ion-icon[class*="custom-icon8"] {
   -webkit-mask-image: url(../assets/icon/friendrequest.svg);
   mask-image: url(../assets/icon/friendrequest.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon9"] {
+ion-icon[class*="custom-icon9"] {
   -webkit-mask-image: url(../assets/icon/chat.svg);
   mask-image: url(../assets/icon/chat.svg);
 }
 
-page-main-tab ion-icon[class*="custom-icon10"] {
+ion-icon[class*="custom-icon10"] {
   -webkit-mask-image: url(../../assets/icon/upload.svg);
   mask-image: url(../../assets/icon/upload.svg);
+}
+
+ion-icon[class*="custom-icon11"] {
+  -webkit-mask-image: url(../../assets/icon/send.svg);
+  mask-image: url(../../assets/icon/send.svg);
+}
+
+ion-icon[class*="custom-icon12"] {
+  -webkit-mask-image: url(../../assets/icon/comment.svg);
+  mask-image: url(../../assets/icon/comment.svg);
+}
+
+ion-icon[class*="custom-icon13"] {
+  -webkit-mask-image: url(../../assets/icon/1f60d.svg);
+  mask-image: url(../../assets/icon/1f60d.svg);
+}
+
+ion-icon[class*="custom-icon14"] {
+  -webkit-mask-image: url(../../assets/icon/1f632.svg);
+  mask-image: url(../../assets/icon/1f632.svg);
+}
+
+ion-icon[class*="custom-icon15"] {
+  -webkit-mask-image: url(../../assets/icon/1f600.svg);
+  mask-image: url(../../assets/icon/1f600.svg);
+}
+
+ion-icon[class*="custom-icon16"] {
+  -webkit-mask-image: url(../../assets/icon/1f622.svg);
+  mask-image: url(../../assets/icon/1f622.svg);
+}
+
+ion-icon[class*="custom-icon17"] {
+  -webkit-mask-image: url(../../assets/icon/1f621.svg);
+  mask-image: url(../../assets/icon/1f621.svg);
 }
 
 page-music-store .SwipedTabs-indicatorSegment {
@@ -26313,6 +26651,28 @@ page-otp .item-md .sign-button {
   height: 46px;
   font-size: 1.6rem;
   text-transform: none;
+}
+
+page-react .popover-md .popover-content {
+  border-radius: 60px;
+}
+
+page-react .button-md {
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+  width: 40px;
+}
+
+page-react .reactImg {
+  height: 35px;
+  width: 35px;
+}
+
+.popover-md .popover-content {
+  width: auto;
+  margin-top: 30px;
 }
 
 page-search .SwipedTabs-indicatorSegment {
