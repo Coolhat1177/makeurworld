@@ -70,6 +70,17 @@ ion-icon {
         mask-image: url(../../assets/icon/1f621.svg);
     }
 
+    &[class*="custom-icon18"] {
+        mask-image: url(../../assets/icon/next.svg);
+    }
+    &[class*="custom-icon19"] {
+        mask-image: url(../../assets/icon/pause.svg);
+    }
+    &[class*="custom-icon20"] {
+        mask-image: url(../../assets/icon/prev.svg);
+    }
+
+
    
 }
 

@@ -19,7 +19,7 @@ import { CoverPage } from '../pages/cover/cover';
 import { SwipeSegmentDirective } from '../directives/SwipeSegmentDirective';
 import { MusicStorePage } from "../pages/music-store/music-store";
 import { ImgGalPage } from '../pages/img-gal/img-gal';
-
+import { File } from '@ionic-native/file';
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
 import { SignInPage } from '../pages/sign-in/sign-in';
@@ -64,6 +64,7 @@ import { ReactionCenterPage} from '../component/reaction/reaction';
 import { ReactionServices } from '../services/InteractionServices';
 import { ReactPage } from '../pages/react/react';
 import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
+import { Media } from '@ionic-native/media';
 
 import { ImCrpPage } from '../pages/im-crp/im-crp';
 //import { ImgCrpServices } from '../services/imgCrpServices';
@@ -183,6 +184,8 @@ import { ImCrpPage } from '../pages/im-crp/im-crp';
     SuggestionServices,
     ReactionServices,
     BgProSetServices,
+    Media,
+    File
     //ImgCrpServices
   
 

@@ -19,7 +19,8 @@ export class MusicStorePage {
   constructor(public navCtrl: NavController,
               private storeS:ImageStoreService,
               private credit:CreditService) {
-  	this.tabs=["Music","Playlist"];
+    this.tabs=["Music","Playlist"];
+    this.loadMusic();
   }
   ionViewWillEnter(){
     this.SwipedTabsSlider.slideTo(0,100);
@@ -59,20 +60,57 @@ export class MusicStorePage {
 
       // console.log(data);
 
-      this.storeS.firstLoad(data[0],data[1]).subscribe(data=>{
+      this.storeS.firstLoadM(data[0],data[1]).subscribe(data=>{
             if(data['status'])
             {
               for(let key in data[0])
               {
+
+                data[0][key]['thmb_src']="http://media.makeurworld.com/store/music_th/81652736758ecda33a6116.jpg";
                 this.storeS.addToList(data[0][key]);
+              
               }
-              this.musicArray=this.storeS.getList();
+            //  console.log(this.musicArray);
+             this.musicArray=this.storeS.getList();
 
             }
       });
     
     });
 
+  }
+
+
+  doInfinite(event){
+    this.loadStorMore(event);
+  }
+
+  loadStorMore(event?)
+  {
+    console.log(this.storeS.getList());
+    this.credit.check().then(data=>{
+
+    
+      let info={'l_t':this.storeS.last_timeM()}
+      this.storeS.moreLoadM(data[0],data[1],info).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.storeS.addToList(data[0][key]);
+              }
+              // this.imageArray=this.imgStore.getList();
+
+            }
+
+            if(event)
+            {
+              event.complete();
+            }
+      });
+    
+    });
+    
   }
 
 }

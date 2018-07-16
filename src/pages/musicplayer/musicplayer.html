@@ -1,18 +1,97 @@
-<!--
-  Generated template for the MusicplayerPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>musicplayer</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
+<ion-content  class='musBg'>
+
+    <div class='viewerTop'>
+        <div class='viewerTopIn'>
+            <div class='viewerTopOpt'>
+                <button ion-button clear  (click)="dismissMusicPlayerView()" class='viewClose'>
+                    <ion-icon name="arrow-back"></ion-icon>
+                  </button>
+            </div>
+            <div class='viewerTopOpt1'>
+                <button ion-button clear  (click)="imageSuggest()" class='viewClose'>
+                    <ion-icon name="paper-plane"></ion-icon>
+  
+                  </button>
+                  <button ion-button clear  (click)="addType()" class='viewClose'>
+                      <ion-icon name="add"></ion-icon>
+                    </button>
+                    <button ion-button clear  (click)="moreOption()" class='viewClose'>
+                         <ion-icon ios="ios-more" md="md-more"></ion-icon>
+  
+                      </button>
+  
+            </div>
+        </div>
+  
+      </div>
+
+      <div class='musPlC'>
+        <div class="musPlC0">
+          <div class="musPlC01">
+            <div class='musPlcCover'>
+
+            </div>
+
+          </div>
+          <div class="musPlC02">
+                <h4>hellow</h4>
+          </div>
+
+        </div>
+
+
+        <div>
+          <div class='musicPlayerOp'>
+            <ion-row>
+                <ion-range [(ngModel)]="singleValue" color="primary"></ion-range>
+            </ion-row>
+            <ion-row>
+                <ion-col class="MusPlayerCr">00:00</ion-col>
+
+                <ion-col class="MusPlayerDurt" text-right>00:00</ion-col>
+            </ion-row>
+           
+              
+
+          </div>
+          <div class='musicPlyrIcon'>
+            <ion-row>
+
+              <ion-col text-center >
+                  <button ion-button clear   class='MplayerIcon'>
+                  <ion-icon name="shuffle"  ></ion-icon>
+                  </button>
+              </ion-col>
+
+              <ion-col text-center>
+                  <button ion-button clear class='MplayerIcon1'>
+                  <ion-icon name='custom-icon20' ></ion-icon>
+                  </button>
+              </ion-col>
+
+              <ion-col text-center>
+                  <button ion-button clear class='MplayerIcon2'>
+                  <ion-icon name='custom-icon19' ></ion-icon>
+                  </button>
+              </ion-col>
+
+              <ion-col text-center>
+                  <button ion-button clear class='MplayerIcon1'>
+                  <ion-icon name='custom-icon18' ></ion-icon>
+                  </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button ion-button clear  class='MplayerIcon'>
+                  <ion-icon name="repeat" ></ion-icon>
+                  </button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+        </div>
+
+      </div>
 
 </ion-content>

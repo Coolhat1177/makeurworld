@@ -1,3 +1,167 @@
 page-musicplayer {
 
+    .musBg{
+        background: linear-gradient(#2394bc, white);
+
+    }
+
+
+    .viewerTop
+    {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+
+    }
+
+
+    .viewerTopIn
+    {
+        height: 60px;
+        width: 100%;
+        position: relative;
+    }
+
+
+
+    .viewerTopOpt
+    {
+        position: absolute;
+        left: 10px;
+        bottom: 0px;
+    }
+
+    .viewerTopOpt1
+    {
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+    }
+
+    .viewClose
+    {
+        color:white;
+        font-size: 1.6em;
+    }
+
+    .musPlC
+    {
+        margin-top: 60px;
+        position: relative;
+    }
+
+    .musPlC0
+    {
+        width: 100%;
+        height: 280px;
+        position: relative;
+    }
+
+    .musPlC01
+    {
+        width: 100%;
+        height: 250px;
+        position: relative;
+    }
+
+    .musPlC02
+    {
+        width: 100%;
+        height: 30px;
+        position: relative;
+    }
+
+    .musPlcCover
+    {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform:translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -o-transform:translate(-50%,-50%);
+        -webkit-box-shadow: -4px -1px 41px 5px rgba(0,0,0,0.75);
+        -moz-box-shadow: -4px -1px 41px 5px rgba(0,0,0,0.75);
+        box-shadow: -4px -1px 41px 5px rgba(0,0,0,0.75);
+        background: whitesmoke;
+    }
+
+    .musPlC02
+    {
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 0 0 3px rgba(0,0,0,1);
+        color:white;
+    }
+
+    .range-md .range-slider
+    {
+        height: 33px;
+    }
+
+    .range-md
+    {
+        padding-bottom: 0px;
+        width: 100%;
+    }
+
+
+    .MusPlayerCr
+    {
+        padding-left: 10px;
+        color:white;
+        font-size: 0.8em;
+        letter-spacing: .8px;
+        font-weight: bold;
+    }
+
+    .MusPlayerDurt
+    {
+        padding-right: 10px;
+        color:white;
+        font-size: 0.8em;
+        letter-spacing: 0.8px;
+        font-weight: bold;
+    }
+
+    .musicPlyrIcon
+    {
+        margin-top: 50px;
+    }
+
+    .MplayerIcon
+    {
+        font-size: 1.2em;
+        color:white;
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+    .MplayerIcon1
+    {
+        font-size: 2em;
+        color:white;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .MplayerIcon2
+    {
+        font-size: 3.2em;
+        color:white;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .musicPlayerOp{
+        margin-top: 20px;
+    }
+   
+
 }

@@ -1,40 +1,51 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { AngularCropperjsComponent } from 'angular-cropperjs';
-import { CoverPage } from '../cover/cover';
-//import { ImgCrpServices } from '../../services/imgCrpServices';
+import { CameraOptions, Camera } from '@ionic-native/camera';
 
 @IonicPage()
 @Component({
-  selector: 'page-im-crp',
-  templateUrl: 'im-crp.html',
+  selector: 'page-img-crp',
+  templateUrl: 'img-crp.html',
 })
-export class ImCrpPage {
+export class ImgCrpPage {
+
   @ViewChild('angularCropper') public angularCropper: AngularCropperjsComponent;
   cropperOptions: any;
   croppedImage = null;
-  
-  
+ 
+  myImage :string= null;
   scaleValX = 1;
   scaleValY = 1;
  
-  myImage:any;
-  aspRatio:number;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.myImage = this.navParams.get('img');
-    this.aspRatio = this.navParams.get('aspRatio');
+  constructor(public navCtrl: NavController, private camera: Camera) {
     this.cropperOptions = {
       dragMode: 'crop',
-      aspectRatio: this.aspRatio,
+      aspectRatio: 2,
       autoCrop: true,
       movable: true,
       zoomable: true,
       scalable: true,
       autoCropArea: 0.8,
     };
-}
-
-     
+  }
+ 
+  // captureImage() {
+  //   const options: CameraOptions = {
+  //     quality: 100,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     mediaType: this.camera.MediaType.PICTURE,
+  //     sourceType: this.camera.PictureSourceType.CAMERA
+  //   }
+ 
+  //   this.camera.getPicture(options).then((imageData) => {
+  //     this.myImage = 'data:image/jpeg;base64,' + "https://jpeg.org/images/jpeg-home.jpg ";
+  //   });
+  // }
+  captureImage(){
+  this.myImage="../assets/imgs/ter1.jpg";
+  }
   reset() {
     this.angularCropper.cropper.reset();
   }
@@ -69,15 +80,6 @@ export class ImCrpPage {
   save() {
     let croppedImgB64String: string = this.angularCropper.cropper.getCroppedCanvas().toDataURL('image/jpeg', (100 / 100));
     this.croppedImage = croppedImgB64String;
-    //code for submitting in coverPhoto
-    this.navCtrl.push(CoverPage,{croppedImage:this.myImage});
-    console.log("back to page");
-    //code for submitting in profilePhoto
-  }
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ImCrpPage');
   }
   
 

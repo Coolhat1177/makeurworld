@@ -22,7 +22,8 @@ export class ImCrpPage {
   myImage:any;
   aspRatio:number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.myImage = this.navParams.get('img');
+    console.log(this.navParams.get('img'))
+    this.myImage = "../assets/imgs/ter1.jpg";
     this.aspRatio = this.navParams.get('aspRatio');
     this.cropperOptions = {
       dragMode: 'crop',
@@ -71,7 +72,7 @@ export class ImCrpPage {
     let croppedImgB64String: string = this.angularCropper.cropper.getCroppedCanvas().toDataURL('image/jpeg', (100 / 100));
     this.croppedImage = croppedImgB64String;
     //code for submitting in coverPhoto
-    this.navCtrl.push(CoverPage,{croppedImage:this.myImage});
+    // this.navCtrl.push(CoverPage,{croppedImage:this.myImage});
     console.log("back to page");
     //code for submitting in profilePhoto
   }

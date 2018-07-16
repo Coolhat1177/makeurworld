@@ -11,29 +11,6 @@ export class ImageStoreService{
 
     }
 
-    firstLoad(user:any,loged:any){
-        let url="http://coolhat/home/image/imgGal_load";
-
-        return this.con.postDataFetch(user,loged,url);
-
-    }
-
-    moreLoad(user:any,loged:any,info){
-        console.log(info);
-        let url="http://coolhat/home/image/imgGal_load_mr";
-        let info1=JSON.stringify(info);
-
-        return this.con.postDataAsked(user,loged,info1,url);
-
-
-    }
-
-    imageAll(user:any,loged:any){
-        let url="http://coolhat/home/image/own_image";
-
-        return this.con.postDataFetch(user,loged,url);
-
-    }
 
 
     addToList(data:any)
@@ -45,15 +22,82 @@ export class ImageStoreService{
         return this.imgArr;
     }
 
-    last_time(){
-            return this.imgArr[this.imgArr.length -1]['image_time'];
-    }
-    bgProImg(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/image/imgGal_load";
+
+
+
+    firstLoad(user:any,loged:any){
+        let url="http://coolhat/home/image/imgGal_load";
 
         return this.con.postDataFetch(user,loged,url);
 
     }
+
+  
+
+    moreLoad(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/image/imgGal_load_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+
+    imageAll(user:any,loged:any){
+        let url="http://coolhat/home/image/own_image";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+
+    last_time(){
+        return this.imgArr[this.imgArr.length -1]['image_time'];
+    }
+
+
+    bgProImg(user:any,loged:any){
+            let url="http://app.makeurworld.com/home/image/imgGal_load";
+
+            return this.con.postDataFetch(user,loged,url);
+
+    }
+
+
+
+
+
+
+
+    firstLoadM(user:any,loged:any){
+        let url="http://coolhat/home/music/lib_down";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+    moreLoadM(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/music/lib_down_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    
+
+
+    last_timeM(){
+        return this.imgArr[this.imgArr.length -1]['music_load'];
+    }
+
+
+    
+   
 
 
 
