@@ -6,6 +6,7 @@ import { ConnectionServices } from './ServerConnection';
 export class ImageStoreService{
     imgArr=[];
     lats_time:string;
+    vidArry=[];
 
     constructor(private con:ConnectionServices){
 
@@ -88,7 +89,8 @@ export class ImageStoreService{
 
     }
 
-    
+
+
 
 
     last_timeM(){
@@ -98,7 +100,42 @@ export class ImageStoreService{
 
     
    
+    ownMusicCollection(user:any,loged:any){
+        let url="http://coolhat/home/music/just_nxt_own";
 
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+
+
+    // video storage
+
+
+
+    firstLoadVid(user:any,loged:any){
+        let url="http://coolhat/home/video/video_down";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+
+
+    getListVid(){
+        return this.vidArry;
+    }
+
+
+    moreLoadVid(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/video/video_down_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
 
 
 

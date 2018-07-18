@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-a
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainTabPage } from '../pages/main-tab/main-tab';
 import { StoreTabPage } from '../pages/store-tab/store-tab';
 import { AddaPage } from '../pages/adda/adda';
@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConnectionServices } from '../services/ServerConnection';
 import { AlertServices } from '../services/AlertServices';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { IonicStorageModule } from '@ionic/storage';
+
 import { OtpPage } from '../pages/otp/otp';
 import { CreditService } from '../services/CreditService';
 import { MessagePage } from '../pages/message/message';
@@ -65,8 +65,19 @@ import { ReactionServices } from '../services/InteractionServices';
 import { ReactPage } from '../pages/react/react';
 import { AddCnavasPage } from '../pages/add-cnavas/add-cnavas';
 import { Media } from '@ionic-native/media';
-
+import { StoreModule } from '@ngrx/store';
 import { ImCrpPage } from '../pages/im-crp/im-crp';
+import { MusicsuggestionPage } from '../pages/musicsuggestion/musicsuggestion';
+import { VideosuggestionPage } from '../pages/videosuggestion/videosuggestion';
+import { MusicplaylistPage } from '../pages/musicplaylist/musicplaylist';
+import { VideofavPage } from '../pages/videofav/videofav';
+import { AuthService } from '../providers/auth0/auth.service';
+import { IonicStorageModule } from '@ionic/storage';
+import { mediaStateReducer } from '../providers/store/store';
+import { AudioProvider } from '../providers/audio/audio';
+import { CloudProvider } from '../providers/cloud/cloud';
+import { MusicplayerServices } from '../services/MusicplayServices';
+import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
 //import { ImgCrpServices } from '../services/imgCrpServices';
 
 
@@ -109,16 +120,25 @@ import { ImCrpPage } from '../pages/im-crp/im-crp';
     ReactionCenterPage,
     ReactPage,
     AddCnavasPage,
-    ImCrpPage
+    ImCrpPage,
+    MusicsuggestionPage,
+    VideosuggestionPage,
+    MusicplaylistPage,
+    VideofavPage,
+    VideoplayerPage
    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    AngularCropperjsModule
+    AngularCropperjsModule,
+    StoreModule.forRoot({
+      appState: mediaStateReducer
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -156,7 +176,12 @@ import { ImCrpPage } from '../pages/im-crp/im-crp';
     ReactionPage,
     ReactPage,
     AddCnavasPage,
-    ImCrpPage
+    ImCrpPage,
+    MusicsuggestionPage,
+    VideosuggestionPage,
+    MusicplaylistPage,
+    VideofavPage,
+    VideoplayerPage
 
    
   ],
@@ -185,7 +210,10 @@ import { ImCrpPage } from '../pages/im-crp/im-crp';
     ReactionServices,
     BgProSetServices,
     Media,
-    File
+    File,
+    AudioProvider,
+    CloudProvider,
+    MusicplayerServices,
     //ImgCrpServices
   
 

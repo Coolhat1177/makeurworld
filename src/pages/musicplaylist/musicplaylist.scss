@@ -1,0 +1,23 @@
+page-musicplaylist {
+
+    .suc
+    {
+        color:#333;
+    }
+
+
+    ion-searchbar{        
+        .searchbar-input-container{            
+            .searchbar-input{
+                border-radius: 20px;
+            }
+        }
+     }
+
+     .item-md ion-avatar ion-img, .item-md ion-avatar img
+     {
+         border-radius: 4px;
+     }
+
+
+}

@@ -10,7 +10,7 @@
                   </button>
             </div>
             <div class='viewerTopOpt1'>
-                <button ion-button clear  (click)="imageSuggest()" class='viewClose'>
+                <button ion-button clear  (click)="musicSuggest()" class='viewClose'>
                     <ion-icon name="paper-plane"></ion-icon>
   
                   </button>
@@ -29,14 +29,14 @@
 
       <div class='musPlC'>
         <div class="musPlC0">
-          <div class="musPlC01">
+          <div class="musPlC01 " (swipe)="swipeEvent($event)">
             <div class='musPlcCover'>
 
             </div>
 
           </div>
           <div class="musPlC02">
-                <h4>hellow</h4>
+                <h4>{{musicInfo['music_name']}}</h4>
           </div>
 
         </div>
@@ -45,12 +45,12 @@
         <div>
           <div class='musicPlayerOp'>
             <ion-row>
-                <ion-range [(ngModel)]="singleValue" color="primary"></ion-range>
+                <ion-range [(ngModel)]="singleValue" color="primary" [max]="state.durationSec" [formControl]="seekbar" (ionFocus)="onSeekStart()" (ionBlur)="onSeekEnd($event)"></ion-range>
             </ion-row>
             <ion-row>
-                <ion-col class="MusPlayerCr">00:00</ion-col>
+                <ion-col class="MusPlayerCr">{{ state.time }}</ion-col>
 
-                <ion-col class="MusPlayerDurt" text-right>00:00</ion-col>
+                <ion-col class="MusPlayerDurt" text-right>{{ state.duration }}</ion-col>
             </ion-row>
            
               
@@ -60,32 +60,43 @@
             <ion-row>
 
               <ion-col text-center >
-                  <button ion-button clear   class='MplayerIcon'>
+                  <button ion-button clear   class='MplayerIcon' *ngIf="!shuffleS" (click)="shuffle()">
                   <ion-icon name="shuffle"  ></ion-icon>
                   </button>
+                  <button ion-button clear   class='MplayerIcon' *ngIf="shuffleS" class='suc' (click)="shuffle()">
+                    <ion-icon name="shuffle"  ></ion-icon>
+                    </button>
               </ion-col>
 
               <ion-col text-center>
-                  <button ion-button clear class='MplayerIcon1'>
+                  <button ion-button clear class='MplayerIcon1' [disabled]="isFirstPlaying()" (click)="previous()">
                   <ion-icon name='custom-icon20' ></ion-icon>
                   </button>
               </ion-col>
 
               <ion-col text-center>
-                  <button ion-button clear class='MplayerIcon2'>
-                  <ion-icon name='custom-icon19' ></ion-icon>
+                <button clear ion-col ion-button *ngIf="!state.playing" (click)="play()" class='MplayerIcon2'>
+                    <ion-icon color="light" name="play"></ion-icon>
+                  </button>
+                  <button clear ion-col ion-button *ngIf="!!state.playing" (click)="pause()" class='MplayerIcon2'>
+                    <ion-icon color="light" name="pause"></ion-icon>
                   </button>
               </ion-col>
 
               <ion-col text-center>
-                  <button ion-button clear class='MplayerIcon1'>
+                  <button ion-button clear class='MplayerIcon1' [disabled]="isLastPlaying()" (click)="next()">
                   <ion-icon name='custom-icon18' ></ion-icon>
                   </button>
               </ion-col>
               <ion-col text-center>
-                  <button ion-button clear  class='MplayerIcon'>
+                  <button ion-button clear  class='MplayerIcon' (click)="repeat()" *ngIf="!repeatS">
                   <ion-icon name="repeat" ></ion-icon>
                   </button>
+
+                  <button ion-button clear  class='MplayerIcon' (click)="repeat()" class='suc' *ngIf="repeatS">
+                    <ion-icon name="repeat" ></ion-icon>
+                    </button>
+
               </ion-col>
             </ion-row>
           </div>
@@ -93,5 +104,52 @@
         </div>
 
       </div>
+
+
+
+    <div class='viewerFooter'>
+        <ion-row class="padding5">
+          <div class='viewerFooterOpt'>
+              <div class='viewerFooterOptIn'>
+                  <div class='picPro'>
+                    <img  [src]="musicInfo['pic_url']">
+                  </div>
+                  <div class='infoPro'>
+                    <div class='infoProIn'>
+                      <div class='infoProIn1'> {{musicInfo['full_name']}}</div>
+                      <div class='infoProIn2'> Detail</div>
+                      </div>
+                    <div class='infoProIn0'>
+                        {{musicInfo['about']}}
+                    </div>
+                  </div>
+                </div>
+          </div>
+  
+        </ion-row>
+       
+         
+         
+          <reaction-temp [activity]="reactStatus"  (reactEmiiter)="loadInitialReactionV()"></reaction-temp>
+  
+              
+             
+               
+  
+       
+        <ion-row class="padding5 ">
+          <ion-col class="padding5 viewInfo" text-center>
+             {{musicInfo['add_by']}}  Added
+          </ion-col >
+          <ion-col class="padding5 viewInfo" text-center>
+              {{musicInfo['sug_by']}}  Suggested
+          </ion-col>
+          <ion-col class="padding5 viewInfo" text-center>
+              {{musicInfo['view']}} Viewed
+          </ion-col>
+        </ion-row>
+  
+      </div>
+      
 
 </ion-content>

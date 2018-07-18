@@ -1,5 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController,Slides } from 'ionic-angular';
+import { IonicPage, NavController,Slides, ModalController } from 'ionic-angular';
+import { CreditService } from '../../services/CreditService';
+import { ImageStoreService } from '../../services/ImageStoreService';
 
 @IonicPage()
 @Component({
@@ -11,9 +13,13 @@ export class VideoStorePage {
 
   SwipedTabsIndicator :any= null;
   tabs:any=[];
+  videoArray:any=[];
 
  
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              private modelCtrl:ModalController,
+              private credit:CreditService,
+              private videoS:ImageStoreService) {
   	this.tabs=["Video Play","Favourite"];
   }
 
@@ -23,6 +29,7 @@ export class VideoStorePage {
  
   ionViewDidEnter() {
     this.SwipedTabsIndicator = document.getElementById("indicator2");
+    this.loadStor();
   }
 
   selectTab(index) {    
@@ -46,5 +53,69 @@ export class VideoStorePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideoStorePage');
   }
+
+
+
+  loadStor()
+  {
+
+    this.credit.check().then(data=>{
+
+      // console.log(data);
+
+      this.videoS.firstLoadVid(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.videoS.vidArry.push(data[0][key]);
+              }
+              this.videoArray=this.videoS.getListVid();
+
+            }
+      });
+    
+    });
+    
+  }
+
+
+  doInfinite(event)
+  {
+    this.loadStorMore(event);
+    
+  }
+
+
+  loadStorMore(event?)
+  {
+
+    this.credit.check().then(data=>{
+
+      // console.log(this.videoS.vidArry[this.videoS.vidArry.length -1]['']);
+      let info={'l_t': this.videoS.vidArry[this.videoS.vidArry.length -1]['video_load']}
+      this.videoS.moreLoadVid(data[0],data[1],info).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                this.videoS.vidArry.push(data[0][key]);
+              }
+              // this.imageArray=this.imgStore.getList();
+
+            }
+
+            if(event)
+            {
+              event.complete();
+            }
+      });
+    
+    });
+    
+  }
+
+
+
 
 }

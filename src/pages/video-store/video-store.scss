@@ -1,4 +1,16 @@
 page-video-store {
+
+
+    .swiper-container
+    {
+        height: auto;
+        .segment-md .segment-button{
+            height:2rem;
+            line-height:1rem;
+            text-transform: capitalize;
+        }
+    }
+
     .SwipedTabs-indicatorSegment
     {
         -webkit-transition: 0.3s all;
@@ -30,4 +42,42 @@ page-video-store {
         line-height:1rem;
         text-transform: capitalize;
     }
+
+    .videoThmb
+    {
+        width: 100%;
+        height: 75%;
+        background-color: white;
+        position: relative;
+        background-size: cover;
+        border-radius:8px 8px 0px 0px;
+    }
+
+    .videoName
+    {
+        height:  25%;
+        width: 100%;
+        border-radius:0px 0px 8px 8px;
+        padding: 5px 10px;
+        font-weight: normal;
+        text-shadow: 0 0 3px rgba(0,0,0,1);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: .7em;
+      
+    }
+
+
+    .updatebox
+    {
+      
+      
+        height: 50vw;
+        border-radius: 8px;
+       position: relative;
+      background-size: cover;
+       box-shadow: 4px 5px 2px -2px rgba(0,0,0,0.4);
+    }
+
 }

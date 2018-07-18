@@ -29,7 +29,7 @@
         
         
           <ion-col col-6 col-md-4 col-xl-3 padding *ngFor="let music of musicArray; let i=index">
-              <div class='updatebox' [style.background-image]="'url('+music['thmb_src']+')'">
+              <div class='updatebox' [style.background-image]="'url('+music['thmb_src']+')'" (click)="playMusic(music['music_id'])">
                 
                 <div class='music_name'> <ion-icon name='musical-notes'></ion-icon> {{music['music_name']}}</div>
               </div>

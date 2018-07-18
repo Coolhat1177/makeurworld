@@ -15,6 +15,10 @@ export class CreditService{
         return Promise.all([  this.storage.get('user'),this.storage.get('loged')]);
 
     }
+    musplyStatus():Promise<any>{
+
+        return Promise.all([  this.storage.get('repeat'),this.storage.get('shuffle')]);
+    }
 
 
 

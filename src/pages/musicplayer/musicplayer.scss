@@ -1,7 +1,11 @@
 page-musicplayer {
 
+    .suc{
+        color: #eee;
+    }
+
     .musBg{
-        background: linear-gradient(#2394bc, white);
+        background: linear-gradient(#2394bc, #203D5B);
 
     }
 
@@ -13,6 +17,7 @@ page-musicplayer {
         left: 0px;
         z-index: 1;
         width: 100%;
+        
 
     }
 
@@ -140,6 +145,8 @@ page-musicplayer {
         color:white;
         padding: 0px;
         margin: 0px;
+        width: 100%;
+        z-index: 1;
     }
 
 
@@ -149,6 +156,8 @@ page-musicplayer {
         color:white;
         padding: 0px;
         margin: 0px;
+        width: 100%;
+        z-index: 1;
     }
 
     .MplayerIcon2
@@ -162,6 +171,136 @@ page-musicplayer {
     .musicPlayerOp{
         margin-top: 20px;
     }
+
+
+
+    .viewerFooter
+    {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .viewerFooteropt1 button
+    {
+        width: 100%;;
+    }
+
+    .padding5
+    {
+        padding: 5px;;
+    }
+
+    .viewerCenter
+    {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform:translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -o-transform:translate(-50%,-50%);
+        color: wheat;
+    }
+
+    .viewerCenterIn
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+    }
+
+    .viewerCenterIn img{
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+    
+
+    .viewerFooterOpt
+    {
+        width: 100%;
+        position: relative;
+    }
+
+    .viewerFooterOptIn
+    {
+        position: relative;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+    }
+
+    .picPro
+    {
+      flex:0 1 50px;
+      padding: 5px;
+
+    }
+
+    .picPro img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50% 50%;
+
+    }
+
+    .infoPro
+    {
+        flex: 1;
+        padding: 5px;
+        padding-left:10px; 
+        color: white;
+       
+        font-size: 1.1em;
+    }
+
+
+    .infoProIn
+    {
+        position: relative;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        border-bottom: solid 1px rgba(255,255,255,0.25);
+    }
+
+    .infoProIn1
+    {
+        flex:1;
+        padding: 5px;
+        
+    }
+
+    .infoProIn0
+    {
+        padding: 5px;
+    }
+
+    .lwBorder
+    {
+        border-bottom: solid 1px rgba(255,255,255,0.25);
+    }
+
+    .infoProIn2
+    {
+        flex: 0 1 50px;
+        padding: 5px;
+    }
+
+    
+    .viewInfo
+    {
+        color: white;
+    }
+
    
 
 }

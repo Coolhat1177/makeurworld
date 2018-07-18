@@ -1,8 +1,9 @@
 
 import { Component,ViewChild } from '@angular/core';
-import { NavController,IonicPage,Slides } from 'ionic-angular';
+import { NavController,IonicPage,Slides, ModalController } from 'ionic-angular';
 import { ImageStoreService } from '../../services/ImageStoreService';
 import { CreditService } from '../../services/CreditService';
+import { MusicplayerPage } from '../musicplayer/musicplayer';
 @IonicPage()
 @Component({
   selector: 'page-music-store',
@@ -18,7 +19,8 @@ export class MusicStorePage {
  
   constructor(public navCtrl: NavController,
               private storeS:ImageStoreService,
-              private credit:CreditService) {
+              private credit:CreditService,
+              private modalCtrl:ModalController) {
     this.tabs=["Music","Playlist"];
     this.loadMusic();
   }
@@ -111,6 +113,37 @@ export class MusicStorePage {
     
     });
     
+  }
+
+
+  playMusic(music_id){
+
+    let muscArry=[];
+
+    this.credit.check().then(data=>{
+
+    
+    
+      this.storeS.ownMusicCollection(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              
+              muscArry=data[0][0];
+              const profilePick=this.modalCtrl.create(MusicplayerPage,{musArry:muscArry,music_id:music_id});
+              profilePick.present();
+
+            }
+
+           
+      });
+    
+    });
+
+
+    
+
+    
+
   }
 
 }
