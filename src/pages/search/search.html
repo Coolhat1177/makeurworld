@@ -27,10 +27,31 @@
               [pager]="false"
         >
     <ion-slide>
-      <h1>People</h1>
+        <ion-row >
+
+            <ion-list>
+                <ion-item *ngFor="let searchP of searchListP; let i=index" >
+                  <ion-avatar item-start>
+                    <img [src]="searchP['pic_url']">
+                  </ion-avatar>
+                  <h4>{{searchP['full_name']}}</h4>
+                  <p>{{searchP['about']}}</p>
+                   <button ion-button clear item-end *ngIf="searchP['req_s']==0" (click)="acceptRequest(i)">Accept Request</button>
+                   <button  ion-button clear item-end *ngIf="searchP['req_s']==2"  (click)="cancelRequest(i)">Cancel Request</button>
+                   <button class='suc' ion-button clear item-end *ngIf="searchP['req_s']==1" >Friend</button>
+                   <button  ion-button clear item-end *ngIf="searchP['req_s']==4" (click)="addFriend(i)" >Add Friend</button>
+                              </ion-item> 
+              </ion-list>
+         
+<!--   
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll> -->
+
+        </ion-row>
     </ion-slide>
     <ion-slide>
-      <h1>Adda </h1>
+     
     </ion-slide>
   </ion-slides>
 </ion-content>

@@ -1,0 +1,110 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+        <ion-list class='chatHeaderList' >
+            <ion-item  class='chatHeader'>
+              <ion-avatar item-start>
+                <img [src]="info['pic_url']">
+              </ion-avatar>
+              <h4>{{info['full_name']}}</h4>
+             
+              <button ion-button clear item-end *ngIf="info['online_status']=='1' && info['typing']!='1'" class='OnlineS' >Online</button>
+              <button ion-button clear item-end *ngIf="info['typing']=='1'" class='OnlineS' >typing..</button>
+             
+            </ion-item>
+          </ion-list>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding (click)="closeEmoBox()">
+   
+     <ion-list no-lines>
+        <ion-item  *ngFor="let mess of messArray; let i=index" >
+            <div class='messArry' >
+              <div class='messArryIn1' *ngIf="mess['from']==='frnd'">
+                <div innerHTML="{{mess['mess']}}" text-wrap></div>
+                <div class='messArryInT'>{{mess['time']}}</div>
+              </div>
+              <div class='messArryIn2' *ngIf="mess['from']==='me'">
+                <div innerHTML="{{mess['mess']}}" text-wrap></div>
+                <div class='messArryInT'>{{mess['time']}}</div>
+              </div>
+                
+            </div>
+    
+           </ion-item>
+     </ion-list>
+       
+            
+     
+    
+    
+
+
+       
+
+   
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+
+      <div class='chat_typing'>
+        <div class='chat_typing0'>
+            <button ion-button clear class='chatOption' (click)='uploadToChat()'>
+                <ion-icon name="add"></ion-icon>
+              </button>
+        </div>
+        <div [class]='typeClass'>
+            <div class='commentTextbox' contenteditable="true"
+            data-placeholder="Type here...."  (click)="typeStatus()"
+            #mytexttyping  (keyup)="carterPosition()"> {{message}}
+   
+          </div>
+        </div>
+        <div class='chat_typing0' *ngIf="typingS">
+            <button ion-button clear class='chatOption' (click)="openEmo()">
+                <ion-icon name="happy"></ion-icon>
+              </button>
+        </div>
+        <div class='chat_typing0' *ngIf="typingS">
+            <button ion-button clear class='chatOption'(click)="sendChat()">
+                <ion-icon name='custom-icon11' class='iconSend' ></ion-icon>
+              </button>
+        </div>
+
+      </div>
+
+
+      
+       
+      </ion-row>
+      <ion-row *ngIf="emoCont" >
+      
+            <ion-row col-12 class="emoRowIcon">
+                <ion-col *ngFor="let icon of icon1;let i=index" class='emoIcon' (click)="setEmoDisplay(i)">
+                    <img [src]="link+icon"/>
+                </ion-col>
+                          </ion-row>
+                          <ion-row>
+                          <div class='emoContainer'>
+                                  <span  *ngFor="let icon of emoIcon; let i=index" (click)="addEmojs(i)">
+                                    <img [src]='link+icon'>
+                                  </span>
+                          </div>
+                           
+                          </ion-row>
+     
+      
+      </ion-row>
+    </ion-grid>
+  
+
+</ion-footer>

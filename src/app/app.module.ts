@@ -78,6 +78,12 @@ import { AudioProvider } from '../providers/audio/audio';
 import { CloudProvider } from '../providers/cloud/cloud';
 import { MusicplayerServices } from '../services/MusicplayServices';
 import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
+import { ChatboxPage } from '../pages/chatbox/chatbox';
+import { PersonalChatServices } from '../services/PersonalChatServices';
+import { VideoPlayerServices } from '../services/VideoPlayerServices';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
 //import { ImgCrpServices } from '../services/imgCrpServices';
 
 
@@ -125,7 +131,9 @@ import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
     VideosuggestionPage,
     MusicplaylistPage,
     VideofavPage,
-    VideoplayerPage
+    VideoplayerPage,
+    ChatboxPage,
+    GoodVideoComponent
    
   ],
   imports: [
@@ -181,7 +189,8 @@ import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
     VideosuggestionPage,
     MusicplaylistPage,
     VideofavPage,
-    VideoplayerPage
+    VideoplayerPage,
+    ChatboxPage
 
    
   ],
@@ -214,6 +223,10 @@ import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
     AudioProvider,
     CloudProvider,
     MusicplayerServices,
+    PersonalChatServices,
+    VideoPlayerServices,
+    SafariViewController,
+    ScreenOrientation
     //ImgCrpServices
   
 

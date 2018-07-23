@@ -137,6 +137,13 @@ export class ImageStoreService{
 
     }
 
+    ownVideoCollectio(user:any,loged:any){
+        let url="http://coolhat/home/video/own_vid_np";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
 
 
 }

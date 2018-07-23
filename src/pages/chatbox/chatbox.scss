@@ -1,0 +1,232 @@
+page-chatbox {
+
+    .commentTextbox
+    {
+        border-radius: 20px;
+        border:solid 1px #333;
+        max-height: 90px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        padding: 8px;
+
+    }
+
+    
+    .commentTextbox span img {
+        width: 20px;
+        height: 20px;
+        margin-right:3px;
+        margin-left: 3px;
+
+    }
+
+    .text-input-md
+    {
+        margin: 5px;
+        margin-left: 8px;
+    }
+
+    .chatOption
+    {
+        font-size: 1.7em;
+        position: absolute;
+        bottom:0px;
+    }
+
+
+    .button-md
+    {
+        margin: 0px;
+        padding: 0;
+    }
+
+    div[data-placeholder]:empty:not(:focus):not([data-div-placeholder-content]):before {
+
+        content: attr(data-placeholder);
+    
+        float: left;
+    
+        margin-left: 2px;
+    
+        color: #333;
+    
+    }
+
+
+    .chat_typing
+    {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        flex-flow: row;
+    }
+
+    .chat_typing0
+    {
+        flex:0 1 30px;
+        position: relative;
+        padding: 5px;
+    }
+
+
+    .chat_typing1
+    {
+        flex:1;
+        padding: 5px;
+      
+    }
+    
+
+    .chat_typing2
+    {
+       
+        padding: 5px;
+        width: calc(100% - 100px);
+    }
+
+    .emojoisBox
+    {
+        width: 100%;
+    }
+
+
+  .messArry
+  {
+      width: 100%;
+      position: relative;
+      margin-top: 10px;
+  }
+  
+  .messArryIn1
+  {
+     float: left;
+      left: 0px;
+      max-width: 80%;
+     background-color: #e8e4e4;
+      padding: 10px;
+      border-radius: 20px;
+      padding-bottom: 5px;
+      font-family: source sans pro,sans-serif;
+    word-wrap: break-word;
+    font-size: .9em;
+  }
+
+  .messArryIn2
+  {
+    position: relative;
+    right: 0px;
+    max-width: 80%;
+    margin-left: 20%;
+    float: right;
+    background: #eee;
+    padding: 10px;
+    border-radius: 20px;
+    padding-bottom:5px;
+    font-family: source sans pro,sans-serif;
+    word-wrap: break-word;
+    font-size: .9em;
+
+  }
+
+  .messArryIn2 div,.messArryIn1 div{
+    word-wrap: break-word;
+
+  }
+
+  .messArryInT
+  {
+      font-size: .7em;
+      padding: 5px;
+      padding-top: 8px;
+      font-weight: 400;
+      letter-spacing: .6px;
+
+      padding-bottom: 0px;
+      color:#333;
+  }
+
+  ion-footer
+  {
+      background-color: white;
+      border-top: solid 1px #eee;
+  }
+
+  .emoIcon
+  {
+      text-align: center;
+  }
+
+  .emoRowIcon
+  {
+      border-top:solid 1px #eee;
+      border-bottom:solid 1px #eee;
+  }
+
+  .emoIcon img
+  {
+      width: 25px;
+      height: 25px;
+      
+  }
+
+  [col-12]
+  {
+      padding: 0px;
+  }
+
+  .emoContainer
+  {
+      height: 150px;
+      width: 100%;
+      padding: 8px;
+      overflow-x: hidden;
+      overflow-y: auto;
+  }
+
+  .label-md
+  {
+      margin:8px 8px 8px 0;
+  }
+
+
+  .emoContainer span
+  {
+      display: block;
+      float:left;
+      padding: 3px;
+  }
+
+  .emoContainer span img
+  {
+      width: 25px;
+      height: 25px;;
+  }
+
+  .chatHeader
+  {
+      color:white;
+      background: transparent;
+  }
+  .list-md > .item-block:last-child .item-inner
+  {
+      border-width: 0px;
+  }
+
+  .chatHeaderList
+  {
+      margin: 0px;
+      height: 55px;
+  }
+
+  .chatHeader
+  {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .OnlineS
+  {
+      color:white;
+  }
+}

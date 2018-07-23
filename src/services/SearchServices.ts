@@ -1,6 +1,7 @@
 export class SearchService
 {
     private searchList=[];
+    private seachAddaList=[];
 
     addList(data:any)
     {
@@ -16,5 +17,32 @@ export class SearchService
 
         return this.searchList.length;
     }
+
+    resetList(){
+         this.searchList=[];
+    }
+
+
+    addAddaList(data:any){
+
+        this.seachAddaList.push(data);
+
+    }
+
+    getAddaList(){
+
+        return this.seachAddaList;
+    }
+
+    lenAddaList(){
+
+        return this.seachAddaList.length;
+    }
+
+    resetAddaList(){
+         this.seachAddaList=[];
+    }
+
+    
 
 }

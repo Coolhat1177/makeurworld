@@ -1,9 +1,6 @@
 
 import { Injectable } from '@angular/core';
 import { ConnectionServices } from './ServerConnection';
-import { AlertServices } from './AlertServices';
-// import { NativeStorage } from '@ionic-native/native-storage';
-import { Storage } from '@ionic/storage';
 
 // top header request..................
 
@@ -12,8 +9,7 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class TopHeaderServices{
 
-    constructor(private con:ConnectionServices,
-        private alertCtrl:AlertServices,private storage:Storage){
+    constructor(private con:ConnectionServices){
 
     }
 
@@ -42,9 +38,34 @@ export class TopHeaderServices{
 
     }
 
+    sentRequestLoad(user:any,loged:any){
+
+        let url="http://coolhat/home/main/meme_req_list_sent";
+
+       return this.con.postDataFetch(user,loged,url);
+
+
+    }
+
     searchLoad(user:any,loged:any,info:any)
     {
         let url="http://coolhat/home/main/search_op";
+
+        return this.con.postDataAsked(user,loged,info,url);
+
+    }
+
+    searchLoadEmail(user:any,loged:any,info:any)
+    {
+        let url="http://coolhat/home/main/search_op_email";
+
+        return this.con.postDataAsked(user,loged,info,url);
+
+    }
+
+    searchLoadAdda(user:any,loged:any,info:any)
+    {
+        let url="http://coolhat/home/main/search_op_email";
 
         return this.con.postDataAsked(user,loged,info,url);
 

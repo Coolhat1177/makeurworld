@@ -1,3 +1,52 @@
 page-message {
 
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition:  0.3s all;
+        -o-transition:  0.3s all;
+        transition:  0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+	    position: relative;
+	    top: -2px;
+	    background-color: black !important;
+    }
+    .SwipedTabs-tabs ion-segment-button
+    {
+    	border:none !important;
+    	color:gray!important;
+    	background-color:white!important;
+    }
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:black !important;
+    }
+    .SwipedTabs-tabs
+    {
+    	border-bottom: solid 1px #e6e6e6  !important;
+    }
+
+
+    .swiper-container
+    {
+        height: auto;
+        .segment-md .segment-button{
+            height:2rem;
+            line-height:1rem;
+            text-transform: capitalize;
+        }
+
+    }
+    
+    .messageTime
+    {
+        font-size: .7em;
+        text-align: right;
+        padding-top: 8px;
+        padding-bottom: 4px;
+        padding-right:8px; 
+        color:#333;
+
+    }
 }

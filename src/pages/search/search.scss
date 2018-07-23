@@ -38,9 +38,25 @@ page-search {
         }
      }
 
+     .swiper-container
+     {
+         height: auto;
+         .segment-md .segment-button{
+             height:2rem;
+             line-height:1rem;
+             text-transform: capitalize;
+         }
+ 
+     }
+
      .searchOutterP
      {
          padding: 5px;
+     }
+
+     page-search .swiper-container
+     {
+         height: 100%;
      }
 
 }

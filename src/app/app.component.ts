@@ -10,6 +10,7 @@ import { ImageStorePage } from '../pages/image-store/image-store';
 import { MusicplayerPage } from '../pages/musicplayer/musicplayer';
 import { VideoStorePage } from '../pages/video-store/video-store';
 import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
+import { ChatboxPage } from '../pages/chatbox/chatbox';
 // import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
 // import { SignInPage } from '../pages/sign-in/sign-in';
 
@@ -17,7 +18,7 @@ import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage= MusicplayerPage;
+  rootPage= VideoStorePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

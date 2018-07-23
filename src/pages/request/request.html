@@ -1,13 +1,84 @@
-
 <ion-header>
 
-  <ion-navbar>
-    <ion-title text-center>Request</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <ion-title>Request</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content >
+  
+      <ion-segment  class="SwipedTabs-tabs"  >
+        <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+          {{tab}}
+        </ion-segment-button>
+      </ion-segment>
+    
+      <!-- here is our dynamic line  "indicator"-->
+      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+    
+      <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
+                  (ionSlideWillChange)="updateIndicatorPosition()"
+                  (ionSlideDidChange)="updateIndicatorPosition()"
+                  (pan)="updateIndicatorPosition()"
+                  [pager]="false"
+            >
+        <ion-slide>
+          <ion-row padding>
 
-</ion-header>
+              <ion-list>
+                  <ion-item *ngFor="let req of reqArray; let i=index" >
+                    <ion-avatar item-start>
+                      <img [src]="req['pic_url']">
+                    </ion-avatar>
+                    <h4>{{req['full_name']}}</h4>
+                    <div>
+                        <button ion-button clear *ngIf="req['show'] && !req['accept']" (click)="acceptRequest(i)">Accept Request</button>
+                        <button class='suc' ion-button clear *ngIf="req['show'] && !req['accept']" (click)="ignoreRequest(i)" >Ignore Request</button>
+                        <button class='suc' ion-button clear *ngIf="!req['show'] && req['accept']" >Friend</button>
+                    </div>
+                   
+                   
+                  </ion-item>
+                </ion-list>
+           
+<!--   
+          <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+          </ion-infinite-scroll> -->
+  
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+            <ion-row padding>
 
-
-<ion-content padding>
-
-</ion-content>
+                <ion-list>
+                    <ion-item *ngFor="let req of reqSentArray; let i=index" >
+                      <ion-avatar item-start>
+                        <img [src]="req['pic_url']">
+                      </ion-avatar>
+                      <h4>{{req['full_name']}}</h4>
+                      <div>
+                          <button ion-button clear *ngIf="req['cancel']" (click)="cancelRequest(i)" >Cancel Request</button>
+                          <button ion-button clear *ngIf="!req['cancel']" (click)="addFriend(i)">Add Friend</button>
+                       
+                      </div>
+                     
+                     
+                    </ion-item>
+                  </ion-list>
+             
+  <!--   
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+              <ion-infinite-scroll-content></ion-infinite-scroll-content>
+            </ion-infinite-scroll> -->
+    
+            </ion-row>
+        </ion-slide>
+      </ion-slides>
+  
+      
+  
+  
+  </ion-content>

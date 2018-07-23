@@ -1,5 +1,84 @@
 
 
-<ion-content padding>
+<ion-content >
+        <div class='viewerBg'>
+                <div class='viewerTop'>
+                  <div class='viewerTopIn'>
+                      <div class='viewerTopOpt'>
+                          <button ion-button clear  (click)="dismissVideoView()" class='viewClose'>
+                              <ion-icon name="arrow-back"></ion-icon>
+                            </button>
+                      </div>
+                      <div class='viewerTopOpt1'>
+                          <button ion-button clear  (click)="videoSuggest()" class='viewClose'>
+                              <ion-icon name="paper-plane"></ion-icon>
+            
+                            </button>
+                            <button ion-button clear  (click)="addType()" class='viewClose'>
+                                <ion-icon name="add"></ion-icon>
+                              </button>
+                              <button ion-button clear  (click)="moreOption()" class='viewClose'>
+                                   <ion-icon ios="ios-more" md="md-more"></ion-icon>
+            
+                                </button>
+            
+                      </div>
+                  </div>
+            
+                </div>
+            
+                <div class='viewerCenter' (swipe)="swipeEvent($event)">
+                  <div class='viewerCenterIn'>
+                        <good-video [src]="'http://media.makeurworld.com/store/video_p/77148737625a80643978cb5.mp4'" [poster]="'assets/poster.png'"></good-video>
+
+                  </div>
+                </div>
+            
+                <div class='viewerFooter'>
+                  <ion-row class="padding5">
+                    <div class='viewerFooterOpt'>
+                        <div class='viewerFooterOptIn'>
+                            <div class='picPro'>
+                              <img  [src]="videoInfo['pic_url']">
+                            </div>
+                            <div class='infoPro'>
+                              <div class='infoProIn'>
+                                <div class='infoProIn1'> {{videoInfo['full_name']}}</div>
+                                <div class='infoProIn2'> Detail</div>
+                                </div>
+                              <div class='infoProIn0'>
+                                  {{videoInfo['about']}}
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+            
+                  </ion-row>
+                 
+                   
+                   
+                    <reaction-temp [activity]="reactStatus"  (reactEmiiter)="loadInitialReactionV()"></reaction-temp>
+            
+                        
+                       
+                         
+            
+                 
+                   <ion-row class="padding5 ">
+                    <ion-col class="padding5 viewInfo" text-center>
+                       {{videoInfo['add_by']}}  Added
+                    </ion-col >
+                    <ion-col class="padding5 viewInfo" text-center>
+                        {{videoInfo['sug_by']}}  Suggested
+                    </ion-col>
+                    <ion-col class="padding5 viewInfo" text-center>
+                        {{videoInfo['view']}} Viewed
+                    </ion-col>
+                  </ion-row> 
+            
+                </div>
+            
+              </div>
+              
 
 </ion-content>

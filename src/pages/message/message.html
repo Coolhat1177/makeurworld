@@ -1,9 +1,4 @@
-<!--
-  Generated template for the MessagePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +9,29 @@
 
 
 <ion-content padding>
+    <ion-row >
+        <ion-list>
+            <ion-item *ngFor="let message of MessageArray; let i=index" (click)="openChat(i)">
+              <ion-avatar item-start>
+                <img [src]="message['pic_url']">
+              </ion-avatar>
+              <h4>{{message['full_name']}}</h4>
+              <div>
+                  <p innerHTML="{{message['mess']}}"></p>
+              </div>
+              <div class='messageTime'>
+                 <span>{{message['time']}}</span>
+              </div>
+             
+             
+            </ion-item>
+          </ion-list>
+       
+   
 
+    <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+
+    </ion-row>
 </ion-content>

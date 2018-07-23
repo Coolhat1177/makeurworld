@@ -2,6 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController,Slides, ModalController } from 'ionic-angular';
 import { CreditService } from '../../services/CreditService';
 import { ImageStoreService } from '../../services/ImageStoreService';
+import { VideoplayerPage } from '../videoplayer/videoplayer';
 
 @IonicPage()
 @Component({
@@ -113,6 +114,41 @@ export class VideoStorePage {
     
     });
     
+  }
+
+
+
+  playVideo(id){
+
+
+    let video=[];
+    this.credit.check().then(data=>{
+
+    
+     
+      this.videoS.ownVideoCollectio(data[0],data[1]).subscribe(data=>{
+            if(data['status'])
+            {
+              for(let key in data[0])
+              {
+                video.push(data[0][key]);
+              }
+
+              const profilePick=this.modelCtrl.create(VideoplayerPage,{vidArr:video,
+                video_id:id});
+             profilePick.present();
+             
+              
+
+            }
+
+           
+      });
+    
+    });
+
+
+
   }
 
 

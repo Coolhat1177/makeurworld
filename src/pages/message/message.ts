@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { CreditService } from '../../services/CreditService';
 import { TopHeaderServices } from '../../services/TopHeaderService';
 import { MessageService } from '../../services/MessageService';
+import { ChatboxPage } from '../chatbox/chatbox';
 
 
 @IonicPage()
@@ -12,14 +13,20 @@ import { MessageService } from '../../services/MessageService';
 })
 export class MessagePage {
 
+  MessageArray:any=[];
+
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      private credit:CreditService,
      private topHeader:TopHeaderServices,
      private messService:MessageService) {
+   
   }
 
+
+
   ionViewDidLoad() {
+    
     this.messageLoad();
   }
 
@@ -36,11 +43,32 @@ export class MessagePage {
               this.messService.addMessage(data[0][key]);
             }
 
+            this.MessageArray=this.messService.getMessage();
+
           }
           
         });
           
       })
   }
+
+
+
+
+  openChat(i){
+
+      this.navCtrl.push(ChatboxPage,
+                        {chatWith_id:this.MessageArray[i]['from_id'],
+                          });
+
+
+
+
+  }
+
+  
+
+
+
 
 }

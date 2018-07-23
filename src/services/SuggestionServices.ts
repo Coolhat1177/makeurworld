@@ -93,6 +93,50 @@ musAddPlaylist(user:any,loged:any,info:any){
 
 
 }
+
+
+vidSuggetion(user:any,loged:any,info:any){
+       
+    let url="http://coolhat/home/video/frnd_mem_all_s_vid";
+    let info1=JSON.stringify(info);
+
+    return this.con.postDataAsked(user,loged,info1,url);
+
+
+}
+
+
+vidSugget(user:any,loged:any,info:any){
+       
+    let url="http://coolhat/home/video/add_to_suggestion_vid";
+    let info1=JSON.stringify(info);
+
+    return this.con.postDataAsked(user,loged,info1,url);
+
+
+}
+
+
+vidFav(user:any,loged:any,info:any){
+       
+    let url="http://coolhat/home/video/vid_in_cnv";
+    let info1=JSON.stringify(info);
+
+    return this.con.postDataAsked(user,loged,info1,url);
+
+
+}
+
+vidAddFav(user:any,loged:any,info:any){
+       
+    let url="http://coolhat/home/video/add_to_playlist";
+    let info1=JSON.stringify(info);
+
+    return this.con.postDataAsked(user,loged,info1,url);
+
+
+}
+
     
 
 }

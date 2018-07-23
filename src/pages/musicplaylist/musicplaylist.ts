@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { CreditService } from '../../services/CreditService';
 import { SuggestionServices } from '../../services/SuggestionServices';
 
-/**
- * Generated class for the MusicplaylistPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
