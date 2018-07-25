@@ -12,6 +12,7 @@ import { AlertServices } from '../../services/AlertServices';
 import { OtpPage } from '../otp/otp';
 import { CreditService } from '../../services/CreditService';
 import { LandingPage } from '../landing/landing';
+import { MainTabPage } from '../main-tab/main-tab';
 
 
 
@@ -81,9 +82,21 @@ export class SignInPage {
         console.log(data);
         if(data['status'])
         {
-            this.storage.set('user',data['user']);
-            this.storage.set('loged',data['loged']);
-            this.navCtrl.push(LandingPage);
+             this.storage.remove('user'); 
+             this.storage.remove('loged');  
+             this.storage.ready().then(()=>{
+                      this.storage.set('user',data['user']);
+                      this.storage.set('loged',data['loged']);
+                      this.storage.ready().then(()=>{
+                      
+                        this.navCtrl.push(MainTabPage);
+                      });
+              
+            });
+            
+
+           
+           
             
         }
         else{
@@ -121,6 +134,7 @@ export class SignInPage {
                                 this.storage.set('user',data['user'])
                                 this.storage.ready().then(()=>{
                                   this.otpCheckVerification();
+                                  console.log(22);
                               });
                                 
                               });

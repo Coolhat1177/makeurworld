@@ -88,5 +88,5 @@
     <plugin name="cordova-plugin-crop" spec="^0.4.0" />
     <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.2.2" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="^7.1.1" />
 </widget>

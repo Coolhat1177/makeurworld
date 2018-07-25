@@ -81,7 +81,10 @@ ion-icon {
     }
     &[class*="custom-icon21"] {
         mask-image: url(../../assets/icon/emoIcon.svg);
+    }&[class*="custom-icon22"] {
+        mask-image: url(../../assets/icon/cross.svg);
     }
+
 
 
    

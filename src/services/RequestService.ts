@@ -33,7 +33,7 @@ export class RequestService{
 
     acceptRequest(user:any,loged:any,info){
        
-        let url="http://coolhat/home/main/message_new_show";
+        let url="http://app.makeurworld.com/home/main/message_new_show";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -44,7 +44,7 @@ export class RequestService{
 
     IgnoreRequest(user:any,loged:any,info){
        
-        let url="http://coolhat/home/main/mem_req_ignore";
+        let url="http://app.makeurworld.com/home/main/mem_req_ignore";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -54,7 +54,7 @@ export class RequestService{
     
     cancelRequest(user:any,loged:any,info){
        
-        let url="http://coolhat/home/main/mem_req_can";
+        let url="http://app.makeurworld.com/home/main/mem_req_can";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -65,7 +65,7 @@ export class RequestService{
 
     AddFriend(user:any,loged:any,info){
        
-        let url="http://coolhat/home/main/mem_req_can";
+        let url="http://app.makeurworld.com/home/main/mem_req_can";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);

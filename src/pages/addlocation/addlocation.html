@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>
+      <div class='viewerTopOpt'>
+          <button ion-button clear (click)="dismissView()"  class='viewClose'>
+              <ion-icon name="arrow-back"></ion-icon>
+            </button>
+      </div>
+    Choose Location
+  </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        
+          <ion-row>
+            <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"  #search  class='googleMapSearch'>
+          </ion-row>
+          <ion-row>
+
+            
+
+          </ion-row>
+        
+
+              <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" (mapClick)="onSetMarker($event)">
+                  <agm-marker [latitude]="latitude" [longitude]="longitude" [visible]="status"></agm-marker>
+                </agm-map>
+          
+           
+
+            <ion-row>
+              <button ion-button block class='loctionAdd' (click)="addLoaction()" [disabled]="!status">Add</button>
+            </ion-row>
+
+        
+          
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

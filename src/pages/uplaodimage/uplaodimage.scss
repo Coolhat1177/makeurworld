@@ -1,0 +1,164 @@
+page-uplaodimage {
+   
+   
+
+
+}
+.publishContainerIn
+{
+    width: auto;
+    height: 280px;
+   position: relative;
+   border-bottom: solid 2px #ccc;
+   
+}
+
+.imageC 
+{
+        display: inline-block;
+        margin: 10px;
+        border-radius: 10px;
+        position: relative;    
+   
+}
+
+.imageC  img {
+    max-width:230px;
+    max-height: 230px;
+    -webkit-box-shadow: 1px 1px 24px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 1px 24px 0px rgba(0,0,0,0.75);
+        box-shadow: 1px 1px 24px 0px rgba(0,0,0,0.75);
+        border-radius: 10px;
+
+}
+
+.wide-as-needed {
+   
+    white-space: nowrap;
+    height: 300px;
+  }
+  .scroll { 
+    min-width: 100%;
+  }
+
+  .rmvImageC{
+      position: absolute;
+      top:10px;
+      right: 10px;
+     
+      background: rgba(255,255,255,0.4);
+     
+      font-size: 1.2em;
+      border-radius: 4px;
+  }
+
+  .rmvImageC button
+  {
+      padding: 0px;
+      height: 2rem;
+      color:red;
+  }
+
+
+  .toggle-md
+  {
+      float: right;
+  }
+  
+  .item-md
+  {
+      background: transparent;
+      color:white;
+      
+  }
+  
+
+  .item-md.item-block .item-inner{
+      border-width: 0px;
+  }
+
+
+
+  .commentTextbox
+{
+    border-radius: 8px;
+    border:solid 1px #c2c2c2;
+    height: 90px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    padding: 8px;
+
+}
+
+.commentTextbox span img {
+    width: 20px;
+    height: 20px;
+    margin-right:3px;
+    margin-left: 3px;
+
+}
+
+
+div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
+
+    content: attr(data-placeholder);
+
+    float: left;
+
+    margin-left: 2px;
+
+    color: #eee;
+    font-size: 1.5em;
+
+}
+
+.describeC
+{
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.uploadOpt
+{
+  font-size: 1.6em;
+}
+
+.uploadOpt1
+{
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+
+.button-md
+{
+  padding: 5px;
+  
+}
+
+.loctionS
+{
+  width: 100%;
+
+  margin: 5px;
+  margin-top: 10px;
+  background: #eee;
+
+  
+}
+
+.loctionS div{
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: .96em;
+
+}
+
+.locIcon
+{
+  margin-right: 5px;
+  color:#333;
+}

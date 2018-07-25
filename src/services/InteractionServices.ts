@@ -22,7 +22,7 @@ export class ReactionServices{
 
     loadComment(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/activity_rev_li_c";
+        let url="http://app.makeurworld.com/home/main/activity_rev_li_c";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -32,7 +32,7 @@ export class ReactionServices{
 
     submitComment(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/activity_review";
+        let url="http://app.makeurworld.com/home/main/activity_review";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -43,7 +43,7 @@ export class ReactionServices{
 
     loadReact(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/activity_rat_li";
+        let url="http://app.makeurworld.com/home/main/activity_rat_li";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -53,7 +53,7 @@ export class ReactionServices{
 
     loadCurReaction(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/rating_status";
+        let url="http://app.makeurworld.com/home/main/rating_status";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -64,7 +64,7 @@ export class ReactionServices{
 
     submitReact(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/activity_rating";
+        let url="http://app.makeurworld.com/home/main/activity_rating";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -75,7 +75,7 @@ export class ReactionServices{
 
     loadCurComment(user:any,loged:any,info){
         console.log(info);
-        let url="http://coolhat/home/main/review_load_c";
+        let url="http://app.makeurworld.com/home/main/review_load_c";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);

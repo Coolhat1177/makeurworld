@@ -15,15 +15,29 @@ export class TopHeaderServices{
 
     notificationLoad(user:any,loged:any){
 
-        let url="http://coolhat/home/main/notifi_load";
+        let url="http://app.makeurworld.com/home/main/notifi_load";
 
        return this.con.postDataFetch(user,loged,url);
 
 
     }
+
+    notificationLoadMore(user:any,loged:any,info:any){
+
+        let url="http://app.makeurworld.com/home/main/notifi_load_mr";
+
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+
+    }
+
+
     messageLaod(user:any,loged:any){
 
-        let url="http://coolhat/home/main/nw_mess_l";
+        let url="http://app.makeurworld.com/home/main/nw_mess_l";
 
        return this.con.postDataFetch(user,loged,url);
 
@@ -31,7 +45,7 @@ export class TopHeaderServices{
     }
     requestLoad(user:any,loged:any){
 
-        let url="http://coolhat/home/main/meme_req_list";
+        let url="http://app.makeurworld.com/home/main/meme_req_list";
 
        return this.con.postDataFetch(user,loged,url);
 
@@ -40,7 +54,7 @@ export class TopHeaderServices{
 
     sentRequestLoad(user:any,loged:any){
 
-        let url="http://coolhat/home/main/meme_req_list_sent";
+        let url="http://app.makeurworld.com/home/main/meme_req_list_sent";
 
        return this.con.postDataFetch(user,loged,url);
 
@@ -49,7 +63,7 @@ export class TopHeaderServices{
 
     searchLoad(user:any,loged:any,info:any)
     {
-        let url="http://coolhat/home/main/search_op";
+        let url="http://app.makeurworld.com/home/main/search_op";
 
         return this.con.postDataAsked(user,loged,info,url);
 
@@ -57,7 +71,7 @@ export class TopHeaderServices{
 
     searchLoadEmail(user:any,loged:any,info:any)
     {
-        let url="http://coolhat/home/main/search_op_email";
+        let url="http://app.makeurworld.com/home/main/search_op_email";
 
         return this.con.postDataAsked(user,loged,info,url);
 
@@ -65,7 +79,7 @@ export class TopHeaderServices{
 
     searchLoadAdda(user:any,loged:any,info:any)
     {
-        let url="http://coolhat/home/main/search_op_email";
+        let url="http://app.makeurworld.com/home/main/search_op_email";
 
         return this.con.postDataAsked(user,loged,info,url);
 

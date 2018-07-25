@@ -20,7 +20,7 @@ export class ChatboxPage {
   typingS:boolean=false;
   typeClass:string="chat_typing1";
   message:string="";
-  emo:any=['../../assets/icon/1f600.svg'];
+
   messArray:any=[];
   mutationObserver: MutationObserver;
   emoCont:boolean=false;

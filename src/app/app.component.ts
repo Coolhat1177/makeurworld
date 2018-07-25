@@ -11,14 +11,17 @@ import { MusicplayerPage } from '../pages/musicplayer/musicplayer';
 import { VideoStorePage } from '../pages/video-store/video-store';
 import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
 import { ChatboxPage } from '../pages/chatbox/chatbox';
+import { UplaodimagePage } from '../pages/uplaodimage/uplaodimage';
+import { UplaodmusicPage } from '../pages/uplaodmusic/uplaodmusic';
+import { UplaodvideoPage } from '../pages/uplaodvideo/uplaodvideo';
 // import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
-// import { SignInPage } from '../pages/sign-in/sign-in';
+import { SignInPage } from '../pages/sign-in/sign-in';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage= VideoStorePage;
+  rootPage= SignInPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

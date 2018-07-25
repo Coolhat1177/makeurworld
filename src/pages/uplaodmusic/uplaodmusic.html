@@ -1,0 +1,112 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <ion-row>
+          <ion-col></ion-col>
+  
+          <ion-col text-right>
+             <ion-item>
+                <ion-label text-right>{{mode}}</ion-label>
+                <ion-toggle checked='true'  (ionChange)="onToggle($event)"></ion-toggle>
+             </ion-item>
+              
+          </ion-col>
+  
+      </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding (click)="closeEmoBox()">
+    <div class='publishContainerIn'>
+        <ion-scroll scrollX="true" class="wide-as-needed" >
+            <div *ngFor="let image of upImg; let i=index" class='imageC'>
+              <img [src]="image">
+              <div class='rmvImageC'>
+                <button ion-button clear (click)="removeImg(i)">
+                    <ion-icon name='custom-icon22'></ion-icon>
+                </button>
+               
+              </div>
+            </div>
+          </ion-scroll>
+    </div>
+  
+  
+    <div class="loctionS" *ngIf="locationS">
+        <ion-item>
+            <div><ion-icon name='pin' class="locIcon"></ion-icon>{{loction}}</div>
+            <button ion-buttom clear item-end (click)="removLocation()">Remove</button>
+        </ion-item>
+           
+        
+    </div>
+
+    <ion-row>
+      <input placeholder="Song Name" type="text"  #songname  class='inputforms'>
+    </ion-row>
+
+    <ion-row>
+        <input placeholder="Song Type" type="text"  #songtype  class='inputforms'>
+      </ion-row>
+
+     
+
+  
+  
+    <div class="describeC">
+        <div>
+            <div class='commentTextbox' contenteditable="true"
+            data-placeholder="Type here...."
+            #describe  > 
+            </div>
+   
+          </div>
+    </div>
+     
+     
+  
+  
+  </ion-content>
+
+
+<ion-footer >
+    <ion-row>
+      <ion-col>
+          <button ion-button clear class='uploadOpt' >
+          <ion-icon name="photos" ></ion-icon> 
+          </button>
+          <button ion-button clear class='uploadOpt' (click)="addLocation()">
+              <ion-icon name="pin" ></ion-icon> 
+              </button>
+              <button ion-button clear class='uploadOpt' (click)="openEmo()">
+                  <ion-icon name="happy"></ion-icon>
+                </button>
+      </ion-col>
+      <ion-col text-right>
+          <button ion-button clear (click)="addLocation()" class='uploadOpt1'>
+          Publish
+          </button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="emoCont" >
+        
+      <ion-row col-12 class="emoRowIcon">
+          <ion-col *ngFor="let icon of icon1;let i=index" class='emoIcon' (click)="setEmoDisplay(i)">
+              <img [src]="link+icon"/>
+          </ion-col>
+                    </ion-row>
+                    <ion-row>
+                    <div class='emoContainer'>
+                            <span  *ngFor="let icon of emoIcon; let i=index" (click)="addEmojs(i)">
+                              <img [src]='link+icon'>
+                            </span>
+                    </div>
+                     
+                    </ion-row>
+  
+  
+  </ion-row>
+  </ion-footer>

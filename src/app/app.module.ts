@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConnectionServices } from '../services/ServerConnection';
 import { AlertServices } from '../services/AlertServices';
 import { NativeStorage } from '@ionic-native/native-storage';
-
+import { AgmCoreModule } from "@agm/core";
 import { OtpPage } from '../pages/otp/otp';
 import { CreditService } from '../services/CreditService';
 import { MessagePage } from '../pages/message/message';
@@ -84,6 +84,12 @@ import { VideoPlayerServices } from '../services/VideoPlayerServices';
 import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
+import { UplaodimagePage } from '../pages/uplaodimage/uplaodimage';
+
+import { UplaodvideoPage } from '../pages/uplaodvideo/uplaodvideo';
+import { UplaodmusicPage } from '../pages/uplaodmusic/uplaodmusic';
+import { AddlocationPage } from '../pages/addlocation/addlocation';
+import { MapService } from '../services/MapServices';
 //import { ImgCrpServices } from '../services/imgCrpServices';
 
 
@@ -133,7 +139,11 @@ import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
     VideofavPage,
     VideoplayerPage,
     ChatboxPage,
-    GoodVideoComponent
+    GoodVideoComponent,
+    UplaodimagePage,
+    UplaodmusicPage,
+    UplaodvideoPage,
+    AddlocationPage
    
   ],
   imports: [
@@ -144,6 +154,9 @@ import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularCropperjsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB1CHZcYMGt_nJfQYQWSlNcptT-7U64dj0'
+    }),
     StoreModule.forRoot({
       appState: mediaStateReducer
     }),
@@ -190,7 +203,11 @@ import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
     MusicplaylistPage,
     VideofavPage,
     VideoplayerPage,
-    ChatboxPage
+    ChatboxPage,
+    UplaodimagePage,
+    UplaodmusicPage,
+    UplaodvideoPage,
+    AddlocationPage,
 
    
   ],
@@ -226,7 +243,8 @@ import { GoodVideoComponent } from '../vidcomponents/good-video/good-video';
     PersonalChatServices,
     VideoPlayerServices,
     SafariViewController,
-    ScreenOrientation
+    ScreenOrientation,
+    MapService
     //ImgCrpServices
   
 

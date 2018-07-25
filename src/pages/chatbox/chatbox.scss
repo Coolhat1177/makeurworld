@@ -146,43 +146,15 @@ page-chatbox {
       color:#333;
   }
 
-  ion-footer
-  {
-      background-color: white;
-      border-top: solid 1px #eee;
-  }
+ 
 
-  .emoIcon
-  {
-      text-align: center;
-  }
-
-  .emoRowIcon
-  {
-      border-top:solid 1px #eee;
-      border-bottom:solid 1px #eee;
-  }
-
-  .emoIcon img
-  {
-      width: 25px;
-      height: 25px;
-      
-  }
 
   [col-12]
   {
       padding: 0px;
   }
 
-  .emoContainer
-  {
-      height: 150px;
-      width: 100%;
-      padding: 8px;
-      overflow-x: hidden;
-      overflow-y: auto;
-  }
+ 
 
   .label-md
   {
@@ -190,18 +162,6 @@ page-chatbox {
   }
 
 
-  .emoContainer span
-  {
-      display: block;
-      float:left;
-      padding: 3px;
-  }
-
-  .emoContainer span img
-  {
-      width: 25px;
-      height: 25px;;
-  }
 
   .chatHeader
   {
@@ -229,4 +189,58 @@ page-chatbox {
   {
       color:white;
   }
+
+  
+}
+
+
+
+.emoContainer span
+{
+    display: block;
+    float:left;
+    padding: 3px;
+}
+
+.emoContainer span img
+{
+    width: 25px;
+    height: 25px;;
+}
+
+
+.emoContainer
+{
+    height: 150px;
+    width: 100%;
+    padding: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+ion-footer
+{
+    background-color: white;
+    border-top: solid 1px #eee;
+}
+
+.emoIcon
+{
+    text-align: center;
+}
+
+.emoRowIcon
+{
+    border-top:solid 1px #eee;
+    border-bottom:solid 1px #eee;
+}
+
+
+
+.emoIcon img
+{
+    width: 25px;
+    height: 25px;
+    
 }
