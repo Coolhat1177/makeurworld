@@ -1,0 +1,106 @@
+page-profilefriends {
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition:  0.3s all;
+        -o-transition:  0.3s all;
+        transition:  0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+	    position: relative;
+	    top: -2px;
+	    background-color: black !important;
+    }
+    .SwipedTabs-tabs ion-segment-button
+    {
+    	border:none !important;
+    	color:gray!important;
+    	background-color:white!important;
+    }
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:black !important;
+    }
+    .SwipedTabs-tabs
+    {
+    	border-bottom: solid 1px #e6e6e6  !important;
+    }
+    .segment-md .segment-button{
+        height:2rem;
+        line-height:1rem;
+        text-transform: capitalize;
+    }
+
+    .swiper-container
+    {
+        height: auto;
+          .segment-md .segment-button{
+              height:2rem;
+              line-height:1rem;
+              text-transform: capitalize;
+          }
+        }
+
+
+
+.frndCnt
+{
+    padding: 10px;
+}
+
+.frndBg
+{
+    height: 75px;;
+}
+
+.frndproCnt
+{
+    display: flex;
+    flex-flow: row;
+}
+
+.frndproCnt0
+{
+    width: 60px;
+    height: 30px;
+    position: relative;
+}
+
+.frndproCnt1{
+    flex:1;
+}
+
+.frndproCnt2{
+    width: 60px;;
+}
+
+.frndproCnt0In
+{
+    width:50px;
+    height: 50px; 
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+.frndproCnt0In img{
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+}
+
+.frndproCnt2 button
+{
+    width: 100%;
+    font-weight: bolder;
+    font-size: 1em;
+    background: transparent;
+}
+
+.profileContainT
+{
+    width: 100%;
+}
+
+
+}

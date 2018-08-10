@@ -1,33 +1,11 @@
-<ion-header class='mainHeaderTop'>
-
-  <ion-navbar>
-      <ion-grid>
-          <ion-row>
-              <ion-col >MUW</ion-col>
-              <ion-col ></ion-col>
-              <ion-col ></ion-col>
-              <ion-col ></ion-col>
-             
-              <ion-col ><ion-icon name="custom-icon6" class='iconHeader' (click)="goToSearch()"></ion-icon></ion-col>
-              <ion-col ><ion-icon name="custom-icon9" class='iconHeader' (click)="goToMessage()"></ion-icon></ion-col>
-              <ion-col ><ion-icon name="custom-icon8" class='iconHeader' (click)="goToRequest()"></ion-icon></ion-col>
-              <ion-col ><ion-icon name="custom-icon7" class='iconHeader' (click)="goToNotification()"></ion-icon></ion-col>
-              <ion-col ><ion-icon name="menu" class='iconHeader'></ion-icon></ion-col>
-          </ion-row>
-      </ion-grid>
-  </ion-navbar>
-
-</ion-header>
-
 
 
 
 
 <ion-tabs>
-  <ion-tab [root]="cover" tabIcon="custom-icon1" tabTitle="Cover"></ion-tab>
-  <ion-tab [root]="store" tabIcon="custom-icon4" tabTitle="Store"></ion-tab>
-  <ion-tab [root]="viral" tabIcon="custom-icon3" tabTitle="Viral"></ion-tab>
-  <ion-tab [root]="upload" tabIcon="custom-icon10" tabTitle="Upload"></ion-tab>
-  <ion-tab [root]="adda" tabIcon="custom-icon5" tabTitle="Adda"></ion-tab>
-  <ion-tab [root]="musicplayer" tabIcon="custom-icon2" tabTitle="Mu"></ion-tab>
+  <ion-tab [root]="cover" tabIcon="custom-icon1"></ion-tab>
+  <ion-tab [root]="store" tabIcon="custom-icon4" #tab></ion-tab>
+  <ion-tab [root]="viral" tabIcon="custom-icon3" ></ion-tab>
+  <ion-tab [root]="upload" tabIcon="custom-icon10" ></ion-tab>
+  <ion-tab [root]="musicplayer" tabIcon="custom-icon2"></ion-tab>
 </ion-tabs>

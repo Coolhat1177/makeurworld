@@ -1,3 +1,53 @@
 page-viral-image {
 
+    ion-searchbar{        
+        .searchbar-input-container{            
+            .searchbar-input{
+                border-radius: 20px;
+                border:1px solid rgba(0,0,0,0.5);
+                height: 40px;;
+            }
+        }
+     }
+
+
+   
+
 }
+
+.label-md{
+    margin: 13px 8px 13px;
+    width: 200px;;
+}
+
+
+
+.list-md > .item-block:last-child .item-inner
+{
+    border:0px;
+}
+
+.selectorBg
+{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.7);
+    z-index:2;
+}
+
+
+.selectElem
+{
+    position: relative;
+    z-index: 3;
+    transform:scale(1.1);
+    border-radius: 4px;
+    border:1px solid #eee;
+
+}
+
+
+

@@ -1,0 +1,116 @@
+
+
+<ion-content (ionScroll)="onScroll($event)">
+    <div  #bgselector (tap)="removeSelect()">
+
+      </div>
+  <div class='canvasBackg' [style.background-image]="'url('+fav['thum_src']+')'">
+      <div class='canvasBackOpt'  >
+       
+          <ion-icon name="arrow-back"  (tap)="dismisView()"></ion-icon>
+     
+    </div>
+
+  </div>
+  <div class='canvasHeader' #canvasHeader>
+    <div class='canvasTitle'>
+        <div class='canvasTitleOpt'  >
+       
+            
+       
+      </div>
+      <div class='canvasTitleIn' text-center>{{fav['fav_name']}}</div>
+      <div class='canvasTitleOpt' *ngIf="allowUpload">
+      
+            <ion-icon name="add" (tap)="addVideo()"></ion-icon>
+       
+      </div>
+    </div>
+    <div class='canvasBy'>
+       <div class='canvasByIn'>
+        <div class='canvasByIn0'>
+            <div class='canvasCr'>
+             <div class='canvasCr0'><img [src]="fav['pic_url']"/></div>
+              <div class='canvasCr1'>
+                <div>{{fav['full_name']}}</div>
+                <div  class='canvasCrT'>{{fav['time']}}</div>
+               </div>
+            </div>
+        </div>
+       
+        <div
+         class='canvasByIn1' >
+            <ion-icon name="add" (tap)="addType()" *ngIf="add_status"></ion-icon>
+          </div>
+
+          <div
+          class='canvasByIn1'(tap)="deleteFromStore()"  *ngIf="delete_status">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+           </div>
+
+          <div class='canvasByIn1'>
+              <ion-icon name="paper-plane" (tap)="suggestFriend()"></ion-icon>
+          </div>
+          <div class='canvasByIn1'>
+              <ion-icon ios="ios-more" md="md-more"  (tap)="moreOption()"></ion-icon>
+            </div>
+       </div>
+      </div>
+  </div>
+
+  <ion-row style="padding-top: 20px;">
+
+        
+    <ion-col col-6 col-md-4 col-xl-3  padding *ngFor="let video of favVideo; let i=index" >
+      <div class='updateboxV' >
+        <div class='videoThmb' [style.background-image]="'url('+video['thum_src']+')'" (tap)="playVideoFav(i)" (press)="selectMe($event,i)" >
+
+        </div>
+        <div class='videoName'> <ion-icon name="videocam"></ion-icon> {{video['video_name']}}</div>
+        
+        
+      </div>
+
+    </ion-col>
+
+  
+
+
+
+   
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-row>
+  <div class='paddingAr'>
+
+  </div>
+
+
+  <div class='viewerFooter'>
+  
+   
+     
+     
+      <reaction-temp [activity]="reactStatus"  (reactEmiiter)="loadInitialReactionV()"></reaction-temp>
+
+          
+         
+           
+
+   
+    <ion-row class="padding5 ">
+      <ion-col class="padding5 viewInfo" text-center>
+         {{fav['add_by']}} Added
+      </ion-col >
+      <ion-col class="padding5 viewInfo" text-center>
+        {{fav['sub_by']}} Suggested
+      </ion-col>
+      <ion-col class="padding5 viewInfo" text-center>
+        {{fav['view']}} Viewed
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-content>

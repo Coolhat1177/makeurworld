@@ -1,0 +1,137 @@
+page-freinds {
+    .SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition:  0.3s all;
+        -o-transition:  0.3s all;
+        transition:  0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+	    position: relative;
+	    top: -2px;
+	    background-color: black !important;
+    }
+    .SwipedTabs-tabs ion-segment-button
+    {
+    	border:none !important;
+    	color:gray!important;
+    	background-color:white!important;
+    }
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:black !important;
+    }
+    .SwipedTabs-tabs
+    {
+    	border-bottom: solid 1px #e6e6e6  !important;
+    }
+    .segment-md .segment-button{
+        height:2rem;
+        line-height:1rem;
+        text-transform: capitalize;
+    }
+
+    .swiper-container
+    {
+        height: auto;
+          .segment-md .segment-button{
+              height:2rem;
+              line-height:1rem;
+              text-transform: capitalize;
+          }
+
+    }
+    .marginTop
+    {
+        margin-top: 15px;
+    }
+
+    .frndCnt
+    {
+        padding: 10px;
+    }
+
+    .frndBg
+    {
+        height: 75px;;
+    }
+
+    .frndproCnt
+    {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .frndproCnt0
+    {
+        width: 60px;
+        height: 30px;
+        position: relative;
+    }
+
+    .frndproCnt1{
+        flex:1;
+    }
+
+    .frndproCnt2{
+        width: 60px;;
+    }
+
+    .frndproCnt0In
+    {
+        width:50px;
+        height: 50px; 
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+    }
+
+    .frndproCnt0In img{
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+    }
+
+    .frndproCnt2 button
+    {
+        width: 100%;
+        font-weight: bolder;
+        font-size: 1em;
+        background: transparent;
+    }
+
+
+}
+
+
+.frnd_abt
+{
+    font-size: .95em;
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+.frnd_name
+{
+   
+    width: 100%;
+    padding: 10px;
+    
+    font-weight: normal;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .76em;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
+
+.updateboxF{
+    height: 44vw;
+    width: 44vw;
+    border-radius: 8px;
+    position: relative;
+    background-size: cover;
+    border: solid 1px rgba(0,0,0,0.2);
+}

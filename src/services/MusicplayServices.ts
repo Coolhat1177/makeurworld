@@ -15,7 +15,7 @@ export class MusicplayerServices{
 
     loadDetail(user:any,loged:any,info){
         console.log(info);
-        let url="http://app.makeurworld.com/home/music/ply_sng";
+        let url="http://coolhat/home/music/ply_sng";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);

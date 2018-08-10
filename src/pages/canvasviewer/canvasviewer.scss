@@ -1,0 +1,236 @@
+page-canvasviewer {
+
+    .viewClose img
+    {
+      width:22px;
+      height:22px;
+    }
+
+    .canvasBackg
+    {
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+        position: relative;
+    }
+
+    .canvasTitle
+    {
+        font-size: 1.5em;
+        color: #333;
+        padding: 0px;
+       display:flex;
+       font-weight: 400;
+       
+
+    }
+
+    .canvasTitleIn
+    {
+        width: calc(100% - 80px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+
+
+    .content-md
+    {
+
+        background-color: #eee;
+
+    }
+
+    .canvasHeader
+    {
+        
+        background: white;
+    }
+
+    .canvasTitleOpt
+    {
+        width:40px;
+    }
+
+    .canvasTitleOptB{
+        padding: 0px;
+       
+        margin: 0px;
+        height: auto;
+        
+        
+    }
+
+    .canvasTitleOpt{
+        padding: 10px;
+        
+        font-size: 1.1em;
+        text-align: center;
+       
+    }
+
+    .canvasByIn
+    {
+        display:flex;
+        flex-flow: row;
+    }
+
+    .canvasByIn1
+    {
+        width: 50px;
+        padding: 8px;
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .canvasByIn0
+    {
+        width: calc(100% - 150px);
+        padding: 10px;
+
+    }
+    .canvasCr
+    {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .canvasCr0
+    {
+        width: 25px;;
+    }
+
+    .canvasCr1{
+        width: calc(100% - 25px);
+        padding:5px;
+        padding-top: 0px;
+        padding-left: 10px;
+        font-size: .9em;
+        font-weight: bold;
+        letter-spacing: .3px;
+    }
+
+    .canvasCrT
+    {
+        font-size: .9em;
+        color:#c2c2c2;
+    }
+
+    .canvasBackOpt
+    {
+        position: fixed;
+        top:10px;
+        left: 10px;
+        height: 40px;
+        width: 40px;
+        z-index: 2;
+        font-size: 1.6em;
+        text-align: center
+    }
+    
+    
+    .canvasCr img
+    {
+        width: 28px;
+        height: 28px;;
+        border-radius: 50% 50%;
+
+    }
+
+
+
+    .flexbin {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: -2.5px; }
+        .flexbin:after {
+          content: '';
+          flex-grow: 999999999;
+          min-width: 300px;
+          height: 0; }
+        .flexbin > * {
+          position: relative;
+          display: block;
+          height: 300px;
+          margin: 2.5px;
+          flex-grow: 1; }
+          .flexbin > * > img {
+            height: 300px;
+            object-fit: cover;
+            max-width: 100%;
+            min-width: 100%;
+            vertical-align: bottom; }
+        .flexbin.flexbin-margin {
+          margin: 2.5px; }
+        @media (max-width: 980px) {
+          .flexbin {
+            display: flex;
+            overflow: hidden;
+            flex-wrap: wrap;
+            margin: -2.5px; }
+            .flexbin:after {
+              content: '';
+              flex-grow: 999999999;
+              min-width: 150px;
+              height: 0; }
+            .flexbin > * {
+              position: relative;
+              display: block;
+              height: 150px;
+              margin: 2.5px;
+              flex-grow: 1; }
+              .flexbin > * > img {
+                height: 150px;
+                object-fit: cover;
+                max-width: 100%;
+                min-width: 100%;
+                vertical-align: bottom; }
+            .flexbin.flexbin-margin {
+              margin: 2.5px; } }
+        @media (max-width: 400px) {
+          .flexbin {
+            display: flex;
+            overflow: hidden;
+            flex-wrap: wrap;
+            margin: -2.5px; }
+            .flexbin:after {
+              content: '';
+              flex-grow: 999999999;
+              min-width: 100px;
+              height: 0; }
+            .flexbin > * {
+              position: relative;
+              display: block;
+              height: 100px;
+              margin: 2.5px;
+              flex-grow: 1; }
+              .flexbin > * > img {
+                height: 100px;
+                object-fit: cover;
+                max-width: 100%;
+                min-width: 100%;
+                vertical-align: bottom; }
+            .flexbin.flexbin-margin {
+              margin: 2.5px; } }
+
+
+              .fix
+              {
+                  position: fixed;
+                  top:0px;
+                  left: 0px;
+                  z-index: 1;
+                  width: 100%;
+              }
+
+
+              .paddingAr
+              {
+                  padding: 40px;
+              }
+
+
+}

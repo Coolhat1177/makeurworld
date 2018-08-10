@@ -74,6 +74,9 @@ export class MusicsuggestionPage {
       this.credit.check().then(data=>{
 
         let text=event.target.value;
+        if(text==undefined){
+          text="";
+        }
         let info={'music_id':this.music_id,
         'text':text
 
@@ -143,7 +146,7 @@ export class MusicsuggestionPage {
 
   onCancel(event)
   {
-      console.log("ok");
+      this.onInput(event);
   }
 
 

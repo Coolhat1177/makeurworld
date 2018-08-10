@@ -14,9 +14,12 @@
                               <ion-icon name="paper-plane"></ion-icon>
             
                             </button>
-                            <button ion-button clear  (click)="addType()" class='viewClose'>
+                            <button ion-button clear  (tap)="addType()" class='viewClose' *ngIf="add_status">
                                 <ion-icon name="add"></ion-icon>
                               </button>
+                              <button ion-button clear  (tap)="deleteFromStore()" class='viewClose' *ngIf="delete_status">
+                                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                                </button>
                               <button ion-button clear  (click)="moreOption()" class='viewClose'>
                                    <ion-icon ios="ios-more" md="md-more"></ion-icon>
             
@@ -29,7 +32,7 @@
             
                 <div class='viewerCenter' (swipe)="swipeEvent($event)">
                   <div class='viewerCenterIn'>
-                        <good-video [src]="'http://media.makeurworld.com/store/video_p/77148737625a80643978cb5.mp4'" [poster]="'assets/poster.png'"></good-video>
+                        <good-video [src]="videoSrc" [poster]="'assets/poster.png'"></good-video>
 
                   </div>
                 </div>
@@ -44,7 +47,7 @@
                             <div class='infoPro'>
                               <div class='infoProIn'>
                                 <div class='infoProIn1'> {{videoInfo['full_name']}}</div>
-                                <div class='infoProIn2'> Detail</div>
+                                <div class='infoProIn2' (tap)="videoDetail()"> Detail</div>
                                 </div>
                               <div class='infoProIn0'>
                                   {{videoInfo['about']}}

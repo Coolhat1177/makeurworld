@@ -1,0 +1,61 @@
+
+
+
+<ion-content >
+    <profileheader-temp></profileheader-temp>
+
+    <ion-row>
+    <div class='profileContainT'>
+
+          <storeheader-temp></storeheader-temp>
+          <div  #bgselector (click)="removeSelect()">
+      
+            </div>
+      
+            <ion-row>
+                <ion-col>
+                    <button ion-button clear (tap)="loadPhotoPro()">
+                      Photo
+                    </button>
+          
+                  </ion-col>
+                  <ion-col>
+          
+                      <button ion-button clear (tap)="loadCanvasPro()" >
+                          Canvas
+                        </button>
+                    
+                    </ion-col>
+            </ion-row>
+      
+         
+        
+          <!-- here is our dynamic line  "indicator"-->
+          <div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
+        
+         
+          <ion-row>
+              <ion-card  *ngFor="let canvas of canvasArray; let i=index ">
+                <div class='cnvasBg' [style.background-image]="'url('+canvas['image_url']+')'" (tap)="openCanvas(i)" (press)="selectCanvas($event,i)"></div>
+                <ion-card-content>
+                    <div class='canvasCont'>
+                      {{canvas['imgb_titile']}}
+                    </div>
+                    <div class='contenNo'>
+                        {{canvas['total_img']}} images
+                      </div>
+                   
+                  </ion-card-content>
+              </ion-card>
+      
+              <ion-infinite-scroll (ionInfinite)="doInfiniteCanvas($event)">
+                  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+      
+      
+           </ion-row>
+
+    </div>
+    </ion-row>
+
+</ion-content>

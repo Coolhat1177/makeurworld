@@ -1,0 +1,50 @@
+
+<ion-header class='mainHeaderTop'>
+
+  <ion-navbar >
+    <header-temp></header-temp>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content >
+    <storeheader-temp></storeheader-temp>
+
+    <div  #bgselector (click)="removeSelect()">
+
+      </div>
+
+    <ion-segment  (tap)="loadPhotoP()"  >
+        <ion-segment-button>
+          Photo
+        </ion-segment-button>
+        <ion-segment-button  (tap)="loadCanvasP()">
+          Canvas
+          </ion-segment-button>
+         
+      </ion-segment>
+
+    <ion-row>
+        <ion-card  *ngFor="let canvas of canvasArray; let i=index ">
+          <div class='cnvasBg' [style.background-image]="'url('+canvas['image_url']+')'" (tap)="openCanvas(i)" (press)="selectCanvas($event,i)"></div>
+          <ion-card-content>
+              <div class='canvasCont'>
+                {{canvas['imgb_titile']}}
+              </div>
+              <div class='contenNo'>
+                  {{canvas['total_img']}} images
+                </div>
+             
+            </ion-card-content>
+        </ion-card>
+
+        <ion-infinite-scroll (ionInfinite)="doInfiniteCanvas($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+
+
+     </ion-row>
+
+</ion-content>

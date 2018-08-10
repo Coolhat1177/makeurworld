@@ -5,19 +5,22 @@
     <div class='viewerTop'>
         <div class='viewerTopIn'>
             <div class='viewerTopOpt'>
-                <button ion-button clear  (click)="dismissMusicPlayerView()" class='viewClose'>
+                <button ion-button clear  (tap)="dismissMusicPlayerView()" class='viewClose'>
                     <ion-icon name="arrow-back"></ion-icon>
                   </button>
             </div>
             <div class='viewerTopOpt1'>
-                <button ion-button clear  (click)="musicSuggest()" class='viewClose'>
+                <button ion-button clear  (tap)="musicSuggest()" class='viewClose'>
                     <ion-icon name="paper-plane"></ion-icon>
   
                   </button>
-                  <button ion-button clear  (click)="addType()" class='viewClose'>
+                  <button ion-button clear  (tap)="addType()" class='viewClose' *ngIf="add_status">
                       <ion-icon name="add"></ion-icon>
                     </button>
-                    <button ion-button clear  (click)="moreOption()" class='viewClose'>
+                    <button ion-button clear  (tap)="deleteFromStore()" class='viewClose' *ngIf="delete_status">
+                        <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                      </button>
+                    <button ion-button clear  (tap)="moreOption()" class='viewClose'>
                          <ion-icon ios="ios-more" md="md-more"></ion-icon>
   
                       </button>
@@ -60,40 +63,40 @@
             <ion-row>
 
               <ion-col text-center >
-                  <button ion-button clear   class='MplayerIcon' *ngIf="!shuffleS" (click)="shuffle()">
+                  <button ion-button clear   class='MplayerIcon' *ngIf="!shuffleS" (tap)="shuffle()">
                   <ion-icon name="shuffle"  ></ion-icon>
                   </button>
-                  <button ion-button clear   class='MplayerIcon' *ngIf="shuffleS" class='suc' (click)="shuffle()">
+                  <button ion-button clear   class='MplayerIcon' *ngIf="shuffleS" class='suc' (tap)="shuffle()">
                     <ion-icon name="shuffle"  ></ion-icon>
                     </button>
               </ion-col>
 
               <ion-col text-center>
-                  <button ion-button clear class='MplayerIcon1' [disabled]="isFirstPlaying()" (click)="previous()">
+                  <button ion-button clear class='MplayerIcon1' [disabled]="isFirstPlaying()" (tap)="previous()">
                   <ion-icon name='custom-icon20' ></ion-icon>
                   </button>
               </ion-col>
 
               <ion-col text-center>
-                <button clear ion-col ion-button *ngIf="!state.playing" (click)="play()" class='MplayerIcon2'>
+                <button clear ion-col ion-button *ngIf="!state.playing" (tap)="play()" class='MplayerIcon2'>
                     <ion-icon color="light" name="play"></ion-icon>
                   </button>
-                  <button clear ion-col ion-button *ngIf="!!state.playing" (click)="pause()" class='MplayerIcon2'>
+                  <button clear ion-col ion-button *ngIf="!!state.playing" (tap)="pause()" class='MplayerIcon2'>
                     <ion-icon color="light" name="pause"></ion-icon>
                   </button>
               </ion-col>
 
               <ion-col text-center>
-                  <button ion-button clear class='MplayerIcon1' [disabled]="isLastPlaying()" (click)="next()">
+                  <button ion-button clear class='MplayerIcon1' [disabled]="isLastPlaying()" (tap)="next()">
                   <ion-icon name='custom-icon18' ></ion-icon>
                   </button>
               </ion-col>
               <ion-col text-center>
-                  <button ion-button clear  class='MplayerIcon' (click)="repeat()" *ngIf="!repeatS">
+                  <button ion-button clear  class='MplayerIcon' (tap)="repeat()" *ngIf="!repeatS">
                   <ion-icon name="repeat" ></ion-icon>
                   </button>
 
-                  <button ion-button clear  class='MplayerIcon' (click)="repeat()" class='suc' *ngIf="repeatS">
+                  <button ion-button clear  class='MplayerIcon' (tap)="repeat()" class='suc' *ngIf="repeatS">
                     <ion-icon name="repeat" ></ion-icon>
                     </button>
 
@@ -117,7 +120,7 @@
                   <div class='infoPro'>
                     <div class='infoProIn'>
                       <div class='infoProIn1'> {{musicInfo['full_name']}}</div>
-                      <div class='infoProIn2'> Detail</div>
+                      <div class='infoProIn2' (tap)="loadMusicDetail()"> Detail</div>
                       </div>
                     <div class='infoProIn0'>
                         {{musicInfo['about']}}

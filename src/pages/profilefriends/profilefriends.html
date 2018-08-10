@@ -1,0 +1,210 @@
+<ion-content >
+
+    <ion-row>
+        <div class='profilrTop'>
+            <div class="coverPic" >
+                
+                <div class='userName'>Sachin</div>
+            </div>
+      
+            <div class='profileAr'>
+              <div class='profileArIn'>
+                <div class='profilePic'>
+                    <div class='profilePicIn'>
+                        <img src="../../assets/imgs/ter2.jpg" />
+                    </div>
+                </div>
+              
+                <div class='profileAr1'>
+                    <button ion-button clear (tap)="loadPhotoProfile()"> Store</button>
+                </div>
+      
+                <div class='profileAr1'>
+                    <button ion-button clear (tap)="loadProfileFriend()"> Friends</button>
+                </div>
+      
+                <div class='profileAr1'>
+                    <button ion-button clear> Adda</button>
+                </div>
+      
+              </div>
+            </div>
+      
+           
+            <div class='optionPro'>
+                <ion-row>
+                    <ion-col text-center>
+                        <button ion-button clear (tap)="loadPhotoProfile()">
+                          Photo
+                          </button>
+                    </ion-col >
+                    <ion-col text-center>
+                        <button ion-button clear (tap)="loadMusicProfile()">
+                        Music
+                        </button>
+                    </ion-col>
+                   
+                    <ion-col text-center>
+                        <button ion-button clear (tap)="loadVideoProfile()">
+                          Video
+                        </button>
+                    </ion-col>
+                  
+                  </ion-row>
+            </div>
+      
+          </div>
+      
+    
+      </ion-row>
+
+      <ion-row>
+      <div class='profileContainT'>
+
+  <ion-segment  class="SwipedTabs-tabs"  >
+      <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
+      [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
+        {{tab}}
+      </ion-segment-button>
+    </ion-segment>
+  
+  
+    <div id='indicator1' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+  
+    <ion-slides #SwipedTabsSlider1  (ionSlideDrag)="animateIndicator($event)"
+                (ionSlideWillChange)="updateIndicatorPosition()"
+                (ionSlideDidChange)="updateIndicatorPosition()"
+                (pan)="updateIndicatorPosition()"
+                [pager]="false"
+          >
+      <ion-slide>
+        <ion-row>
+         
+          
+          
+            <ion-col col-6 col-md-4 col-xl-3 class='frndCnt'  *ngFor="let friend of friendList; let i=index" >
+                <div class='updateboxF' >
+                  <div class='frndBg' [style.background-image]="'url('+friend['bg_url']+')'" >
+  
+                  </div>
+                  <div class='frndproCnt'> 
+                      <div class='frndproCnt0'>
+                        <div class='frndproCnt0In'>
+                          <img [src]="friend['pic_url']" />
+                        </div>
+                      </div>
+                      <div class='frndproCnt1'></div>
+                      <div class='frndproCnt2'>
+                        <button ion-buttom clear (tap)="loadFrndOpt(i)">
+                            <ion-icon name="more"></ion-icon>
+                        </button>
+                      </div>
+                  </div>
+                  <div class='frnd_name'> 
+                    <div>{{friend['full_name']}}</div> 
+                    <div class='frnd_abt'>  {{friend['about']}}</div>
+                  </div>
+                 
+                  
+                 
+                </div>
+      
+              </ion-col>
+          
+         
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+          <ion-row>
+  
+              <ion-row>
+         
+          
+          
+                  <ion-col col-6 col-md-4 col-xl-3 class='frndCnt'  *ngFor="let friend of attachList; let i=index" >
+                      <div class='updateboxF' >
+                        <div class='frndBg' [style.background-image]="'url('+friend['bg_url']+')'" >
+        
+                        </div>
+                        <div class='frndproCnt'> 
+                            <div class='frndproCnt0'>
+                              <div class='frndproCnt0In'>
+                                <img [src]="friend['pic_url']" />
+                              </div>
+                            </div>
+                            <div class='frndproCnt1'></div>
+                            <div class='frndproCnt2'>
+                              <button ion-buttom clear (tap)="loadAttachOpt(i)">
+                                  <ion-icon name="more"></ion-icon>
+                              </button>
+                            </div>
+                        </div>
+                        <div class='frnd_name'> 
+                          <div>{{friend['full_name']}}</div> 
+                          <div class='frnd_abt'>  {{friend['about']}}</div>
+                        </div>
+                       
+                        
+                       
+                      </div>
+            
+                    </ion-col>
+                
+               
+              </ion-row>
+        
+              
+           </ion-row>
+      </ion-slide>
+  
+      <ion-slide>
+        <ion-row>
+  
+        
+                <ion-row>
+           
+            
+            
+                    <ion-col col-6 col-md-4 col-xl-3 class='frndCnt'  *ngFor="let friend of attacheList; let i=index" >
+                        <div class='updateboxF' >
+                          <div class='frndBg' [style.background-image]="'url('+friend['bg_url']+')'" >
+          
+                          </div>
+                          <div class='frndproCnt'> 
+                              <div class='frndproCnt0'>
+                                <div class='frndproCnt0In'>
+                                  <img [src]="friend['pic_url']" />
+                                </div>
+                              </div>
+                              <div class='frndproCnt1'></div>
+                              <div class='frndproCnt2'>
+                                <button ion-buttom clear (tap)="loadAttacheOpt(i)">
+                                    <ion-icon name="more"></ion-icon>
+                                </button>
+                              </div>
+                          </div>
+                          <div class='frnd_name'> 
+                            <div>{{friend['full_name']}}</div> 
+                            <div class='frnd_abt'>  {{friend['about']}}</div>
+                          </div>
+                         
+                          
+                         
+                        </div>
+              
+                      </ion-col>
+                  
+                 
+                </ion-row>
+          
+                
+             
+            
+         </ion-row>
+    </ion-slide>
+    </ion-slides>
+  
+        </div>
+        </ion-row>
+
+</ion-content>

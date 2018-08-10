@@ -1,0 +1,54 @@
+
+
+<ion-content >
+    <profileheader-temp></profileheader-temp>
+
+      <ion-row>
+      <div class='profileContainT'>
+
+            <storeheader-temp></storeheader-temp>
+            <div  #bgselector (click)="removeSelect()">
+        
+              </div>
+        
+              <ion-row>
+                <ion-col>
+                  <button ion-button clear (tap)="loadPhotoPro()">
+                    Photo
+                  </button>
+        
+                </ion-col>
+                <ion-col>
+        
+                    <button ion-button clear (tap)="loadCanvasPro()" >
+                        Canvas
+                      </button>
+                  
+                  </ion-col>
+              </ion-row>
+        
+           
+          
+            <!-- here is our dynamic line  "indicator"-->
+            <div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
+          
+           
+                <ion-row padding>
+                  <div class="flexbin flexbin-margin">
+                    <div *ngFor="let image of imageArray;let i=index" (tap)="imageZoom(i)" (press)="selectMe($event,i)">
+                        <img src="{{image['image_url']}}" />
+                    </div>
+                   
+                </div>
+        
+                <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+        
+                </ion-row>
+          
+
+      </div>
+      </ion-row>
+
+</ion-content>

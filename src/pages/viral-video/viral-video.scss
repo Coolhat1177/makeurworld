@@ -1,3 +1,42 @@
 page-viral-video {
+    ion-searchbar{        
+        .searchbar-input-container{            
+            .searchbar-input{
+                border-radius: 20px;
+                border:1px solid rgba(0,0,0,0.5);
+                height: 40px;;
+            }
+        }
+     }
+     
+   
 
+}
+
+
+.videoBox
+{
+    padding: 0px;
+    margin-top:15px;
+}
+
+
+.viralSearch
+{
+    position: fixed;
+    z-index: 1;
+    bottom:50px;
+    right:20px;
+    max-width:250px;
+}
+
+
+.viralSearchIcon
+{
+    padding:5px  10px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8);
+    font-size: 1.8em;
+    font-weight: bolder;
 }

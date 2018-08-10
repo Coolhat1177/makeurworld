@@ -40,6 +40,8 @@ export class ImagesuggestPage {
                 'text':''
  
       }
+
+      console.log(info);
       
        this.sugServices.imgSuggetion(data[0],data[1],info).subscribe(data=>{
              if(data['status'])
@@ -50,6 +52,8 @@ export class ImagesuggestPage {
                   this.suggestionList.push(data[0][key]);
 
                 }
+
+                console.log(this.suggestionList);
                
  
              }
@@ -75,6 +79,9 @@ export class ImagesuggestPage {
       this.credit.check().then(data=>{
 
         let text=event.target.value;
+        if(text==undefined){
+          text="";
+        }
         let info={'image_id':this.image_id,
         'text':text
 
@@ -91,6 +98,7 @@ export class ImagesuggestPage {
                       this.suggestionList.push(data[0][key]);
 
                     }
+                   
                   
 
                 }
@@ -105,7 +113,7 @@ export class ImagesuggestPage {
 
   onCancel(event)
   {
-      console.log("ok");
+      this.onInput(event);
   }
 
 
@@ -120,12 +128,13 @@ export class ImagesuggestPage {
                 'frnd_id':this.suggestionList[i]['frnd_id']
  
       }
+      console.log(info);
       
        this.sugServices.imgSugget(data[0],data[1],info).subscribe(data=>{
              if(data['status'])
              {
               
-                
+                console.log(data);
                 this.suggestionList[i]['status']=true;
               }
               

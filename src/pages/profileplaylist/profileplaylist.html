@@ -1,0 +1,64 @@
+
+
+
+<ion-content >
+    <profileheader-temp></profileheader-temp>
+    <div  #bgselector (tap)="removeSelect()">
+
+        </div>
+        
+
+        <ion-row>
+                <div class='profileContainT'>
+            
+                      <storeheader-temp></storeheader-temp>
+                      <div  #bgselector (click)="removeSelect()">
+                  
+                        </div>
+                  
+                        <ion-row>
+                            <ion-col>
+                                <button ion-button clear (tap)="loadMusicP()" >
+                                  Music
+                                </button>
+                      
+                              </ion-col>
+                              <ion-col>
+                      
+                                  <button ion-button clear (tap)="loadPlaylistP()">
+                                      Playlist
+                                    </button>
+                                
+                                </ion-col>
+                        </ion-row>
+                  
+                     
+                    
+                      <!-- here is our dynamic line  "indicator"-->
+                      <div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
+                    
+                     
+                      <ion-row>
+                          <ion-card  *ngFor="let canvas of plyArray; let i=index ">
+                            <div class='cnvasBg' [style.background-image]="'url('+canvas['thmb_src']+')'" (tap)="openPlaylist(i)" (press)="selectMe($event,i)"></div>
+                            <ion-card-content>
+                                <div class='canvasCont'>
+                                  {{canvas['playlist_name']}}
+                                </div>
+                                <div class='contenNo'>
+                                  {{canvas['song_number']}} songs
+                                </div>
+                               
+                              </ion-card-content>
+                          </ion-card>
+                  
+                          <ion-infinite-scroll (ionInfinite)="doInfinitePlaylist($event)">
+                              <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                            </ion-infinite-scroll>
+                  
+                  
+                       </ion-row>
+                </div>
+                </ion-row>
+
+</ion-content>

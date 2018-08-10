@@ -23,6 +23,7 @@ export class VideofavPage {
              private credit:CreditService,
              private sugServices:SuggestionServices) {
                this.video_id=this.navParams.data['video_id'];
+               console.log(this.video_id);
   }
 
   ionViewDidLoad() {

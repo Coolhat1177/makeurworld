@@ -1,0 +1,60 @@
+
+
+
+<ion-content >
+    <profileheader-temp></profileheader-temp>
+
+    <ion-row>
+    <div class='profileContainT'>
+
+          <storeheader-temp></storeheader-temp>
+          <div  #bgselector (click)="removeSelect()">
+      
+            </div>
+      
+            <ion-row>
+                <ion-col>
+                    <button ion-button clear (tap)="loadVideoP()">
+                    Video
+                    </button>
+          
+                  </ion-col>
+                  <ion-col>
+          
+                      <button ion-button clear (tap)="loadFavouriteP()" >
+                          Favourite
+                        </button>
+                    
+                    </ion-col>
+            </ion-row>
+      
+         
+        
+          <!-- here is our dynamic line  "indicator"-->
+         
+        
+         
+          <ion-row padding>
+              <ion-card  *ngFor="let canvas of favArray; let i=index " (tap)="favOpen(i)" (press)="selectMe($event,i)">
+                <div class='cnvasBg' [style.background-image]="'url('+canvas['thum_src']+')'"></div>
+                <ion-card-content>
+                    <div class='canvasCont'>
+                      {{canvas['fav_name']}}
+                    </div>
+                    <div class='contenNo'>
+                      {{canvas['video_no']}} videos
+                    </div>
+                  </ion-card-content>
+              </ion-card>
+      
+              <ion-infinite-scroll (ionInfinite)="doInfiniteFav($event)">
+                  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                </ion-infinite-scroll> 
+      
+      
+           </ion-row>
+
+    </div>
+    </ion-row>
+
+</ion-content>

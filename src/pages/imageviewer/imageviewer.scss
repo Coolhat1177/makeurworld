@@ -1,4 +1,15 @@
 page-imageviewer {
+
+    .viewClose img
+    {
+      width:22px;
+      height:22px;
+    }
+
+    .button-md
+    {
+        padding: 15px;
+    }
     .viewerBg
     {
         background: black;
@@ -47,25 +58,7 @@ page-imageviewer {
         font-size: 1.6em;
     }
 
-    .viewerFooter
-    {
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        z-index: 1;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.4);
-    }
 
-    .viewerFooteropt1 button
-    {
-        width: 100%;;
-    }
-
-    .padding5
-    {
-        padding: 5px;;
-    }
 
     .viewerCenter
     {
@@ -110,6 +103,36 @@ page-imageviewer {
         flex-flow: row;
         width: 100%;
     }
+
+   
+
+}
+
+
+.viewerFooter
+    {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .viewerFooteropt1 button
+    {
+        width: 100%;;
+    }
+
+
+
+
+
+    .padding5
+    {
+        padding: 5px;;
+    }
+
 
     .picPro
     {
@@ -172,9 +195,7 @@ page-imageviewer {
     .viewInfo
     {
         color: white;
+        font-size: .9em;
+        font-weight: bold;
+    letter-spacing: 0.2px;
     }
-
-
-}
-
-

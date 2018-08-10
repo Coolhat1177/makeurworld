@@ -1,0 +1,193 @@
+page-playlistviewer {
+    .fix
+    {
+        position: fixed;
+        top:0px;
+        left: 0px;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .viewClose img
+    {
+      width:22px;
+      height:22px;
+    }
+
+
+    .paddingAr
+    {
+        padding: 50px;
+    }
+
+    .canvasBackg
+    {
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+        position: relative;
+    }
+
+    .canvasTitle
+    {
+        font-size: 1.5em;
+        color: #333;
+        padding: 0px;
+       display:flex;
+       font-weight: 400;
+       
+
+    }
+
+    .canvasTitleIn
+    {
+        width: calc(100% - 80px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+
+
+    .content-md
+    {
+
+        background-color: #eee;
+
+    }
+
+    .canvasHeader
+    {
+        
+        background: white;
+    }
+
+    .canvasTitleOpt
+    {
+        width:40px;
+    }
+
+    .canvasTitleOptB{
+        padding: 0px;
+       
+        margin: 0px;
+        height: auto;
+        
+        
+    }
+
+    .canvasTitleOpt{
+        padding: 10px;
+        
+        font-size: 1.1em;
+        text-align: center;
+       
+    }
+
+    .canvasByIn
+    {
+        display:flex;
+        flex-flow: row;
+    }
+
+    .canvasByIn1
+    {
+        width: 50px;
+        padding: 8px;
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .canvasByIn0
+    {
+        width: calc(100% - 150px);
+        padding: 10px;
+
+    }
+    .canvasCr
+    {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .canvasCr0
+    {
+        width: 25px;;
+    }
+
+    .canvasCr1{
+        width: calc(100% - 25px);
+        padding:5px;
+        padding-top: 0px;
+        padding-left: 10px;
+        font-size: .9em;
+        font-weight: bold;
+        letter-spacing: .3px;
+    }
+
+    .canvasCrT
+    {
+        font-size: .9em;
+        color:#c2c2c2;
+    }
+
+    .canvasBackOpt
+    {
+        position: fixed;
+        top:10px;
+        left: 10px;
+        height: 40px;
+        width: 40px;
+        z-index: 2;
+        font-size: 1.6em;
+        text-align: center
+    }
+    
+    
+    .canvasCr img
+    {
+        width: 28px;
+        height: 28px;;
+        border-radius: 50% 50%;
+
+    }
+
+
+    .updatebox
+    {
+      
+        
+        height: 40vw;
+        border-radius: 8px;
+       position: relative;
+      background-size: cover;
+       box-shadow: 4px 0 2px -2px rgba(0,0,0,0.4);
+    }
+
+
+    .music_name
+    {
+        padding: 10px;
+        padding-bottom: 15px;
+        background: rgba(0,0,0,0.4);
+        color:white;
+        font-weight: normal;
+        text-shadow: 0 0 3px rgba(0,0,0,1);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        text-align: left;
+        width: 100%;
+        border-radius: 0px 0px 8px 8px;
+        overflow: hidden;
+            text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.8em;
+
+    }
+
+
+
+
+}

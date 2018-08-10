@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StoreTabPage } from '../store-tab/store-tab';
-import { ViralTabPage } from '../viral-tab/viral-tab';
+
 import { AddaPage } from '../adda/adda';
 import { MusicplayerPage } from '../musicplayer/musicplayer';
 import { CoverPage } from '../cover/cover';
-import { SearchPage } from '../search/search';
-import { MessagePage } from '../message/message';
-import { RequestPage } from '../request/request';
-import { NotificationPage } from '../notification/notification';
+
 import { UploadPage } from '../upload/upload';
+import { ImageStorePage } from '../image-store/image-store';
+import { ViralImagePage } from '../viral-image/viral-image';
+
 
 /**
  * Generated class for the MainTabPage page.
@@ -25,8 +24,8 @@ import { UploadPage } from '../upload/upload';
 })
 export class MainTabPage {
   cover = CoverPage;
-  store = StoreTabPage;
-  viral = ViralTabPage;
+  store = ImageStorePage;
+  viral = ViralImagePage;
   adda = AddaPage;
   upload=UploadPage;
   musicplayer = MusicplayerPage;
@@ -40,32 +39,6 @@ export class MainTabPage {
 
 
 
-  goToSearch(){
-
-    this.navCtrl.push(SearchPage)
-
-  }
-
-
-  goToMessage(){
-
-    this.navCtrl.push(MessagePage);
-
-  }
-  
-
-  goToRequest(){
-
-    this.navCtrl.push(RequestPage);
-
-  }
-
-
-  goToNotification(){
-
-    this.navCtrl.push(NotificationPage);
-
-  }
 
 
 }

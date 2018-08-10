@@ -1,8 +1,15 @@
-import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController,Slides, ModalController } from 'ionic-angular';
+import { Component,ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController,Slides, ModalController, PopoverController } from 'ionic-angular';
 import { CreditService } from '../../services/CreditService';
 import { ImageStoreService } from '../../services/ImageStoreService';
 import { VideoplayerPage } from '../videoplayer/videoplayer';
+import { StoreHeaderPage } from '../../component/header/storeheader';
+import { HeaderPage } from '../../component/header/header';
+import { ImageOptionPop } from '../popover/imagePopover';
+import { ViralServices } from '../../services/ViralServices';
+import { VideosuggestionPage } from '../videosuggestion/videosuggestion';
+import { VideofavPage } from '../videofav/videofav';
+import { FavouritePage } from '../favourite/favourite';
 
 @IonicPage()
 @Component({
@@ -10,50 +17,58 @@ import { VideoplayerPage } from '../videoplayer/videoplayer';
   templateUrl: 'video-store.html',
 })
 export class VideoStorePage {
-  @ViewChild('SwipedTabsSlider') SwipedTabsSlider: Slides ;
+ 
+  @ViewChild("bgselector") bgselector:ElementRef;
+  selecEle:any;
 
-  SwipedTabsIndicator :any= null;
-  tabs:any=[];
+ 
   videoArray:any=[];
+  favArray:any=[];
 
  
   constructor(public navCtrl: NavController,
               private modelCtrl:ModalController,
               private credit:CreditService,
-              private videoS:ImageStoreService) {
-  	this.tabs=["Video Play","Favourite"];
+              private videoS:ImageStoreService,
+              private popCtrl:PopoverController,
+              private iServices:ViralServices,) {
+  
   }
 
-  ionViewWillEnter(){
-      this.SwipedTabsSlider.slideTo(0,100);
-  }
+  
+  ionViewDidLoad() {
  
-  ionViewDidEnter() {
-    this.SwipedTabsIndicator = document.getElementById("indicator2");
     this.loadStor();
   }
 
-  selectTab(index) {    
-    this.SwipedTabsIndicator.style.webkitTransform = 'translate3d('+(100*index)+'%,0,0)';
-    this.SwipedTabsSlider.slideTo(index, 500);
+  loadVideoP(){
+    this.navCtrl.setRoot(VideoStorePage);
+
   }
 
-  updateIndicatorPosition() {
-      // this condition is to avoid passing to incorrect index
-  	if( this.SwipedTabsSlider.length()> this.SwipedTabsSlider.getActiveIndex())
-  	{
-  		this.SwipedTabsIndicator.style.webkitTransform = 'translate3d('+(this.SwipedTabsSlider.getActiveIndex() * 100)+'%,0,0)';
-  	}
-    
+
+  loadFavouriteP()
+  {
+    this.navCtrl.setRoot(FavouritePage);
+
+  }
+
+
+
+  swipeEvent(ev)
+  {
+   
+    if(ev.direction==2)
+    {
+     
+     this.loadFavouriteP();
+     
     }
 
-  animateIndicator($event) {
-  	if(this.SwipedTabsIndicator)
-   	    this.SwipedTabsIndicator.style.webkitTransform = 'translate3d(' + (($event.progress* (this.SwipedTabsSlider.length()-1))*100) + '%,0,0)';
+   
+
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VideoStorePage');
-  }
+
 
 
 
@@ -69,9 +84,9 @@ export class VideoStorePage {
             {
               for(let key in data[0])
               {
-                this.videoS.vidArry.push(data[0][key]);
+                this.videoArray.push(data[0][key]);
               }
-              this.videoArray=this.videoS.getListVid();
+            
 
             }
       });
@@ -92,17 +107,18 @@ export class VideoStorePage {
   {
 
     this.credit.check().then(data=>{
+      console.log()
 
       // console.log(this.videoS.vidArry[this.videoS.vidArry.length -1]['']);
-      let info={'l_t': this.videoS.vidArry[this.videoS.vidArry.length -1]['video_load']}
+      let info={'l_t': this.videoArray[this.videoArray.length -1]['video_load']}
       this.videoS.moreLoadVid(data[0],data[1],info).subscribe(data=>{
             if(data['status'])
             {
               for(let key in data[0])
               {
-                this.videoS.vidArry.push(data[0][key]);
+                this.videoArray.push(data[0][key]);
               }
-              // this.imageArray=this.imgStore.getList();
+              // this.videoArray=this.imgStore.getList();
 
             }
 
@@ -118,7 +134,7 @@ export class VideoStorePage {
 
 
 
-  playVideo(id){
+  playVideo(i){
 
 
     let video=[];
@@ -135,8 +151,19 @@ export class VideoStorePage {
               }
 
               const profilePick=this.modelCtrl.create(VideoplayerPage,{vidArr:video,
-                video_id:id});
+                video:this.videoArray[i],add_status:false,delet_status:true});
              profilePick.present();
+             profilePick.onDidDismiss((data)=>{
+              console.log()
+                if (data !=null && data['data'] ){
+                  this.videoArray.splice(i,i+1);
+                  
+                }
+              
+                   
+            });
+        
+
              
               
 
@@ -150,6 +177,183 @@ export class VideoStorePage {
 
 
   }
+
+
+  // press code ........................................................................................
+
+
+
+  selectMe(event,i){
+    console.log(this.videoArray[i]);
+    let bgS=this.bgselector.nativeElement;
+    bgS.classList.add("selectorBg");
+   this.selecEle=event.target || event.srcElement || event.currentTarget;
+   this.selecEle.classList.add("selectElem");
+
+
+      this.credit.check().then(data=>{
+               
+                let info={
+                  'video_id':this.videoArray[i]['video_id'],
+                
+                }
+              
+                this.iServices.checkStatusV(data[0],data[1],info).subscribe(data=>{
+                  if(data['status'])
+                  {
+                    
+                        const pop=this.popCtrl.create(ImageOptionPop,{
+                          media_id:this.videoArray[i]['video_id'],
+                          add_status:false,
+                          delete_status:true,
+                          'activity_id':this.videoArray[i]['activity_id'],
+                          suggestStatus:this.vrialVidSug,
+                          // addStatus:this.viralAddType,
+                          moreOption:this.viralMoreOption,
+                          full_name:this.videoArray[i]['full_name'],
+                          pic_url:this.videoArray[i]['pic_url'],
+                          user_id:this.videoArray[i]['user_id'],
+                         
+                          deleteFn:this.DeleteFromStore,
+                        });
+                        pop.present({ev:event});
+                        pop.onDidDismiss((data)=>{
+                          console.log()
+                            if (data !=null && data['data'] ){
+                              this.videoArray.splice(i,i+1);
+                              
+                            }
+                            this.removeSelect();
+                               
+                        });
+                    
+
+                  }
+                  
+
+                
+            });
+
+                
+       });
+  
+
+
+  
+
+
+  }
+
+
+  vrialVidSug(video_id,modelCtrl){
+   
+    const load=modelCtrl.create(VideosuggestionPage,{video_id:video_id});
+    load.present();
+    
+  
+    
+  }
+
+
+
+  removeSelect(){
+    let bgS=this.bgselector.nativeElement;
+    bgS.classList.remove("selectorBg");
+    this.selecEle.classList.remove("selectElem");
+  }
+
+
+
+  DeleteFromStore(video_id,credit,service,alertBox):Promise<boolean>{
+  
+    console.log(video_id);
+
+    return new Promise(resolve=>{
+      
+      
+     
+      let alert = alertBox.create({
+        title: 'Delete',
+        message: 'Do you want to delete this video from Store',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+             resolve(false);
+            }
+           
+          },
+          {
+            text: 'Ok',
+            handler: () => {
+              credit.check().then(data=>{
+  
+                                                  
+                let info={'video_id': video_id}
+                
+                service.deleteVideo(data[0],data[1],info).subscribe(data=>{
+                      if(data['status'])
+                      {
+                        
+                        
+                        resolve(true);
+                       
+                        
+                      }
+                     
+                    
+          
+                      
+                });
+            });
+              
+            }
+          }
+        ]
+      });
+      alert.present();
+
+    });
+  }
+
+
+
+  viralMoreOption(video_id,actionSheet,modelCtrl,fnc,credit,viralS,alertM){
+
+    const actSheet=actionSheet.create({
+     
+      buttons:[
+        {
+          text:"Add to Favourite",
+          handler:()=>{
+
+            const profilePick=modelCtrl.create(VideofavPage,{'video_id':video_id});
+            profilePick.present();
+            profilePick.onDidDismiss(()=>{
+        
+             
+              
+            });
+            
+          }
+        },
+     
+        {
+          text:'Cancel',
+          role:'cancel'
+        }
+      ]
+    });
+
+    actSheet.present();
+
+
+  }
+
+
+
+
 
 
 

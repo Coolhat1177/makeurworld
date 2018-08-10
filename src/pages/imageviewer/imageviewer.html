@@ -14,9 +14,13 @@
                   <ion-icon name="paper-plane"></ion-icon>
 
                 </button>
-                <button ion-button clear  (click)="addType()" class='viewClose'>
+                <button ion-button clear  (click)="addType()" class='viewClose' *ngIf="add_status">
                     <ion-icon name="add"></ion-icon>
                   </button>
+                  <button ion-button clear  (click)="deleteFromStore()" class='viewClose' *ngIf="delete_status">
+                      <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                    </button>
+
                   <button ion-button clear  (click)="moreOption()" class='viewClose'>
                        <ion-icon ios="ios-more" md="md-more"></ion-icon>
 
@@ -43,7 +47,7 @@
                 <div class='infoPro'>
                   <div class='infoProIn'>
                     <div class='infoProIn1'> {{imgInfo['full_name']}}</div>
-                    <div class='infoProIn2'> Detail</div>
+                    <div class='infoProIn2' (tap)="detail_load()"> Detail</div>
                     </div>
                   <div class='infoProIn0'>
                       {{imgInfo['about']}}

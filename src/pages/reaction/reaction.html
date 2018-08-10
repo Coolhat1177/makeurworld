@@ -8,7 +8,7 @@
                   <ion-icon name="arrow-back"></ion-icon>
                 </button>
           </div>
-      Reaction
+      Reaction({{total}})
   
       </ion-title>
   </ion-navbar>
@@ -25,7 +25,7 @@
                       </ion-avatar>
                       <h4>{{user['full_name']}}</h4>
                      
-                      <ion-icon [name]="iconArray[user['rating_val']]" item-end class='iconSend'></ion-icon>
+                      <img [src]="iconArray[user['rating_val']]" item-end class='iconSend'/>
                      
                     </ion-item>
                   </ion-list>

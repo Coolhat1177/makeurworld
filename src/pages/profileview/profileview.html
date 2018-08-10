@@ -1,0 +1,382 @@
+
+<ion-content class='containR'>
+  <ion-row>
+    <div class='profilrTop'>
+      <div class="coverPic" >
+          <div class="coverPicIn">
+            <img [src]="basicInfo['bg_url']" />
+          </div>
+          <div class='userName'>{{basicInfo['full_name']}}</div>
+      </div>
+
+      <div class='profileAr'>
+        <div class='profileArIn'>
+          <div class='profilePic'>
+              <div class='profilePicIn'>
+                  <img [src]="basicInfo['pic_url']" />
+              </div>
+          </div>
+          <div class='profileAr0'>
+           
+          </div>
+
+          <div class='profileAr1'>
+              <button ion-button clear > Friend</button>
+          </div>
+
+          <div class='profileAr1'>
+              <button ion-button clear> Attach</button>
+          </div>
+
+          <div class='profileAr2'>
+              <button ion-button clear> 
+                  <ion-icon name="chatbubbles"></ion-icon>
+              </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class='InfoOvervieww'>
+          <ion-row class="tagLine" *ngIf="basicInfo['abt_status']">
+             {{basicInfo['about']}}
+          </ion-row>
+          <ion-row class='workPlace' *ngIf="basicInfo['work_status']">
+
+          </ion-row>
+          
+         
+          <ion-row class='loaction' *ngIf="basicInfo['add_true']">
+            {{basicInfo['address']}}
+          </ion-row>
+          <ion-row class='loaction'>
+            <ion-col text-right >
+                <button ion-button clear>
+                    Info
+                  </button>
+              </ion-col>
+          </ion-row>
+            
+      </div>
+      <div class='optionPro'>
+          <ion-row>
+              <ion-col text-center>
+                  <button ion-button clear (tap)="loadRecentProfile()">
+                    Recent
+                    </button>
+              </ion-col >
+              <ion-col text-center>
+                  <button ion-button clear (tap)="loadStoreFriend()">
+                    Store
+                  </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button ion-button clear (tap)="loadProfileFriend()">
+                    Friends
+                    </button>
+              </ion-col>
+              <ion-col text-center>
+                  <button ion-button clear>
+                    Addas
+                  </button>
+              </ion-col>
+             
+            </ion-row>
+      </div>
+
+    </div>
+
+  </ion-row>
+
+  <ion-row>
+    <div class='layer1'>
+      <div class='layer1In'>
+        <div class='layerTop'>
+          Photos
+        </div>
+        <div  class='layerCenter'>
+          
+                <div class="flexbin flexbin-margin">
+                  <div *ngFor="let image of photoArray;let i=index" (tap)="imageZoomViral(i)" (press)="selectMe($event,i)">
+                      <img src="{{image['image_url']}}" />
+                  </div>
+                 
+              </div>
+            
+
+        </div>
+        <div class='layerButton' text-center>
+            <button ion-button clear (tap)="loadStoreFriend()">
+                More..
+              </button>
+        </div>
+      </div>
+
+    </div>
+  </ion-row>
+
+
+  <ion-row>
+      <div class='layer1'>
+        <div class='layer1In'>
+          <div class='layerTop'>
+            Canvas
+          </div>
+          <div  class='layerCenter'>
+              <ion-row>
+                  <ion-card  *ngFor="let canvas of cnavasArray; let i=index ">
+                    <div class='cnvasBg' [style.background-image]="'url('+canvas['image_url']+')'" (click)="openCanvas(i)"></div>
+                    <ion-card-content>
+                        <div class='canvasCont'>
+                          {{canvas['imgb_titile']}}
+                        </div>
+                        <!-- <div class='contenNo'>
+                            {{canvas['total_img']}} images
+                          </div> -->
+                       
+                      </ion-card-content>
+                  </ion-card>
+        
+                
+        
+        
+               </ion-row>
+
+
+          </div>
+          <div class='layerButton' text-center>
+              <button ion-button clear (tap)="loadStoreFriend()">
+                  More..
+                </button>
+          </div>
+        </div>
+  
+      </div>
+    </ion-row>
+
+
+    <ion-row>
+        <div class='layer1'>
+          <div class='layer1In'>
+            <div class='layerTop'>
+              Music
+            </div>
+            <div  class='layerCenter'>
+              <ion-row>
+        
+        
+                <ion-col col-6 col-md-4 col-xl-3 padding *ngFor="let music of musicArray; let i=index">
+                    <div class='updateboxM' [style.background-image]="'url('+music['thmb_src']+')'" (click)="playMusicViral(music['music_id'])">
+                      
+                      <div class='music_name'> <ion-icon name='musical-notes'></ion-icon> {{music['music_name']}}</div>
+                    </div>
+          
+                  </ion-col>
+        
+                
+            </ion-row>
+            </div>
+            <div class='layerButton' text-center>
+                <button ion-button clear (tap)="loadMusicProfile()">
+                    More..
+                  </button>
+            </div>
+          </div>
+    
+        </div>
+      </ion-row>
+
+
+      <ion-row>
+          <div class='layer1'>
+            <div class='layer1In'>
+              <div class='layerTop'>
+                Playlist
+              </div>
+              <div  class='layerCenter'>
+                  <ion-row>
+                      <ion-card  *ngFor="let canvas of playlistArray; let i=index ">
+                        <div class='cnvasBg' [style.background-image]="'url('+canvas['thmb_src']+')'" (click)="openPlaylist(i)"></div>
+                        <ion-card-content>
+                            <div class='canvasCont'>
+                              {{canvas['playlist_name']}}
+                            </div>
+                            <!-- <div class='contenNo'>
+                              {{canvas['song_number']}} songs
+                            </div> -->
+                           
+                          </ion-card-content>
+                      </ion-card>
+            
+                    
+            
+            
+                   </ion-row>
+
+
+              </div>
+              <div class='layerButton' text-center>
+                  <button ion-button clear (tap)="loadMusicProfile()">
+                      More..
+                    </button>
+              </div>
+            </div>
+      
+          </div>
+        </ion-row>
+
+
+        <ion-row>
+            <div class='layer1'>
+              <div class='layer1In'>
+                <div class='layerTop'>
+                  Video
+                </div>
+                <div  class='layerCenter'>
+                    <ion-row>
+        
+        
+                 
+                        <ion-col col-6 col-md-4 col-xl-3 class='videoBox'  *ngFor="let video of videoArray; let i=index" >
+                            <div class='updateboxV' >
+                              <div class='videoThmb' [style.background-image]="'url('+video['thum_src']+')'" (click)="playVideoViral(video['video_id'])">
+                
+                              </div>
+                              <div class='videoName'> <ion-icon name="videocam"></ion-icon> {{video['video_name']}}</div>
+                              
+                             
+                            </div>
+                  
+                          </ion-col>
+                
+                         
+                    </ion-row>
+                
+                </div>
+                <div class='layerButton' text-center>
+                    <button ion-button clear (tap)="loadVideoProfile()">
+                        More..
+                      </button>
+                </div>
+              </div>
+        
+            </div>
+          </ion-row>
+
+          <ion-row>
+              <div class='layer1'>
+                <div class='layer1In'>
+                  <div class='layerTop'>
+                   Favourite
+                  </div>
+                  <div  class='layerCenter'>
+                      <ion-row>
+                          <ion-card  *ngFor="let canvas of favArray; let i=index " (click)="favOpen(i)">
+                            <div class='cnvasBg' [style.background-image]="'url('+canvas['thum_src']+')'"></div>
+                            <ion-card-content>
+                                <div class='canvasCont'>
+                                  {{canvas['fav_name']}}
+                                </div>
+                                <div class='contenNo'>
+                                  <!-- {{canvas['video_no']}} videos -->
+                                </div>
+                              </ion-card-content>
+                          </ion-card>
+                
+                
+                       </ion-row>
+
+                  </div>
+                  <div class='layerButton' text-center>
+                      <button ion-button clear (tap)="loadVideoProfile()">
+                          More..
+                        </button>
+                  </div>
+                </div>
+          
+              </div>
+            </ion-row>
+
+
+            <ion-row>
+                <div class='layer1'>
+                  <div class='layer1In'>
+                    <div class='layerTop'>
+                      Friends
+                    </div>
+                    <div  class='layerCenter'>
+                        <ion-row>
+       
+        
+        
+                            <ion-col col-6 col-md-4 col-xl-3 class='frndCnt'  *ngFor="let friend of friendArray; let i=index" >
+                                <div class='updateboxF' >
+                                  <div class='frndBg' [style.background-image]="'url('+friend['bg_url']+')'" >
+                  
+                                  </div>
+                                  <div class='frndproCnt'> 
+                                      <div class='frndproCnt0'>
+                                        <div class='frndproCnt0In'>
+                                          <img [src]="friend['pic_url']" />
+                                        </div>
+                                      </div>
+                                      <div class='frndproCnt1'></div>
+                                      <div class='frndproCnt2'>
+                                        <button ion-buttom clear (tap)="loadAttachOpt(i)">
+                                            <ion-icon name="more"></ion-icon>
+                                        </button>
+                                      </div>
+                                  </div>
+                                  <div class='frnd_name'> 
+                                    <div>{{friend['full_name']}}</div> 
+                                    <div class='frnd_abt'>  {{friend['about']}}</div>
+                                  </div>
+                                 
+                                  
+                                 
+                                </div>
+                                <button ion-button clear item-end *ngIf="friend['req_s']==0" (click)="acceptRequest(i)">Accept Request</button>
+                                <button  ion-button clear item-end *ngIf="friend['req_s']==2"  (click)="cancelRequest(i)">Cancel Request</button>
+                                <button class='suc' ion-button clear item-end *ngIf="friend['req_s']==1" >Friend</button>
+                                <button  ion-button clear item-end *ngIf="friend['req_s']==4" (click)="addFriend(i)" >Add Friend</button>
+                              </ion-col>
+                          
+                         
+                        </ion-row>
+                  
+
+                    </div>
+                    <div class='layerButton' text-center>
+                        <button ion-button clear (tap)="loadProfileFriend()">
+                            More..
+                          </button>
+                    </div>
+                  </div>
+            
+                </div>
+              </ion-row>
+
+
+              <ion-row>
+                  <div class='layer1'>
+                    <div class='layer1In'>
+                      <div class='layerTop'>
+                        Adda
+                      </div>
+                      <div  class='layerCenter'></div>
+                      <div class='layerButton' text-center>
+                          <button ion-button clear>
+                              More..
+                            </button>
+                      </div>
+                    </div>
+              
+                  </div>
+                </ion-row>
+
+                <ion-row padding>
+                   
+                  </ion-row>
+                
+
+</ion-content>

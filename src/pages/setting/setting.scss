@@ -1,0 +1,108 @@
+page-setting {
+
+    .settingBg
+    {
+        background: #eee;
+    }
+
+
+    .layerSetting
+    {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .rowC .input-cover
+    {
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .flex1In
+    {
+        padding: 5px;
+    }
+
+    .valueIn
+    {
+        padding: 5px;
+        padding-top: 0px;
+    }
+
+    .setMarginTop
+    {
+        margin-top: 10px;
+    }
+
+    .border_bottom{
+        border-bottom: 1px solid rgba(0,0,0,0.2)
+    }
+
+    .setMarginTop1
+    {
+        margin-top: 20px;
+    }
+
+    .rowC input{
+        width: 100%;
+        border-width: 0px;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        padding: 5px;
+    }
+    .rowCF
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .rowCF select
+    {
+        width: 100%;
+        padding: 5px;
+        border-width: 0px;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        background: transparent;
+    }
+
+    .wrong{
+        color:red !important;
+    }
+
+    .rowCF textarea
+    {
+        width: 100%;
+        border-radius: 8px;
+        height: 70px;;
+    }
+
+    .label-md
+    {
+        color:black;
+    }
+
+}
+
+.rowC
+{
+    width:100%;
+    position: relative;
+}
+
+.flex
+{
+    display: flex;
+    float: row;
+}
+
+.flex1
+{
+    flex: 1;
+}
+
+.flex0
+{
+   width: 70px; 
+}
+
+
+

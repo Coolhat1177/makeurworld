@@ -33,7 +33,7 @@ export class RequestService{
 
     acceptRequest(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/message_new_show";
+        let url="http://coolhat/home/main/mem_req_accept_pro";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -44,7 +44,7 @@ export class RequestService{
 
     IgnoreRequest(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/mem_req_ignore";
+        let url="http://coolhat/home/main/mem_req_ignore";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -54,7 +54,17 @@ export class RequestService{
     
     cancelRequest(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/mem_req_can";
+        let url="http://coolhat/home/main/mem_req_can";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    removeFriend(user:any,loged:any,info){
+       
+        let url="http://coolhat/home/main/mem_req_rem";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -65,10 +75,58 @@ export class RequestService{
 
     AddFriend(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/mem_req_can";
+        let url="http://coolhat/home/main/frnd_req";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    AttachFriend(user:any,loged:any,info){
+       
+        let url="http://coolhat/home/main/attach_req";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    DettachFriend(user:any,loged:any,info){
+       
+        let url="http://coolhat/home/main/detach_req";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
+
+    loadFriend(user:any,loged:any){
+
+        let url="http://coolhat/home/main/frnd_mem_all";
+
+       return this.con.postDataFetch(user,loged,url);
+
+
+    }
+
+    loadAttached(user:any,loged:any){
+
+        let url="http://coolhat/home/main/attach_mem_all";
+
+       return this.con.postDataFetch(user,loged,url);
+
+
+    }
+
+
+    loadAttache(user:any,loged:any){
+
+        let url="http://coolhat/home/main/attaches_mem_all";
+
+       return this.con.postDataFetch(user,loged,url);
 
 
     }

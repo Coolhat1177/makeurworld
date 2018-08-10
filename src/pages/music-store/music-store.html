@@ -1,35 +1,34 @@
-<ion-header>
+<ion-header class='mainHeaderTop'>
 
   <ion-navbar>
-    <ion-title>MusicStore</ion-title>
+    <header-temp></header-temp>
   </ion-navbar>
 
 </ion-header>
 
+
+
 <ion-content >
+    <storeheader-temp></storeheader-temp>
+    <div  #bgselector (tap)="removeSelect()">
 
-  <ion-segment  class="SwipedTabs-tabs"  >
-    <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
-    [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
-      {{tab}}
-    </ion-segment-button>
-  </ion-segment>
+      </div>
 
-  <!-- here is our dynamic line  "indicator"-->
-  <div id='indicator1' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+      <ion-segment  (tap)="loadMusicP()"  >
+          <ion-segment-button>
+            Music
+          </ion-segment-button>
+          <ion-segment-button  (tap)="loadPlaylistP()">
+            Playlist
+            </ion-segment-button>
+           
+        </ion-segment>
 
-  <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-              (ionSlideWillChange)="updateIndicatorPosition()"
-              (ionSlideDidChange)="updateIndicatorPosition()"
-              (pan)="updateIndicatorPosition()"
-              [pager]="false"
-        >
-    <ion-slide>
       <ion-row>
         
         
-          <ion-col col-6 col-md-4 col-xl-3 padding *ngFor="let music of musicArray; let i=index">
-              <div class='updatebox' [style.background-image]="'url('+music['thmb_src']+')'" (click)="playMusic(music['music_id'])">
+          <ion-col col-6 col-md-4 col-xl-3  *ngFor="let music of musicArray; let i=index">
+              <div class='updateboxM' [style.background-image]="'url('+music['thmb_src']+')'" (tap)="playMusic(i)" (press)="selectMe($event,i)">
                 
                 <div class='music_name'> <ion-icon name='musical-notes'></ion-icon> {{music['music_name']}}</div>
               </div>
@@ -40,9 +39,6 @@
                 <ion-infinite-scroll-content></ion-infinite-scroll-content>
               </ion-infinite-scroll>
       </ion-row>
-    </ion-slide>
-    <ion-slide>
-      <h1> PlayList </h1>
-    </ion-slide>
-  </ion-slides>
+  
+
 </ion-content>

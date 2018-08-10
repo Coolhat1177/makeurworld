@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>
+        <div class='viewerTopOpt'>
+            <button ion-button clear (click)="dismissView()"  class='viewClose'>
+                <ion-icon name="arrow-back"></ion-icon>
+              </button>
+        </div>
+     Canvas Suggest
+
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+      <ion-searchbar (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)" class='searchbarRadius'></ion-searchbar>
+  </ion-row>
+  <ion-row padding>
+      <ion-list>
+          <ion-item *ngFor="let user of suggestionList; let i=index">
+            <ion-avatar item-start>
+              <img [src]="user['pic_url']">
+            </ion-avatar>
+            <h2>{{user['full_name']}}</h2>
+            <button ion-button clear item-end *ngIf="!user['status']" (click)=suggestCnv(i)>Suggest</button>
+            <button class='suc' ion-button clear item-end *ngIf="user['status']">Suggested</button>
+          </ion-item>
+        </ion-list>
+  </ion-row>
+
+</ion-content>

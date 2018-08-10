@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ImageStorePage } from '../image-store/image-store';
 import { MusicStorePage } from '../music-store/music-store';
 import { VideoStorePage } from '../video-store/video-store';
-
+import { HeaderPage } from '../../component/header/header';
 
 @IonicPage()
 @Component({

@@ -2,18 +2,61 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-row>
-        <ion-col></ion-col>
-
-        <ion-col text-right>
-           <ion-item>
-              <ion-label text-right>{{mode}}</ion-label>
-              <ion-toggle checked='true'  (ionChange)="onToggle($event)"></ion-toggle>
-           </ion-item>
+      <div [ngSwitch]="typemode">
+            <ion-row *ngSwitchCase="'upload'">
+      
+                    <ion-col>
+                           
+                            <button ion-button clear (tap)="CloseView()" class='viewClose' >
+                                    <ion-icon name="arrow-back"></ion-icon>
+                            </button>
+                           
+                    </ion-col>
             
-        </ion-col>
+                    <ion-col text-right>
+                       <ion-item class='modeS'>
+                          <ion-label text-right>{{mode}}</ion-label>
+                          <ion-toggle checked='true'  (ionChange)="onToggle($event)"></ion-toggle>
+                       </ion-item>
+                        
+                    </ion-col>
+            
+                </ion-row>
+                <ion-row *ngSwitchCase="'detail'">
+                        <ion-col>
+                               
+                                <button ion-button clear (tap)="CloseView()"  class='viewClose' >
+                                        <ion-icon name="arrow-back"></ion-icon>
+                                </button>
+                        </ion-col>
+                
+      
+                        <ion-col>
+                                <button ion-button clear (tap)="openEdit()" *ngIf="!editAble" >
+                                        <ion-icon name="create" ></ion-icon>
+                                </button>
 
-    </ion-row>
+                                <button ion-button clear (tap)="openEdit()" *ngIf="editAble">
+                                       Cancel
+                                </button>
+                               
+                        </ion-col>
+                
+                        <ion-col text-right>
+                             
+                                <ion-item class='modeS'>
+                                        <ion-label text-right>{{mode}}</ion-label>
+                                        <ion-toggle [(ngModel)]="data"  (ionChange)="onToggle($event)" *ngIf="editAble"  ></ion-toggle>
+                                     </ion-item>
+                                   
+                              
+                          
+                            
+                        </ion-col>
+                
+                    </ion-row>
+      </div>
+    
     
   </ion-navbar>
 
@@ -21,6 +64,9 @@
 
 
 <ion-content padding (click)="closeEmoBox()">
+        <div [ngSwitch]="typemode">
+            <div *ngSwitchCase="'upload'">
+    <div></div>
   <div class='publishContainerIn'>
       <ion-scroll scrollX="true" class="wide-as-needed" >
           <div *ngFor="let image of upImg; let i=index" class='imageC'>
@@ -55,45 +101,188 @@
         </div>
   </div>
    
-   
+</div>
+
+<div *ngSwitchCase="'detail'">
+        <ion-row>
+                <ion-list class='details'>
+                        <ion-item>
+                          
+                                <ion-avatar item-start>
+                                        <img [src]="info['pic_url']">
+                                      </ion-avatar>
+                                      <h2>{{info['full_name']}}</h2>
+                            </ion-item>
+
+                         <ion-item>
+                             <div class="flex" >
+                                 <div class="labelD editFor">
+                                        About
+                                 </div>
+                                 <div class='detailEdit' *ngIf="editAble">
+                                        <button ion-button clear (tap)="openAbout()">
+                                                <ion-icon name="create"></ion-icon>
+                                        </button>
+                                 </div>
+                                 
+                                
+                             </div>
+                             <div [innerHTML]="info['about']" class='labelV'>
+
+                             </div>
+
+                             <div class="describeC" *ngIf="aboutEdit">
+                                    <div>
+                                        <div class='commentTextbox' contenteditable="true"
+                                        data-placeholder="Type here...."
+                                        #describe  [innerHTML]="info['about']"> 
+                                        </div>
+                               
+                                      </div>
+                                      <div>
+
+                                            <button ion-button clear (tap)="openAbout()">Cancel</button>
+
+                                      </div>
+                                </div>
+                            
+                           </ion-item>    
+
+                         <ion-item>
+                                <div class="flex" >
+                                        <div class="labelD editFor">
+                                               Location
+                                        </div>
+                                        <div class='detailEdit' *ngIf="editAble">
+                                               <button ion-button clear (tap)="openLocation()">
+                                                       <ion-icon name="create"></ion-icon>
+                                               </button>
+                                        </div>
+                                        
+                                       
+                                    </div>
+                                    <div >
+                                            <div class='labelV ' >
+                                                    {{info['full_add']}}
+                                            </div>
+                                            <div >
+                                                <div>
+                                                        <button ion-button clear (tap)="removeLoction()" *ngIf="removeLoct">
+                                                                Remove
+                                                        </button>
+                                                </div>
+                                                    
+                                            </div>
+                                    </div>
+                                    
+                                    <div class='rowC' *ngIf="locationEdit">
+                                            <location-temp (loactionEmitter)="saveLocation($event)"></location-temp>
+                                        <div>
+                                                <button ion-button clear (tap)="openLocation()">Cancel</button>
+                                        </div>
+                                           
+                                    </div>
+                         
+                        </ion-item>
+
+                        <ion-item>
+                                <div class="labelD">
+                                        Uploaded
+                                    </div>
+                                    <div  class='labelV'>
+                                            {{info['u_time']}}
+                                    </div>
+                          
+                        </ion-item>
+             </ion-list>
+           
+        </ion-row>
+    </div>
 
 
+
+
+</div>
 </ion-content>
+
+
 <ion-footer >
-  <ion-row>
-    <ion-col>
-        <button ion-button clear class='uploadOpt' >
-        <ion-icon name="photos" ></ion-icon> 
-        </button>
-        <button ion-button clear class='uploadOpt' (click)="addLocation()">
-            <ion-icon name="pin" ></ion-icon> 
-            </button>
-            <button ion-button clear class='uploadOpt' (click)="openEmo()">
-                <ion-icon name="happy"></ion-icon>
-              </button>
-    </ion-col>
-    <ion-col text-right>
-        <button ion-button clear (click)="addLocation()" class='uploadOpt1'>
-        Publish
-        </button>
-    </ion-col>
-  </ion-row>
-  <ion-row *ngIf="emoCont" >
-      
-    <ion-row col-12 class="emoRowIcon">
-        <ion-col *ngFor="let icon of icon1;let i=index" class='emoIcon' (click)="setEmoDisplay(i)">
-            <img [src]="link+icon"/>
-        </ion-col>
-                  </ion-row>
-                  <ion-row>
-                  <div class='emoContainer'>
-                          <span  *ngFor="let icon of emoIcon; let i=index" (click)="addEmojs(i)">
-                            <img [src]='link+icon'>
-                          </span>
-                  </div>
-                   
-                  </ion-row>
+    <div [ngSwitch]="typemode">
+        <div *ngSwitchCase="'upload'">
+                <ion-row >
+                        <ion-col>
+                            <button ion-button clear class='uploadOpt' >
+                            <ion-icon name="photos" ></ion-icon> 
+                            </button>
+                            <button ion-button clear class='uploadOpt' (click)="addLocation()">
+                                <ion-icon name="pin" ></ion-icon> 
+                                </button>
+                                <button ion-button clear class='uploadOpt' (click)="openEmo()">
+                                    <ion-icon name="happy"></ion-icon>
+                                </button>
+                        </ion-col>
+                        <ion-col text-right>
+                            <button ion-button clear (click)="addLocation()" class='uploadOpt1'>
+                            Publish
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row *ngIf="emoCont" >
+                        
+                        <ion-row col-12 class="emoRowIcon">
+                            <ion-col *ngFor="let icon of icon1;let i=index" class='emoIcon' (click)="setEmoDisplay(i)">
+                                <img [src]="link+icon"/>
+                            </ion-col>
+                                    </ion-row>
+                                    <ion-row>
+                                    <div class='emoContainer'>
+                                            <span  *ngFor="let icon of emoIcon; let i=index" (click)="addEmojs(i)">
+                                                <img [src]='link+icon'>
+                                            </span>
+                                    </div>
+                                    
+                                    </ion-row>
+        
+        
+                    </ion-row>
+        </div>
 
 
-</ion-row>
+        <!-- switch case chnage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, -->
+            
+            <div *ngSwitchCase="'detail'" >
+                    <ion-row *ngIf="editAble">
+                            <ion-col>
+                               
+                                
+                                    <button ion-button clear class='uploadOpt' (click)="openEmo()" *ngIf="aboutEdit">
+                                        <ion-icon name="happy"></ion-icon>
+                                    </button>
+                            </ion-col>
+                            <ion-col text-right>
+                                <button ion-button clear (click)="saveChange()" class='uploadOpt1'>
+                                Change
+                                </button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row *ngIf="emoCont" >
+                            
+                            <ion-row col-12 class="emoRowIcon">
+                                <ion-col *ngFor="let icon of icon1;let i=index" class='emoIcon' (click)="setEmoDisplay(i)">
+                                    <img [src]="link+icon"/>
+                                </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                        <div class='emoContainer'>
+                                                <span  *ngFor="let icon of emoIcon; let i=index" (click)="addEmojs(i)">
+                                                    <img [src]='link+icon'>
+                                                </span>
+                                        </div>
+                                        
+                                        </ion-row>
+            
+            
+                        </ion-row>
+                    </div>
+    </div>
 </ion-footer>

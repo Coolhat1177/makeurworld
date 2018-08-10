@@ -1,33 +1,44 @@
-<ion-header>
+<ion-header class='mainHeaderTop'>
 
-  <ion-navbar>
-    <ion-title>imageStore</ion-title>
+  <ion-navbar >
+    <header-temp></header-temp>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content >
 
-    <ion-segment  class="SwipedTabs-tabs"  >
-      <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
-      [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
-        {{tab}}
-      </ion-segment-button>
-    </ion-segment>
+
+<ion-content >
+  <storeheader-temp></storeheader-temp>
+    <div  #bgselector (click)="removeSelect()">
+
+      </div>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button clear (tap)="loadPhotoP()">
+            Photo
+          </button>
+
+        </ion-col>
+        <ion-col>
+
+            <button ion-button clear (tap)="loadCanvasP()" >
+                Canvas
+              </button>
+          
+          </ion-col>
+      </ion-row>
+
+   
   
     <!-- here is our dynamic line  "indicator"-->
-    <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
+    <div id='indicator' class="SwipedTabs-indicatorSegment" ></div>
   
-    <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-                (ionSlideWillChange)="updateIndicatorPosition()"
-                (ionSlideDidChange)="updateIndicatorPosition()"
-                (pan)="updateIndicatorPosition()"
-                [pager]="false"
-          >
-      <ion-slide>
+   
         <ion-row padding>
           <div class="flexbin flexbin-margin">
-            <div *ngFor="let image of imageArray" (click)="imageZoom(image['image_id'])">
+            <div *ngFor="let image of imageArray;let i=index" (tap)="imageZoom(i)" (press)="selectMe($event,i)">
                 <img src="{{image['image_url']}}" />
             </div>
            
@@ -38,12 +49,7 @@
         </ion-infinite-scroll>
 
         </ion-row>
-      </ion-slide>
-      <ion-slide>
-        <h1>Canvas </h1>
-      </ion-slide>
-    </ion-slides>
-
+    
     
 
 

@@ -1,0 +1,109 @@
+
+
+<ion-content (ionScroll)="onScroll($event)">
+    <div  #bgselector (click)="removeSelect()">
+
+      </div>
+
+  <div class='canvasBackg' [style.background-image]="'url('+canvas['image_url']+')'">
+      <div class='canvasBackOpt'  >
+       
+          <ion-icon name="arrow-back"  (click)="dismisView()"></ion-icon>
+     
+    </div>
+
+  </div>
+  <div class='canvasHeader' #canvasHeader>
+    <div class='canvasTitle'>
+        <div class='canvasTitleOpt'  >
+       
+            
+       
+      </div>
+      <div class='canvasTitleIn' text-center>{{canvas['imgb_titile']}}</div>
+      <div class='canvasTitleOpt' *ngIf="allowUpload">
+      
+            <ion-icon name="add"></ion-icon>
+       
+      </div>
+    </div>
+    <div class='canvasBy'>
+       <div class='canvasByIn'>
+        <div class='canvasByIn0'>
+            <div class='canvasCr'>
+             <div class='canvasCr0'><img [src]="canvas['pic_url']"/></div>
+              <div class='canvasCr1'>
+                <div>{{canvas['full_name']}}</div>
+                <div  class='canvasCrT'>{{canvas['board_time']}}</div>
+               </div>
+            </div>
+        </div>
+        <div class='canvasByIn1'>
+            <ion-icon name="paper-plane" (click)="suggestFriend()"></ion-icon>
+        </div>
+        <div
+         class='canvasByIn1' (click)="addType()" class='viewClose' *ngIf="add_status">
+            <ion-icon name="add" (click)="addType()"></ion-icon>
+          </div>
+
+          <div
+         class='canvasByIn1'(click)="deleteFromStore()"  *ngIf="delete_status">
+         <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+          </div>
+
+        
+        
+          <div class='canvasByIn1'>
+              <ion-icon ios="ios-more" md="md-more"  (click)="moreOption()"></ion-icon>
+            </div>
+       </div>
+      </div>
+  </div>
+
+  <ion-row padding>
+
+      <div class="flexbin flexbin-margin">
+          <div *ngFor="let image of cnvImg; let i=index;" (tap)="imageZoomCnv(i)" (press)="selectMe($event,i)">
+              <img src="{{image['image_url']}}" />
+          </div>
+         
+      </div>
+      <div class='paddingAr'>
+
+      </div>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+   
+  </ion-row>
+
+
+  <div class='viewerFooter'>
+  
+   
+     
+     
+      <reaction-temp [activity]="reactStatus"  (reactEmiiter)="loadInitialReactionV()"></reaction-temp>
+
+          
+         
+           
+
+   
+    <ion-row class="padding5 ">
+      <ion-col class="padding5 viewInfo" text-center>
+         {{canvas['add_by']}} Added
+      </ion-col >
+      <ion-col class="padding5 viewInfo" text-center>
+        {{canvas['sub_by']}} Suggested
+      </ion-col>
+      <ion-col class="padding5 viewInfo" text-center>
+        {{canvas['view']}} Viewed
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+</ion-content>

@@ -1,41 +1,44 @@
-<ion-header>
+<ion-header class='mainHeaderTop'>
 
     <ion-navbar>
-      <ion-title>videoStore</ion-title>
+      <header-temp></header-temp>
     </ion-navbar>
   
   </ion-header>
   
-  <ion-content >
   
-      <ion-segment  class="SwipedTabs-tabs"  >
-        <ion-segment-button *ngFor='let tab of tabs ; let i = index ' value="IngoreMe" (click)="selectTab(i)"
-        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider  && ( this.SwipedTabsSlider.getActiveIndex() === i || (  tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }' >
-          {{tab}}
-        </ion-segment-button>
-      </ion-segment>
-    
-      <!-- here is our dynamic line  "indicator"-->
-      <div id='indicator2' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%': (100/this.tabs.length)}"></div>
-    
-      <ion-slides #SwipedTabsSlider  (ionSlideDrag)="animateIndicator($event)"
-                  (ionSlideWillChange)="updateIndicatorPosition()"
-                  (ionSlideDidChange)="updateIndicatorPosition()"
-                  (pan)="updateIndicatorPosition()"
-                  [pager]="false"
-            >
-        <ion-slide>
+
+  
+  <ion-content (swipe)="swipeEvent($event)">
+     
+
+        <storeheader-temp></storeheader-temp>
+    <div  #bgselector (tap)="removeSelect()">
+
+      </div>
+
+      <ion-segment  (tap)="loadVideoP()"  >
+          <ion-segment-button>
+            Video
+          </ion-segment-button>
+          <ion-segment-button  (tap)="loadFavouriteP()">
+           Favourite
+            </ion-segment-button>
+           
+        </ion-segment>
+  
+  
           <ion-row>
         
         
             <ion-col col-6 col-md-4 col-xl-3 padding  *ngFor="let video of videoArray; let i=index" >
-                <div class='updatebox' >
-                  <div class='videoThmb' [style.background-image]="'url('+video['thum_src']+')'" (click)="playVideo(video['video_id'])">
+                <div class='updateboxV' >
+                  <div class='videoThmb' [style.background-image]="'url('+video['thum_src']+')'" (tap)="playVideo(i)" (press)="selectMe($event,i)">
 
                   </div>
                   <div class='videoName'> <ion-icon name="videocam"></ion-icon> {{video['video_name']}}</div>
                   
-                  
+                 
                 </div>
       
               </ion-col>
@@ -44,9 +47,6 @@
                   <ion-infinite-scroll-content></ion-infinite-scroll-content>
                 </ion-infinite-scroll>
         </ion-row>
-        </ion-slide>
-        <ion-slide>
-          <h1>Favourite</h1>
-        </ion-slide>
-      </ion-slides>
+       
+          
   </ion-content>

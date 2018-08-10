@@ -90,6 +90,45 @@ import { UplaodvideoPage } from '../pages/uplaodvideo/uplaodvideo';
 import { UplaodmusicPage } from '../pages/uplaodmusic/uplaodmusic';
 import { AddlocationPage } from '../pages/addlocation/addlocation';
 import { MapService } from '../services/MapServices';
+import { CanvasviewerPage } from '../pages/canvasviewer/canvasviewer';
+import { PlaylistviewerPage } from '../pages/playlistviewer/playlistviewer';
+import { FavviewerPage } from '../pages/favviewer/favviewer';
+import { CanvasService } from '../services/CanvasService';
+import { CanvassuggestionPage } from '../pages/canvassuggestion/canvassuggestion';
+import { FavsuggestionPage } from '../pages/favsuggestion/favsuggestion';
+import { PlaylistsuggestionPage } from '../pages/playlistsuggestion/playlistsuggestion';
+import { PlaylistService } from '../services/PlaylistService';
+import { FavService } from '../services/FavServices';
+import { AddimagePage } from '../pages/addimage/addimage';
+import { AddmusicPage } from '../pages/addmusic/addmusic';
+import { AddvideoPage } from '../pages/addvideo/addvideo';
+import { ViralServices } from '../services/ViralServices';
+import { ImageOptionPop } from '../pages/popover/imagePopover';
+import { SettingPage } from '../pages/setting/setting';
+import { ProfileviewPage } from '../pages/profileview/profileview';
+import { FreindsPage } from '../pages/freinds/freinds';
+import { ProfileServices } from '../services/ProfileService';
+import { ProfileaddaPage } from '../pages/profileadda/profileadda';
+import { ProfilefriendsPage } from '../pages/profilefriends/profilefriends';
+import { ProfileimagePage } from '../pages/profileimage/profileimage';
+import { ProfilmusicPage } from '../pages/profilmusic/profilmusic';
+import { ProfileinfoPage } from '../pages/profileinfo/profileinfo';
+import { ProfilevideoPage } from '../pages/profilevideo/profilevideo';
+import { SettingServices } from '../services/SettingService';
+import { LocationChooserPage } from '../component/location/location';
+import { PrivacyPage } from '../pages/privacy/privacy';
+import { HeaderPage } from '../component/header/header';
+import { CanvasPage } from '../pages/canvas/canvas';
+import { PlaylistPage } from '../pages/playlist/playlist';
+import { FavouritePage } from '../pages/favourite/favourite';
+import { ProfilecanvasPage } from '../pages/profilecanvas/profilecanvas';
+import { ProfilefavPage } from '../pages/profilefav/profilefav';
+import { ProfileplaylistPage } from '../pages/profileplaylist/profileplaylist';
+import { StoreHeaderPage } from '../component/header/storeheader';
+import { ViralHeaderPage } from '../component/header/viralHeader';
+import { ProdileHeaderPage } from '../component/header/profileheader';
+import { UploadServices } from '../services/UploadServices';
+
 //import { ImgCrpServices } from '../services/imgCrpServices';
 
 
@@ -130,6 +169,7 @@ import { MapService } from '../services/MapServices';
     CommentPage,
     ReactionPage,
     ReactionCenterPage,
+    LocationChooserPage,
     ReactPage,
     AddCnavasPage,
     ImCrpPage,
@@ -143,7 +183,41 @@ import { MapService } from '../services/MapServices';
     UplaodimagePage,
     UplaodmusicPage,
     UplaodvideoPage,
-    AddlocationPage
+    AddlocationPage,
+    CanvasviewerPage,
+    PlaylistviewerPage,
+    FavviewerPage,
+    CanvassuggestionPage,
+    FavsuggestionPage,
+    PlaylistsuggestionPage,
+    AddimagePage,
+    AddmusicPage,
+    AddvideoPage,
+    ImageOptionPop,
+    SettingPage,
+    ProfileviewPage,
+    FreindsPage,
+    ProfileviewPage,
+    FreindsPage,
+    ProfileaddaPage,
+    ProfilefriendsPage,
+    ProfileimagePage,
+    ProfilmusicPage,
+    ProfileinfoPage,
+    ProfilevideoPage,
+    FreindsPage,
+    PrivacyPage,
+    HeaderPage,
+    CanvasPage,
+    PlaylistPage,
+    FavouritePage,
+    ProfilecanvasPage,
+    ProfilefavPage,
+    ProfileplaylistPage,
+    StoreHeaderPage,
+    ViralHeaderPage,
+    ProdileHeaderPage
+
    
   ],
   imports: [
@@ -208,6 +282,35 @@ import { MapService } from '../services/MapServices';
     UplaodmusicPage,
     UplaodvideoPage,
     AddlocationPage,
+    CanvasviewerPage,
+    PlaylistviewerPage,
+    FavviewerPage,
+    CanvassuggestionPage,
+    FavsuggestionPage,
+    PlaylistsuggestionPage,
+    AddimagePage,
+    AddmusicPage,
+    AddvideoPage,
+    ImageOptionPop,
+    SettingPage,
+    ProfileviewPage,
+    FreindsPage,
+    ProfileaddaPage,
+    ProfilefriendsPage,
+    ProfileimagePage,
+    ProfilmusicPage,
+    ProfileinfoPage,
+    ProfilevideoPage,
+    FreindsPage,
+    PrivacyPage,
+    CanvasPage,
+    PlaylistPage,
+    FavouritePage,
+    ProfilecanvasPage,
+    ProfilefavPage,
+    ProfileplaylistPage,
+   
+
 
    
   ],
@@ -244,7 +347,19 @@ import { MapService } from '../services/MapServices';
     VideoPlayerServices,
     SafariViewController,
     ScreenOrientation,
-    MapService
+    MapService,
+    CanvasService,
+    PlaylistService,
+    FavService,
+    ViralServices,
+    ImageOptionPop,
+    ProfileServices,
+    SettingServices,
+    UploadServices
+   
+    
+    
+    
     //ImgCrpServices
   
 

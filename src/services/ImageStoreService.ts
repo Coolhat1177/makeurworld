@@ -27,7 +27,7 @@ export class ImageStoreService{
 
 
     firstLoad(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/image/imgGal_load";
+        let url="http://coolhat/home/image/imgGal_load";
 
         return this.con.postDataFetch(user,loged,url);
 
@@ -37,7 +37,7 @@ export class ImageStoreService{
 
     moreLoad(user:any,loged:any,info){
         console.log(info);
-        let url="http://app.makeurworld.com/home/image/imgGal_load_mr";
+        let url="http://coolhat/home/image/imgGal_load_mr";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -47,7 +47,7 @@ export class ImageStoreService{
 
 
     imageAll(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/image/own_image";
+        let url="http://coolhat/home/image/own_image";
 
         return this.con.postDataFetch(user,loged,url);
 
@@ -60,20 +60,34 @@ export class ImageStoreService{
 
 
     bgProImg(user:any,loged:any){
-            let url="http://app.makeurworld.com/home/image/imgGal_load";
+            let url="http://coolhat/home/image/imgGal_load";
 
             return this.con.postDataFetch(user,loged,url);
 
     }
 
 
+    canvasLoad(user:any,loged:any){
+        let url="http://coolhat/home/image/imgBoard_load";
+
+        return this.con.postDataFetch(user,loged,url);
+
+}
 
 
+canvasLoadMr(user:any,loged:any,info:any){
+    let url="http://coolhat/home/image/imgBoard_load_mr";
+
+    let info1=JSON.stringify(info);
+
+    return this.con.postDataAsked(user,loged,info1,url);
+
+}
 
 
 
     firstLoadM(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/music/lib_down";
+        let url="http://coolhat/home/music/lib_down";
 
         return this.con.postDataFetch(user,loged,url);
 
@@ -81,7 +95,7 @@ export class ImageStoreService{
 
     moreLoadM(user:any,loged:any,info){
         console.log(info);
-        let url="http://app.makeurworld.com/home/music/lib_down_mr";
+        let url="http://coolhat/home/music/lib_down_mr";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -101,20 +115,36 @@ export class ImageStoreService{
     
    
     ownMusicCollection(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/music/just_nxt_own";
+        let url="http://coolhat/home/music/just_nxt_own";
 
         return this.con.postDataFetch(user,loged,url);
 
     }
 
 
+    playlistLoad(user:any,loged:any){
+        let url="http://coolhat/home/music/playlist_down";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+    playlistLoadM(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/music/playlist_down_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
+
+    }
 
     // video storage
 
 
 
     firstLoadVid(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/video/video_down";
+        let url="http://coolhat/home/video/video_down";
 
         return this.con.postDataFetch(user,loged,url);
 
@@ -129,7 +159,7 @@ export class ImageStoreService{
 
     moreLoadVid(user:any,loged:any,info){
         console.log(info);
-        let url="http://app.makeurworld.com/home/video/video_down_mr";
+        let url="http://coolhat/home/video/video_down_mr";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -138,9 +168,26 @@ export class ImageStoreService{
     }
 
     ownVideoCollectio(user:any,loged:any){
-        let url="http://app.makeurworld.com/home/video/own_vid_np";
+        let url="http://coolhat/home/video/own_vid_np";
 
         return this.con.postDataFetch(user,loged,url);
+
+    }
+
+    favLoad(user:any,loged:any){
+        let url="http://coolhat/home/video/fav_down";
+
+        return this.con.postDataFetch(user,loged,url);
+
+    }
+
+    favLoadMr(user:any,loged:any,info){
+        console.log(info);
+        let url="http://coolhat/home/video/fav_down_mr";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
 
     }
 

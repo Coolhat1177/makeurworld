@@ -5,12 +5,7 @@ import { ReactionServices } from '../../services/InteractionServices';
 import { NgForm } from '@angular/forms';
 
 
-/**
- * Generated class for the CommentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -27,6 +22,7 @@ export class CommentPage {
   isenabled:boolean=false;
   last_time:string="0000-00-00 00:00:00";
   task:any;
+  total:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
           private viewCtrl:ViewController,
@@ -38,6 +34,7 @@ export class CommentPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommentPage');
     this.load_comment();
+    this.loadCommentNo();
   }
 
 
@@ -163,6 +160,45 @@ export class CommentPage {
         this.isenabled=false;
       }
   }
+
+
+  loadCommentNo(){
+
+    // console.log(22);
+
+    this.credit.check().then(data=>{
+
+    
+      let info={'activity_id': this.activity_id
+ 
+      }
+      
+      
+
+
+       this.commentS.loadCurComment(data[0],data[1],info).subscribe(data=>{
+        if(data['status'])
+        {
+          
+          
+           this.total=data[0][0]['t_rev'];
+       
+          
+         
+        }
+
+       //  console.log(this.reactStatus);
+
+       
+  });
+     
+     });
+
+  }
+
+
+
+
 
   
 }

@@ -1,0 +1,1171 @@
+<ion-header class='mainHeaderTop'>
+
+    <ion-navbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col >MUW</ion-col>
+                <ion-col></ion-col>
+              
+                <ion-col text-center><ion-icon name="custom-icon6" class='iconHeader' (tap)="goToSearch()"></ion-icon></ion-col>
+                <ion-col text-center ><ion-icon name="custom-icon9" class='iconHeader' (tap)="goToMessage()"></ion-icon></ion-col>
+                <ion-col text-center ><ion-icon name="custom-icon8" class='iconHeader' (tap)="goToRequest()"></ion-icon></ion-col>
+                <ion-col text-center ><ion-icon name="custom-icon7" class='iconHeader' (tap)="goToNotification()"></ion-icon></ion-col>
+  
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+
+
+
+
+<ion-content padding class='settingBg'>
+
+  <ion-row>
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              Account
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Name</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="nameEdit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                </div>
+                <div class='rowC'>
+                 <div class='valueIn'>{{accountInfo['full_name']}}</div> 
+                </div>
+                <div class='rowC' *ngIf="setName">
+                    <div class='rowCF'>
+                        <input placeholder="Enter First Name" #fname>
+                      </div>
+                      <div class='rowCF'>
+                          <input placeholder="Enter Last Name" type="text" #lname>
+                        </div>
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col> <button ion-button (tap)="saveName()"> Save</button></ion-col>
+                            <ion-col> <button ion-button color="danger" (tap)="nameEdit()"> Cancel</button></ion-col>
+                          </ion-row>
+                           
+                          </div>
+                </div>
+               
+
+              </ion-row>
+
+
+              <!-- email -->
+
+              <ion-row class='setMarginTop border_bottom'>
+                  <div class='rowC flex'>
+                   <div class='flex1'>
+                      <div class='flex1In'>Email
+                        </div>
+                      </div> 
+                   <div class='flex0'>
+                     <button ion-button clear (tap)="emailEdit()">
+                        <ion-icon name="custom-icon24" ></ion-icon>
+                     </button>
+                   </div>
+                  </div>
+                  <div class='rowC'>
+                      <div class='valueIn'>{{accountInfo['email_id']}}</div>
+                  </div>
+                  <div class='rowC' *ngIf="setEmail">
+                      <div class='rowCF'>
+                          <input placeholder="Enter First Name" type="email" #email>
+                        </div>
+                        
+        
+                          <div class='rowC'>
+                            <ion-row>
+                              <ion-col> 
+                                 <button ion-button (tap)="saveEmail()"> Save</button>
+                                </ion-col>
+                                <ion-col> 
+                                    <button ion-button color="danger" (tap)="emailEdit()"> Cancel</button>
+                                   </ion-col>
+                            </ion-row>
+                            
+                             
+                            </div>
+                  </div>
+                 
+  
+                </ion-row>
+
+                  <!-- password -->
+
+
+
+
+              <ion-row class='setMarginTop border_bottom'>
+
+                  <div class='rowC flex'>
+                      <div class='flex1'>
+                          <div class='flex1In'>Password</div>
+
+                          </div> 
+                      <div class='flex0'>
+                        <button ion-button clear (tap)="passwordEdit()">
+                           <ion-icon name="custom-icon24" ></ion-icon>
+                        </button>
+                      </div>
+                     </div>
+                     <div class='rowC'>
+                        <div class='valueIn'>************</div>
+
+                     </div>
+                     <div class='rowC' *ngIf="setPassword">
+                         <div class='rowCF'>
+                             <input placeholder="Enter Password" type="password" #password>
+                           </div>
+                           <div class='rowCF'>
+                              <input placeholder="Re-enter Password" type="password" #repassword>
+                            </div>
+                            
+           
+                             <div class='rowC'>
+                               <ion-row>
+                                 <ion-col>
+                                    <button ion-button (tap)="savePassword()"> Save</button>
+                                 </ion-col>
+                                 <ion-col>
+                                    <button ion-button color="danger" (tap)="passwordEdit()"> Clear</button>
+                                 </ion-col>
+                               </ion-row>
+                                
+                               </div>
+                     </div>
+                
+                </ion-row>
+
+                <ion-row class='setMarginTop border_bottom'>
+
+
+                    <div class='rowC flex'>
+                        <div class='flex1'>
+                            <div class='flex1In'>Username</div>
+                          </div> 
+                        <div class='flex0'>
+                          <button ion-button clear (tap)="userNameEdit()">
+                             <ion-icon name="custom-icon24" ></ion-icon>
+                          </button>
+                        </div>
+                       </div>
+                       
+                       <div class='rowC'>
+                          <div class='valueIn'>{{accountInfo['user_name']}}</div>
+                       </div>
+                       <div class='rowC' *ngIf="setUserName">
+                          <div class='rowC'>
+                          <div class='valueIn'>Use only character, numbers ,".","-","_"</div>
+                       </div>
+                       <div class='rowC' *ngIf="userNameStatus">
+                          <div class='valueIn'>Username not available.</div>
+                       </div>
+                           <div class='rowCF'>
+                               <input placeholder="Enter Username" type="text" (keyup)="checkUserName()" #username>
+                             </div>
+                           
+                              
+             
+                               <div class='rowC'>
+                                 <ion-row>
+                                   <ion-col>
+                                      <button ion-button (tap)="saveUserName()"> Save</button>
+                                   </ion-col>
+                                   <ion-col>
+                                      <button ion-button color="danger" (tap)="userNameEdit()"> Save</button>
+                                   </ion-col>
+                                 </ion-row>
+                                   
+                                 </div>
+                       </div>
+                
+                  </ion-row>
+
+                  <ion-row class='setMarginTop '>
+
+                      <div class='rowC flex'>
+                          <div class='flex1'>
+                              <div class='flex1In'>Friend Request</div>
+                            </div> 
+                          <div class='flex0'>
+                            <button ion-button clear (tap)="friendRequestEdit()">
+                               <ion-icon name="custom-icon24" ></ion-icon>
+                            </button>
+                          </div>
+                         </div>
+                         <div class='rowC'>
+                            <div class='valueIn'>{{accountInfo['frnd_reqV']}} </div>
+                         </div>
+                         <div class='rowC' *ngIf="setFriendRequest">
+                             <div class='rowCF'>
+                                <select  no-lines name="frndrequest"  #frndRequest>
+                                    <option 
+                                       
+                                        value="On" checked=True>On</option>
+                                        <option
+                                       
+                                        value="Off" >Off</option>
+                                    </select>
+                               </div>
+                             
+                                
+               
+                                 <div class='rowC'>
+                                   <ion-row>
+                                     <ion-col>
+                                        <button ion-button (tap)="saveFrndRequest()"> Save</button>
+                                     </ion-col>
+                                     <ion-col>
+                                        <button ion-button color="danger" (tap)="friendRequestEdit()"> Cancel</button>
+                                     </ion-col>
+                                   </ion-row>
+                                     
+                                   </div>
+                         </div>
+                
+                    </ion-row>
+
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+
+  </ion-row>
+
+  <!-- about info....................................................... -->
+
+  <ion-row  class='setMarginTop1'>
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              About
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Birthday</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="birthdayEdit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                 <div class='flex0'>
+                    <button ion-button clear (tap)="privacy($event,'birth')" data-tbl='birth'>
+                       <ion-icon name="custom-icon25" ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class='rowC'>
+                 <div class='valueIn'>{{aboutInfo['birth_day']}}</div> 
+                </div>
+                <div class='rowC' *ngIf="setBirthday">
+                    <div class='rowCF'>
+                        <ion-datetime placeholder="tap to chose date" displayFormat="MM/DD/YYYY" name="signUpBirthDay" #abc>
+                        </ion-datetime>
+                      </div>
+                      
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col>
+                                <button ion-button (tap)="saveBirthDay()"> Save</button>
+                            </ion-col>
+                            <ion-col>
+                                <button ion-button color="danger" (tap)="birthdayEdit()"> Cancel</button>
+                            </ion-col>
+                          </ion-row>
+                            
+                          </div>
+                </div>
+               
+
+              </ion-row>
+
+
+              <!-- relationship -->
+
+              <ion-row class='setMarginTop border_bottom'>
+                  <div class='rowC flex'>
+                   <div class='flex1'>
+                      <div class='flex1In'>Relationship
+                        </div>
+                      </div> 
+                   <div class='flex0'>
+                     <button ion-button clear (tap)="relationshipEdit()">
+                        <ion-icon name="custom-icon24" ></ion-icon>
+                     </button>
+                   </div>
+                   <div class='flex0'>
+                      <button ion-button clear (tap)="privacy($event,'rel_status')" data-tbl='rel_status'>
+                         <ion-icon name="custom-icon25" ></ion-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <div class='rowC'>
+                      <div class='valueIn'>{{aboutInfo['rel_status']}}</div>
+                  </div>
+                  <div class='rowC' *ngIf="setRelationship">
+                      <div class='rowCF'>
+                          <select  no-lines name="selectRelation" #relastionship>
+                              <option value="Single" checked='true'>Single</option>
+                              <option value="Unspecified">Unspecified</option>
+                              <option value="In a relationship">In a relationship</option>
+                              <option value="Engaged">Engaged</option>
+                              <option value="Married">Married</option>
+                              <option value="It's complicated">It's complicated</option>
+                              <option value="In an open relationship">In an open relationship</option>
+                              <option value="Widowed">Widowed</option>
+                              <option value="Divorced">Divorced</option>
+                              <option value="In a civil union">In a civil union</option>
+                              <option value="In a domestic partnership">In a domestic partnership</option>
+                              
+                          </select>
+                        </div>
+                        
+        
+                          <div class='rowC'>
+                            <ion-row>
+                              <ion-col>
+                                  <button ion-button (tap)="saveRelationship()" > Save</button>
+                              </ion-col>
+                              <ion-col>
+                                  <button ion-button color="danger" (tap)="relationshipEdit()" > Cancel</button>
+                              </ion-col>
+                            </ion-row>
+                              
+                            </div>
+                  </div>
+                 
+  
+                </ion-row>
+
+                  <!-- password -->
+
+
+
+
+              <ion-row class='setMarginTop border_bottom'>
+
+                  <div class='rowC flex'>
+                      <div class='flex1'>
+                          <div class='flex1In'>Intrested in</div>
+
+                          </div> 
+                      <div class='flex0'>
+                        <button ion-button clear (tap)="interestEdit()">
+                           <ion-icon name="custom-icon24" ></ion-icon>
+                        </button>
+                      </div>
+                      <div class='flex0'>
+                          <button ion-button clear (tap)="privacy($event,'intrest')" data-tbl='intrest'>
+                             <ion-icon name="custom-icon25" ></ion-icon>
+                          </button>
+                        </div>
+                     </div>
+                     <div class='rowC'>
+                        <div class='valueIn'>{{aboutInfo['intrest']}}</div>
+
+                     </div>
+                     <div class='rowC' *ngIf="setIntrest">
+                         <div class='rowCF'>
+                            <select  no-lines name="intrest" #intrest>
+                                <option value="female" checked='true'>Female</option>
+                                <option value="male">Male</option>
+                                <option value="Both">Both</option>   
+                            </select>
+                           </div>
+                          
+                            
+           
+                             <div class='rowC'>
+                               <ion-row>
+                                 <ion-col>
+                                    <button ion-button (tap)="saveIntrest()"> Save</button>
+                                 </ion-col>
+                                 <ion-col>
+                                    <button ion-button color="danger" (tap)="interestEdit()"> Cancel</button>
+                                 </ion-col>
+                               </ion-row>
+                                 
+                               </div>
+                     </div>
+                
+                </ion-row>
+
+                <ion-row class='setMarginTop border_bottom'>
+
+
+                    <div class='rowC flex'>
+                        <div class='flex1'>
+                            <div class='flex1In'>Gender</div>
+                          </div> 
+                        <div class='flex0'>
+                          <button ion-button clear (tap)="genderEdit()">
+                             <ion-icon name="custom-icon24" ></ion-icon>
+                          </button>
+                        </div>
+                        <div class='flex0'>
+                            <button ion-button clear (tap)="privacy($event,'gender')" data-tbl='gender'>
+                               <ion-icon name="custom-icon25" ></ion-icon>
+                            </button>
+                          </div>
+                       </div>
+                       <div class='rowC'>
+                          <div class='valueIn'>{{aboutInfo['gender']}}</div>
+                       </div>
+                       <div class='rowC' *ngIf="setGender">
+                           <div class='rowCF'>
+                              <select  no-lines name="gender" #gender>
+                                  <option value="female" checked='true'>Female</option>
+                                  <option value="male">Male</option>
+                                  <option value="Both">Transgender</option>   
+                              </select>
+                             </div>
+                           
+                              
+             
+                               <div class='rowC'>
+                                 <ion-row>
+                                   <ion-col>
+                                      <button ion-button (tap)="saveGender()"> Save</button>
+                                   </ion-col>
+                                   <ion-col>
+                                      <button ion-button color="danger" (tap)="genderEdit()"> Save</button>
+                                   </ion-col>
+                                 </ion-row>
+                                  
+                                 </div>
+                       </div>
+                
+                  </ion-row>
+
+                  <ion-row class='setMarginTop '>
+
+                      <div class='rowC flex'>
+                          <div class='flex1'>
+                              <div class='flex1In'>Description</div>
+                            </div> 
+                          <div class='flex0'>
+                            <button ion-button clear (tap)="descriptionEdit()">
+                               <ion-icon name="custom-icon24" ></ion-icon>
+                            </button>
+                          </div>
+                          <div class='flex0'>
+                              <button ion-button clear (tap)="privacy($event,'about')" data-tbl='about'>
+                                 <ion-icon name="custom-icon25" ></ion-icon>
+                              </button>
+                            </div>
+                         </div>
+                         <div class='rowC'>
+                            <div class='valueIn'>{{aboutInfo['about']}}</div>
+                         </div>
+                         <div class='rowC' *ngIf="setDescription">
+                             <div class='rowCF'>
+                               <textarea placeholder="Write about your self"  value="" #about></textarea>
+                               </div>
+                             
+                                
+               
+                                 <div class='rowC'>
+                                   <ion-row>
+                                     <ion-col>
+                                        <button ion-button (tap)="saveAbout()"> Save</button>
+                                     </ion-col>
+                                     <ion-col>
+                                        <button ion-button color="danger" (tap)="descriptionEdit()"> Cancel</button>
+                                     </ion-col>
+                                   </ion-row>
+                                     
+                                   </div>
+                         </div>
+                
+                    </ion-row>
+
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+    
+  </ion-row>
+
+  <!-- contact......................................................... -->
+
+  <ion-row class='setMarginTop1'>
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              Contact
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Email Id</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="emailIdEdit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                 <div class='flex0'>
+                    <button ion-button clear (tap)="privacy($event,'email')" data-tbl='email'>
+                       <ion-icon name="custom-icon25" ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class='rowC' *ngIf="setEmailId">
+                    <div class='rowCF'>
+                        <input placeholder="Enter your email" #emailId>
+                      </div>
+                    
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col>
+                                <button ion-button (tap)="saveEmailId()"> Save</button>
+                            </ion-col>
+                            <ion-col>
+                                <button ion-button color="danger" (tap)="emailIdEdit()"> Cancel</button>
+                            </ion-col>
+                          </ion-row>
+                           
+                          </div>
+                </div>
+
+                <div class='rowC'>
+                    <div class='valueIn'>
+                      <ion-list>
+                        <ion-item *ngFor="let email of contactInfo['e_m']; let i=index">
+                          <div>{{email}}</div>
+                          <button ion-button clear (tap)="removeEmail(i)" >Remove</button>
+                        </ion-item>
+                      </ion-list>
+                    </div> 
+                   </div>
+               
+
+              </ion-row>
+
+
+              <!-- relationship -->
+
+              <ion-row class='setMarginTop border_bottom'>
+                  <div class='rowC flex'>
+                   <div class='flex1'>
+                      <div class='flex1In'>Contact Number
+                        </div>
+                      </div> 
+                   <div class='flex0'>
+                     <button ion-button clear (tap)="contactNumberEdit()">
+                        <ion-icon name="custom-icon24" ></ion-icon>
+                     </button>
+                   </div>
+                   <div class='flex0'>
+                      <button ion-button clear (tap)="privacy($event,'contact_no')" data-tbl='contact_no'>
+                         <ion-icon name="custom-icon25" ></ion-icon>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class='rowC' *ngIf="setContactNumber">
+                      <div class='rowCF'>
+                      <select  no-lines name="countryCode" #countryCode>
+                         <option value="+7 840"> (+7 840) Abkhazia </option> 
+                         <option *ngFor="let code of countryCode" [value]="code['code']">{{ code['name']}}</option>
+                         
+                      </select>
+                      </div>
+                      <div class='rowCF'>
+                          <input placeholder="Enter Number" type="number" #number>
+                        </div>
+                        
+        
+                          <div class='rowC'>
+                            <ion-row>
+                              <ion-col>
+                                  <button ion-button (tap)="addContact()"> Save</button>
+                              </ion-col>
+                              <ion-col>
+                                  <button ion-button color="danger" (tap)="contactNumberEdit()"> Cancel</button>
+                              </ion-col>
+                            </ion-row>
+                              
+                            </div>
+                  </div>
+
+                  <div class='rowC'>
+                    <div class='valueIn'>
+                        <ion-list>
+                        <ion-item *ngFor="let number of contactInfo['c_m']; let i=index">
+                          <div>{{number}}</div>
+                          <button ion-button clear (tap)="removeContact(i)">Remove</button>
+                        </ion-item>
+                        </ion-list>
+                      </div>
+                </div>
+                 
+  
+                </ion-row>
+
+                  <!-- password -->
+
+
+
+
+              <ion-row class='setMarginTop border_bottom'>
+
+                  <div class='rowC flex'>
+                      <div class='flex1'>
+                          <div class='flex1In'>Website</div>
+
+                          </div> 
+                      <div class='flex0'>
+                        <button ion-button clear (tap)="websiteEdit()">
+                           <ion-icon name="custom-icon24" ></ion-icon>
+                        </button>
+                      </div>
+                      <div class='flex0'>
+                          <button ion-button clear (tap)="privacy($event,'website')" data-tbl='website'>
+                             <ion-icon name="custom-icon25" ></ion-icon>
+                          </button>
+                        </div>
+                     </div>
+                     
+                     <div class='rowC' *ngIf="setWebsite">
+                         <div class='rowCF'>
+                             <input placeholder="Enter Website Url" type="text" #website>
+                           </div>
+                         
+                            
+           
+                             <div class='rowC'>
+                               <ion-row>
+                                 <ion-col>
+                                    <button ion-button (tap)="addWebsite()"> Save</button>
+                                 </ion-col>
+                                 <ion-col>
+                                    <button ion-button color="danger" (tap)="websiteEdit()"> Cancel</button>
+                                 </ion-col>
+                               </ion-row>
+                                 
+                               </div>
+                     </div>
+
+                     <div class='rowC'>
+                      <div class='valueIn'>
+                          <ion-list>
+                              <ion-item *ngFor="let www of contactInfo['w_m']; let i=index">
+                                <div>{{www}}</div>
+                                <button ion-button clear (tap)="removeWebsiet(i)">Remove</button>
+                              </ion-item>
+                            </ion-list>
+
+                      </div>
+
+                   </div>
+                
+                </ion-row>
+
+                <ion-row class='setMarginTop '>
+
+
+                    <div class='rowC flex'>
+                        <div class='flex1'>
+                            <div class='flex1In'>Blog</div>
+                          </div> 
+                        <div class='flex0'>
+                          <button ion-button clear (tap)="blogEdit()">
+                             <ion-icon name="custom-icon24" ></ion-icon>
+                          </button>
+                        </div>
+                        <div class='flex0'>
+                            <button ion-button clear (tap)="privacy($event,'blog')" data-tbl='blog'>
+                               <ion-icon name="custom-icon25" ></ion-icon>
+                            </button>
+                          </div>
+                       </div>
+                       <div class='rowC'>
+                          <div class='valueIn'>
+                              <ion-list>
+                                  <ion-item *ngFor="let blog of contactInfo['b_m']; let i=index">
+                                    <div>{{blog}}</div>
+                                    <button ion-button clear (tap)="removeBlog(i)" >Remove</button>
+                                  </ion-item>
+                                </ion-list>
+                          </div>
+                       </div>
+                       <div class='rowC' *ngIf="setBlog">
+                           <div class='rowCF'>
+                               <input placeholder="Enter Blog Url" type="text" #blog>
+                             </div>
+                           
+                              
+             
+                               <div class='rowC'>
+                                 <ion-row>
+                                   <ion-col>
+                                      <button ion-button (tap)="addBlog()"> Save</button>
+                                   </ion-col>
+                                   <ion-col>
+                                      <button ion-button (tap)="blogEdit()"> Cancel</button>
+                                   </ion-col>
+                                 </ion-row>
+                                   
+                                 </div>
+                       </div>
+                
+                  </ion-row>
+
+
+
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+   
+    
+  </ion-row>
+
+  <ion-row class='setMarginTop1'>
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              Location
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Current Town</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="curLocationEdit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                 <div class='flex0'>
+                    <button ion-button clear (tap)="privacy($event,'location_c')" data-tbl='location_c'>
+                       <ion-icon name="custom-icon25" ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class='rowC'>
+                 <div class='valueIn'>{{locationInfo1['full_add']}}</div> 
+                </div>
+                <div class='rowC' *ngIf="setCurLocation">
+
+                    <!-- <div class='valueIn' *ngIf="curTownStatus">{{curTown['country']}}</div>  -->
+                   
+                      <div class='rowCF'>
+                          <location-temp (loactionEmitter)="loadLocation($event)"></location-temp>
+                        </div>
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col>
+                                <button ion-button (tap)="saveCurrentTown()"> Save</button>
+                            </ion-col>
+                            <ion-col>
+                                <button ion-button color="danger" (tap)="curLocationEdit()"> Cancel</button>
+                            </ion-col>
+                          </ion-row>
+                            
+                          </div>
+                </div>
+               
+
+              </ion-row>
+
+
+              <!-- relationship -->
+
+              <ion-row class='setMarginTop border_bottom'>
+                  <div class='rowC flex'>
+                   <div class='flex1'>
+                      <div class='flex1In'>Home Town
+                        </div>
+                      </div> 
+                   <div class='flex0'>
+                     <button ion-button clear (tap)="homeTownEdit()">
+                        <ion-icon name="custom-icon24" ></ion-icon>
+                     </button>
+                   </div>
+                   <div class='flex0'>
+                      <button ion-button clear (tap)="privacy($event,'location_h')" data-tbl='location_h'>
+                         <ion-icon name="custom-icon25" ></ion-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <div class='rowC'>
+                      <div class='valueIn'> {{locationInfo0['full_add']}}</div>
+                  </div>
+                  <div class='rowC' *ngIf="setHomeTown">
+                      <div class='rowCF'>
+                          <!-- <div class='valueIn' *ngIf="homeTownStatus">{{homeTown['town']+" "+homeTown['state']+" "+homeTown['country']}}</div>  -->
+                          <location-temp (loactionEmitter)="loadLocationH($event)"></location-temp>
+                        </div>
+                        
+        
+                          <div class='rowC'>
+                            <ion-row>
+                              <ion-col>
+                                  <button ion-button (tap)="saveHomeTown()"> Save</button>
+                              </ion-col>
+                              <ion-col>
+                                  <button ion-button color="danger" (tap)="homeTownEdit()"> Cancel</button>
+                              </ion-col>
+                            </ion-row>
+                             
+                            </div>
+                  </div>
+                 
+  
+                </ion-row>
+
+                  <!-- password -->
+
+
+
+
+              <ion-row class='setMarginTop border_bottom'>
+
+                  <div class='rowC flex'>
+                      <div class='flex1'>
+                          <div class='flex1In'>Favourite Location</div>
+
+                          </div> 
+                      <div class='flex0'>
+                        <button ion-button clear (tap)="favLocationEdit()">
+                           <ion-icon name="custom-icon24" ></ion-icon>
+                        </button>
+                      </div>
+                      <div class='flex0'>
+                          <button ion-button clear (tap)="privacy($event,'fav_l')" data-tbl='fav_l'>
+                             <ion-icon name="custom-icon25" ></ion-icon>
+                          </button>
+                        </div>
+                     </div>
+                     <div class='rowC'>
+                        <div class='valueIn'>
+                            <ion-list>
+                                <ion-item *ngFor="let location of favLoactionInfo; let i=index">
+                                  <div>{{location['full_add']}}</div>
+                                  <button ion-button clear (tap)="removeFavLocation(i)">Remove</button>
+                                </ion-item>
+                              </ion-list>
+                        </div>
+
+                     </div>
+                     <div class='rowC' *ngIf="setFavLocation">
+                        <div class='rowCF'>
+                            <!-- <div class='valueIn' *ngIf="favTownStatus">{{favTown['town']+" "+favTown['state']+" "+favTown['country']}}</div>  -->
+                            <location-temp (loactionEmitter)="loadLocationFav($event)"></location-temp>
+                          </div>
+                            
+           
+                             <div class='rowC'>
+                               <ion-row>
+                                 <ion-col>
+                                    <button ion-button (tap)="saveFavTown()"> Save</button>
+                                 </ion-col>
+                                 <ion-col>
+                                    <button ion-button color="danger" (tap)="favLocationEdit()"> Cancel</button>
+                                 </ion-col>
+                               </ion-row>
+                                
+                               </div>
+                     </div>
+                
+                </ion-row>
+
+                
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+   
+
+    
+    
+  </ion-row>
+
+  <ion-row class='setMarginTop1'>
+
+  
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              Education
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Education</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="educationedit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                 <div class='flex0'>
+                    <button ion-button clear (tap)="privacy($event,'eduction')" data-tbl='eduction'>
+                       <ion-icon name="custom-icon25" ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class='rowC' *ngIf="setEducation">
+                    <div class='rowCF'>
+                        <input placeholder="Enter First Name" #eduname>
+                      </div>
+                      <div class='rowCF'>
+                          <select  no-lines name="Institute" #instituteType>
+                              <option  checked='true'>High School</option>
+                              <option >Collage</option>
+                                
+                          </select>
+                        </div>
+      
+                        <div class='rowCF'>
+                           <ion-col>
+                            From:  <select  no-lines name="edufrom" #eduFrom>
+                                  <option  checked='true'>2018</option>
+                                 <option *ngFor="let y of year">{{y}}</option>
+                              </select>
+
+                           </ion-col>
+                           <ion-col>
+                              To:  <select  no-lines name="eduto" #eduTo>
+                                  <option  checked='true'>Present</option>
+                                    <option >2018</option>
+                                   <option *ngFor="let y of year">{{y}}</option>
+                                </select>
+  
+                             </ion-col>
+                          </div>
+
+                          <div class='rowCF'>
+                              <!-- <div class='valueIn' *ngIf="eduAddStatus">{{eduAdd['town']+" "+eduAdd['state']+" "+eduAdd['country']}}</div>  -->
+                              <location-temp (loactionEmitter)="loadLocationEdu($event)"></location-temp>
+                            </div>
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col>
+                                <button ion-button (tap)="saveEdu()"> Save</button>
+                            </ion-col>
+                            <ion-col>
+                                <button ion-button color="danger" (tap)="educationedit()"> Cancel</button>
+                            </ion-col>
+                          </ion-row>
+                            
+                          </div>
+                </div>
+
+
+                <div class='rowC'>
+                  <div class='valueIn'>
+                     <ion-list>
+                         <ion-item *ngFor="let education of educationInfo; let i=index">
+                           <div>{{education['edu_name']}}</div>
+                           <div>{{education['edu_tyrp']}}</div>
+                           <div>{{education['from'] +"-"+ education['to']}}</div>
+                           <div>{{education['full_add']}}</div>
+                           <button ion-button clear (tap)="removeEdu(i)" >Remove</button>
+                         </ion-item>
+                       </ion-list>
+                  </div> 
+                 </div>
+               
+
+              </ion-row>
+
+
+              <!-- relationship -->
+
+     
+
+      
+
+
+
+
+         
+
+                
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+   
+
+    
+    
+  </ion-row>
+
+
+  <ion-row class='setMarginTop1'>
+
+      <div class='layer1'>
+          <div class='layer1In'>
+
+            <div class='layerTop'>
+              Work Place
+            </div>
+
+            <div  class='layerSetting'>
+              <ion-row class='border_bottom'>
+                <div class='rowC flex'>
+                 <div class='flex1'>
+                   <div class='flex1In'>Work Place</div>
+                  </div> 
+                 <div class='flex0'>
+                   <button ion-button clear (tap)="workPlacdEdit()">
+                      <ion-icon name="custom-icon24" ></ion-icon>
+                   </button>
+                 </div>
+                 <div class='flex0'>
+                    <button ion-button clear (tap)="privacy($event,'work')" data-tbl='work'>
+                       <ion-icon name="custom-icon25" ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class='rowC'>
+                 <div class='valueIn'>
+                    <ion-list>
+                        <ion-item *ngFor="let wp of workPlaceInfo; let i=index">
+                          <div>{{wp['wp_name']}}</div>
+                          <div>{{wp['wp_type']}}</div>
+                          <div>{{wp['from']+"-"+ wp['to']}}</div>
+                          <div>{{wp['full_add']}}</div>
+                          <button ion-button clear  (tap)="removeWp(i)">Remove</button>
+                        </ion-item>
+                      </ion-list>
+                 </div> 
+                </div>
+                <div class='rowC' *ngIf="setWorkPLACE">
+                    <div class='rowCF'>
+                        <input placeholder="Enter First Name" #wpname>
+                      </div>
+                      <div class='rowCF'>
+                          <select  no-lines name="gender" #wpType>
+                              <option  checked='true'>Company</option>
+                              <option >Institute</option>
+                              <option>Group</option>   
+                          </select>
+                        </div>
+      
+                        <div class='rowCF'>
+                           <ion-col>
+                            From:  <select  no-lines name="gender" #wpFrom>
+                                  <option  checked='true'>2018</option>
+                                 <option *ngFor="let y of year">{{y}}</option>
+                              </select>
+
+                           </ion-col>
+                           <ion-col>
+                              To:  <select  no-lines name="gender" #wpTo>
+                                  <option  checked='true'>Present</option>
+                                    <option  >2018</option>
+                                   <option *ngFor="let y of year">{{y}}</option>
+                                </select>
+  
+                             </ion-col>
+                          </div>
+
+                          <div class='rowCF'>
+                              <!-- <div class='valueIn' *ngIf="wpAddStatus">{{eduAdd['town']+" "+eduAdd['state']+" "+eduAdd['country']}}</div>  -->
+                              <location-temp (loactionEmitter)="loadLocationWp($event)"></location-temp>
+                            </div>
+      
+                        <div class='rowC'>
+                          <ion-row>
+                            <ion-col>
+                                <button ion-button (tap)="saveWp()"> Save</button>
+                            </ion-col>
+                            <ion-col>
+                                <button ion-button color="danger" (tap)="workPlacdEdit()"> Cancel</button>
+                            </ion-col>
+                          </ion-row>
+                            
+                          </div>
+                </div>
+               
+
+              </ion-row>
+
+
+             
+
+     
+
+      
+
+
+
+
+         
+
+                
+
+
+            </div>
+           
+          </div>
+    
+        </div>
+   
+    
+    </ion-row>
+  
+
+</ion-content>

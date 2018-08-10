@@ -14,7 +14,8 @@ export class ReactionPage {
 
   activity_id:string;
   reactionArry:any=[];
-  iconArray=['custom-icon13','custom-icon14','custom-icon15','custom-icon16','custom-icon17'];
+  total:number=0;
+  iconArray=['../../assets/icon/1f60d.svg','../../assets/icon/1f632.svg','../../assets/icon/1f600.svg','../../assets/icon/1f622.svg','../../assets/icon/1f621.svg'];
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -28,6 +29,7 @@ export class ReactionPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReactionPage');
     this.loadReaction();
+    this.loadReactionNo();
   }
 
 
@@ -65,6 +67,41 @@ export class ReactionPage {
                 });
 
   }
+
+  loadReactionNo(){
+
+    // console.log(22);
+
+    this.credit.check().then(data=>{
+
+    
+      let info={'activity_id': this.activity_id
+ 
+      }
+      
+      
+
+
+      this.commentS.loadCurReaction(data[0],data[1],info).subscribe(data=>{
+        if(data['status'])
+        {
+          
+          
+           this.total=data[0][0]['rate_by'];
+          
+          
+         
+        }
+
+       //  console.log(this.reactStatus);
+
+       
+  });
+     
+     });
+
+  }
+
 
 
   dismissView()

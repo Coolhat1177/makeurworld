@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ActionSheetController, AlertController, ViewController } from 'ionic-angular';
 import { ImagesuggestPage } from '../imagesuggest/imagesuggest';
 
 import { ImageZoomServices } from '../../services/ImageZoomServices';
@@ -7,13 +7,11 @@ import { CreditService } from '../../services/CreditService';
 import { ReactionCenterPage} from '../../component/reaction/reaction';
 import { ReactionServices } from '../../services/InteractionServices';
 import { AddCnavasPage } from '../add-cnavas/add-cnavas';
+import { AlertServices } from '../../services/AlertServices';
+import { ViralServices } from '../../services/ViralServices';
+import { UplaodimagePage } from '../uplaodimage/uplaodimage';
 
-/**
- * Generated class for the ImageviewerPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -21,7 +19,8 @@ import { AddCnavasPage } from '../add-cnavas/add-cnavas';
   templateUrl: 'imageviewer.html',
 })
 export class ImageviewerPage {
-
+  add_status:boolean=false;
+  delete_status=false;
    data:any={};
    imgInfo:any={};
    reactStatus:any={ov_rate:0,
@@ -29,29 +28,39 @@ export class ImageviewerPage {
     activity_id:'',
     t_rev:0 };
 
+    
+   
+
   constructor(public navCtrl: NavController,
-     public navParams: NavParams,
-     private modelCtr:ModalController,
-      private actionSheet:ActionSheetController,
-      private imgZoom:ImageZoomServices,
-      private credit:CreditService,
-      private intrService:ReactionServices)
- {
-      this.data=this.navParams.data;
-      this.imgZoom.imageList=this.data['imgArr'];
-      this.imgZoom.image_id=this.data['image_id'];
-      this.loadImg();
-        
-  }
+              public navParams: NavParams,
+              private modelCtr:ModalController,
+              private actionSheet:ActionSheetController,
+              private imgZoom:ImageZoomServices,
+              private credit:CreditService,
+              private intrService:ReactionServices,
+              private alertM:AlertServices,
+              private viralS:ViralServices,
+              private alertBox:AlertController,
+              private viewCtrl:ViewController)
+            {
+                  this.data=this.navParams.data;
+                 
+                  this.imgZoom.image_id=this.data['image']['image_id'];
+                  this.imgZoom.imageList=this.data['imageNextArray'];
+                  
+                  this.reactStatus.activity_id=this.data['image']['activity_id'];
+                  console.log(this.imgZoom.image_id);
+                    
+              }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ImageviewerPage');
+    this.loadImg();
 
   }
 
   dismissImageView()
   {
-    this.navCtrl.pop();
+    this.viewCtrl.dismiss({data:false});
   }
 
   imageSuggest(){
@@ -60,22 +69,120 @@ export class ImageviewerPage {
     
   }
 
+  deleteFromStore(){
+
+   
+
+   
+    let alert = this.alertBox.create({
+      title: 'Delete',
+      message: 'Do you want to delete this image from Store',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+         
+         
+        },
+        {
+          text: 'Ok',
+          handler: () => {
+            this.credit.check().then(data=>{
+
+                                                
+              let info={'image_id': this.imgZoom.image_id}
+              
+              this.viralS.deleteImage(data[0],data[1],info).subscribe(data=>{
+                    if(data['status'])
+                    {
+                      
+                      
+                     this.viewCtrl.dismiss({data:true});
+                     
+                      
+                    }
+                   
+                  
+        
+                    
+              });
+          });
+            
+          }
+        }
+      ]
+    });
+    alert.present();
+
+    
+  
+
+  }
+
+
   
 
   addType()
   {
+    
+
+
     const actSheet=this.actionSheet.create({
    
       buttons:[
         {
           text:"Viral",
           handler:()=>{
-            console.log(15);
+                        this.credit.check().then(data=>{
+                         
+                    
+                                  let info={
+                                  image_id:this.imgZoom.image_id,
+                                  pub_s:0
+                            
+                                  }
+                                
+                                  this.viralS.addImage(data[0],data[1],info).subscribe(data=>{
+                                  
+
+
+                                    this.add_status=false;
+                                    this.delete_status=true;
+                                    
+                            
+                                  
+                                });
+                    
+                          
+                      });
+
           }
         },
         {
           text:'Private',
           handler:()=>{
+                        this.credit.check().then(data=>{
+                                    
+                                
+                                let info={
+                                image_id:this.imgZoom.image_id,
+                                pub_s:1
+                          
+                                }
+                              
+                                this.viralS.addImage(data[0],data[1],info).subscribe(data=>{
+                                
+
+
+                                  this.add_status=false;
+                                  this.delete_status=true;
+                                  
+                          
+                                
+                              });
+
+      
+                 });
 
           }
         },
@@ -88,6 +195,8 @@ export class ImageviewerPage {
 
     actSheet.present();
 
+    
+    
 
 
   }
@@ -129,6 +238,7 @@ export class ImageviewerPage {
 
   }
 
+
   loadImg()
   {
     
@@ -144,8 +254,9 @@ export class ImageviewerPage {
             {
               
                this.imgInfo=data[0][0];
-           
-              this.loadInitialReactionV();
+              console.log( this.imgInfo);
+              // this.loadInitialReactionV();
+              this.checkStatusImg();
 
             }
 
@@ -157,55 +268,18 @@ export class ImageviewerPage {
 
   }
 
-  loadInitialReactionV(){
 
-    // console.log(22);
+  detail_load(){
+    const detail=this.modelCtr.create(UplaodimagePage,{
+      image:this.imgInfo,
+      mode:"detail"
 
-    this.credit.check().then(data=>{
-
+    });
     
-      let info={'activity_id': this.imgInfo['activity_id']
- 
-      }
-      
-       this.intrService.loadCurReaction(data[0],data[1],info).subscribe(data=>{
-             if(data['status'])
-             {
-               
-               
-                this.reactStatus=data[0][0];
-            
-               
-              
-             }
-
-            //  console.log(this.reactStatus);
- 
-            
-       });
-
-
-       this.intrService.loadCurComment(data[0],data[1],info).subscribe(data=>{
-        if(data['status'])
-        {
-          
-          
-           this.reactStatus['t_rev']=data[0][0]['t_rev'];
-       
-          
-         
-        }
-
-       //  console.log(this.reactStatus);
-
-       
-  });
-     
-     });
-
+    detail.present();
   }
 
-
+ 
   swipeEvent(ev)
   {
    
@@ -230,7 +304,33 @@ export class ImageviewerPage {
   }
 
 
+  checkStatusImg(){
+    this.credit.check().then(data=>{
+               
+      let info={
+        'image_id':this.imgZoom.image_id,
+      
+      }
+    
+      this.imgZoom.checkStatus(data[0],data[1],info).subscribe(data=>{
+        console.log(data)
+        if(data['status'])
+        {
+          this.add_status=false;
+          this.delete_status=true;
+        }
+        else{
 
+          this.add_status=true;
+          this.delete_status=false;
+
+        }
+      });
+    })
+  }
+
+
+ 
 
  
 }

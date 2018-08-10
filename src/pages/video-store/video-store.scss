@@ -1,83 +1,112 @@
 page-video-store {
 
-
-    .swiper-container
+        
+    .scroll-content
     {
-        height: auto;
-        .segment-md .segment-button{
-            height:2rem;
-            line-height:1rem;
-            text-transform: capitalize;
-        }
+      margin-top: 100px !important;
     }
 
-    .SwipedTabs-indicatorSegment
+
+    
+
+    .contenNo
     {
-        -webkit-transition: 0.3s all;
-        -moz-transition:  0.3s all;
-        -o-transition:  0.3s all;
-        transition:  0.3s all;
-        transform-origin: top 0 left 0;
-        height: 1px;
-	    position: relative;
-	    top: -2px;
-	    background-color: black !important;
-    }
-    .SwipedTabs-tabs ion-segment-button
-    {
-    	border:none !important;
-    	color:gray!important;
-    	background-color:white!important;
-    }
-     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
-    {
-        color:black !important;
-    }
-    .SwipedTabs-tabs
-    {
-    	border-bottom: solid 1px #e6e6e6  !important;
-    }
-    .segment-md .segment-button{
-        height:2rem;
-        line-height:1rem;
-        text-transform: capitalize;
+      letter-spacing: 0.6px;
+      font-size: .9em;
+      text-align: center;
+      color: #736f6f;
+
     }
 
-    .videoThmb
+
+
+    .cnvasBg
+    {
+      height:180px;
+      width: 100%;
+      position: relative;
+      background-size: cover;
+    }
+
+    .canvasCont
+    {
+      width:100%;
+      padding: 5px;
+      text-align: center;
+      font-weight: 400;
+      color:#333;
+      letter-spacing: 0.8px;
+      font-size: 1.2em;
+    }
+
+
+}
+
+
+.videoThmb
     {
         width: 100%;
         height: 75%;
         background-color: white;
         position: relative;
         background-size: cover;
-        border-radius:8px 8px 0px 0px;
+        border-radius:4px;
+        border:1px solid rgba(0,0,0,0.1);
     }
 
     .videoName
     {
         height:  25%;
         width: 100%;
-        border-radius:0px 0px 8px 8px;
-        padding: 5px 10px;
+       
+        padding: 10px;
         font-weight: normal;
-        text-shadow: 0 0 3px rgba(0,0,0,1);
+        text-shadow: 0 0 3px rgba(0,0,0,0.2);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: .7em;
+        font-size: .76em;
+        letter-spacing: 0.3px;
       
     }
 
 
-    .updatebox
+    .updateboxV
     {
       
       
-        height: 50vw;
+        height: 40vw;
+        width: 44vw;
         border-radius: 8px;
        position: relative;
       background-size: cover;
-       box-shadow: 4px 5px 2px -2px rgba(0,0,0,0.4);
+      
     }
 
-}
+
+    .choosed
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.7);
+        top:0px;
+        left: 0px;
+    }
+
+
+    .choosedIn
+    {
+        font-size: 2.5em;
+        color:green;
+        font-weight: bolder;
+        position: relative;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform:translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -o-transform:translate(-50%,-50%);
+        text-align: center;
+        z-index: 1;
+    }

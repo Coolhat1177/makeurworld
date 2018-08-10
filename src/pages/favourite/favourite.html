@@ -1,0 +1,46 @@
+<ion-header class='mainHeaderTop'>
+
+    <ion-navbar>
+      <header-temp></header-temp>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+<ion-content (swipe)="swipeEvent($event)" >
+    <storeheader-temp></storeheader-temp>
+    <div  #bgselector (tap)="removeSelect()">
+
+      </div>
+
+      <ion-segment  (tap)="loadVideoP()"  >
+          <ion-segment-button>
+            Video
+          </ion-segment-button>
+          <ion-segment-button  (tap)="loadFavouriteP()">
+           Favourite
+            </ion-segment-button>
+           
+        </ion-segment>
+    <ion-row padding>
+        <ion-card  *ngFor="let canvas of favArray; let i=index " (tap)="favOpen(i)" (press)="selectMe($event,i)">
+          <div class='cnvasBg' [style.background-image]="'url('+canvas['thum_src']+')'"></div>
+          <ion-card-content>
+              <div class='canvasCont'>
+                {{canvas['fav_name']}}
+              </div>
+              <div class='contenNo'>
+                {{canvas['video_no']}} videos
+              </div>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-infinite-scroll (ionInfinite)="doInfiniteFav($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+          </ion-infinite-scroll> 
+
+
+     </ion-row>
+
+
+</ion-content>

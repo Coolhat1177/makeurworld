@@ -22,6 +22,7 @@ export class VideosuggestionPage {
               private sServices:SuggestionServices,) {
 
                 this.video_id=this.navParams.data['video_id'];
+                console.log(this.video_id);
 
   }
 
@@ -70,6 +71,9 @@ export class VideosuggestionPage {
       this.credit.check().then(data=>{
 
         let text=event.target.value;
+        if(text==undefined){
+          text="";
+        }
         let info={'video_id':this.video_id,
         'text':text
 
@@ -103,7 +107,7 @@ export class VideosuggestionPage {
     this.credit.check().then(data=>{
 
       
-      let info={'video':this.video_id,
+      let info={'video_id':this.video_id,
                 'frnd_id':this.suggestionList[i]['frnd_id']
  
       }
@@ -132,7 +136,7 @@ export class VideosuggestionPage {
 
   onCancel(event)
   {
-      console.log("ok");
+    this.onInput(event)
   }
 
 

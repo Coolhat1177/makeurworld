@@ -1,0 +1,46 @@
+<ion-header class='mainHeaderTop'>
+
+    <ion-navbar>
+      <header-temp></header-temp>
+    </ion-navbar>
+  
+  </ion-header>
+  
+
+
+<ion-content padding>
+    <storeheader-temp></storeheader-temp>
+    <ion-segment  (tap)="loadMusicP()"  >
+        <ion-segment-button>
+          Music
+        </ion-segment-button>
+        <ion-segment-button  (tap)="loadPlaylistP()">
+          Playlist
+          </ion-segment-button>
+         
+      </ion-segment>
+    <div  #bgselector (click)="removeSelect()">
+
+      </div>
+    <ion-row>
+        <ion-card  *ngFor="let canvas of plyArray; let i=index ">
+          <div class='cnvasBg' [style.background-image]="'url('+canvas['thmb_src']+')'" (tap)="openPlaylist(i)" (press)="selectMe($event,i)"></div>
+          <ion-card-content>
+              <div class='canvasCont'>
+                {{canvas['playlist_name']}}
+              </div>
+              <div class='contenNo'>
+                {{canvas['song_number']}} songs
+              </div>
+             
+            </ion-card-content>
+        </ion-card>
+
+        <ion-infinite-scroll (ionInfinite)="doInfinitePlaylist($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+
+
+     </ion-row>
+
+</ion-content>

@@ -8,6 +8,7 @@ import { ImagePickPage } from '../image-pick/image-pick';
 import { CommentPage } from '../comment/comment';
 import { ImCrpPage } from '../im-crp/im-crp';
 
+import { HeaderPage } from '../../component/header/header';
 @IonicPage()
 @Component({
   selector: 'page-cover',
@@ -119,7 +120,6 @@ export class CoverPage {
   }
 
 
- 
 
 
 }//class end

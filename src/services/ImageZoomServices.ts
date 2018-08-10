@@ -15,7 +15,7 @@ export class ImageZoomServices{
 
     loadImg(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/image/img_zoom";
+        let url="http://coolhat/home/image/img_zoom";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -61,6 +61,18 @@ export class ImageZoomServices{
         else{
             return this.imageList[i]['image_id'];
         }
+
+    }
+
+
+    checkStatus(user:any,loged:any,info:any){
+      
+       
+        let url="http://coolhat/home/image/check_lib";
+        let info1=JSON.stringify(info);
+
+        return this.con.postDataAsked(user,loged,info1,url);
+
 
     }
 

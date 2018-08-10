@@ -1,5 +1,81 @@
 page-uplaodimage {
+
+  .item-md ion-avatar
+  {
+    width: 60px;
+    height: 60px;;
+  }
+  
+  .item-md ion-avatar ion-img, .item-md ion-avatar img
+  {
+    width: 60px;
+    height: 60px;;
+  }
+
+  .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start]
+  {
+    margin: 8px;
+  }
+  .item-md
+  {
+      background: transparent;
+      color:white;
+      
+  }
+
+  .modeS .label-md
+  {
+    width: 80px;
+  }
+  .viewClose
+  {
+      color:white;
+      font-size: 1.6em;
+  }
+
+
    
+  .details .item-md
+  {
+    
+      color:#333;
+      
+  }
+
+  .labelD
+  {
+    padding: 8px;
+    font-size: .8em;
+    font-weight: 600;
+    color:#c2c2c2;
+    
+  }
+
+  .button-md
+{
+  width: 100%;
+}
+
+.removeLoct
+{
+  width: 70px;;
+}
+.editForLoct
+{
+  width: calc(100% - 70px);
+}
+
+
+  .detailEdit
+  {
+    width: 100px;
+  }
+
+  .editFor
+  {
+    width: calc(100% - 100px)
+  }
+
    
 
 
@@ -30,6 +106,14 @@ page-uplaodimage {
         box-shadow: 1px 1px 24px 0px rgba(0,0,0,0.75);
         border-radius: 10px;
 
+}
+
+
+.rowC input{
+  width: 100%;
+  border-width: 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 5px;
 }
 
 .wide-as-needed {
@@ -64,13 +148,13 @@ page-uplaodimage {
   {
       float: right;
   }
-  
-  .item-md
+
+  .labelV
   {
-      background: transparent;
-      color:white;
-      
+    font-size: .97em;
+    padding: 10px;
   }
+
   
 
   .item-md.item-block .item-inner{
@@ -100,7 +184,7 @@ page-uplaodimage {
 }
 
 
-div[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
+div[data-placeholder]:not(:focus):not(:empty):not([data-div-placeholder-content]):before {
 
     content: attr(data-placeholder);
 

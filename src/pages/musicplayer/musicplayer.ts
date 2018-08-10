@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { IonicPage, NavController,Navbar, NavParams, ViewController, Platform, ModalController, ActionSheetController,Content, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController,Navbar, NavParams, ViewController, Platform, ModalController, ActionSheetController,Content, LoadingController, AlertController } from 'ionic-angular';
 
 import { MusicsuggestionPage } from '../musicsuggestion/musicsuggestion';
 import { MusicplaylistPage } from '../musicplaylist/musicplaylist';
@@ -15,6 +15,9 @@ import {CloudProvider} from '../../providers/cloud/cloud';
 import {pluck, filter, map, distinctUntilChanged} from 'rxjs/operators';
 
 import { MusicplayerServices } from '../../services/MusicplayServices';
+import { ViralServices } from '../../services/ViralServices';
+import { AlertServices } from '../../services/AlertServices';
+import { UplaodmusicPage } from '../uplaodmusic/uplaodmusic';
 
 
 @IonicPage()
@@ -35,6 +38,9 @@ export class MusicplayerPage {
   shuffleS:boolean=false;
   @ViewChild(Navbar) navBar: Navbar;
   @ViewChild(Content) content: Content;
+  delete_status:boolean=false;
+  add_status:boolean=false;
+
  
 
 
@@ -59,13 +65,18 @@ export class MusicplayerPage {
     public loadingCtrl: LoadingController,
     public cloudProvider: CloudProvider,
     private store: Store<any>,
-    private storage:Storage
-   ) {
+    private storage:Storage,
+    private iServices:ViralServices,
+    private alertBox:AlertController
+     ) {
 
 
       this.storeC.musicArray=this.navParams.data['musArry'];
-      this.music_id=this.navParams.data['music_id'];
+      this.music_id=this.navParams.data['music']['music_id'];
+      this.reactStatus.activity_id=this.navParams.data['music']['activity_id'];
       this.getDocuments()
+      console.log(this.music_id);
+      console.log(this.storeC.musicArray);
 
      
 
@@ -92,7 +103,7 @@ export class MusicplayerPage {
 
 
   ionViewDidLoad() {
-
+    this.checkStatus();
 
     this.credit.musplyStatus().then(data=>{
       this.repeatS=this.storeC.repeat= data[0];
@@ -392,23 +403,73 @@ export class MusicplayerPage {
         {
           text:"Viral",
           handler:()=>{
-            console.log(15);
+                       this.credit.check().then(data=>{
+                         
+                    
+                                  let info={
+                                  music_id:this.music_id,
+                                  pub_s:0
+                            
+                                  }
+                                
+                                 this.iServices.addMusic(data[0],data[1],info).subscribe(data=>{
+                                  
+                                  this.delete_status=true;
+
+                                  this.add_status=false;
+
+                                  
+                                    
+                            
+                                  
+                                });
+                    
+                          
+                      });
+
           }
         },
         {
           text:'Private',
           handler:()=>{
+                       this.credit.check().then(data=>{
+                                    
+                                
+                                let info={
+                                music_id:this.music_id,
+                                pub_s:1
+                          
+                                }
+                              
+                                this.iServices.addMusic(data[0],data[1],info).subscribe(data=>{
+                                
+
+
+                                this.delete_status=true;
+
+                                  this.add_status=false;
+                          
+                                
+                              });
+
+      
+                 });
 
           }
         },
         {
           text:'Cancel',
-          role:'cancel'
+          role:'cancel',
+          handler:()=>{
+            
+          }
         }
       ]
     });
 
     actSheet.present();
+
+
 
 
 
@@ -479,4 +540,111 @@ export class MusicplayerPage {
     // console.log(this.imgZoom.imageList);
 
   }
+
+
+  checkStatus(){
+    this.credit.check().then(data=>{
+               
+      let info={
+        'music_id':this.music_id,
+      
+      }
+    
+      this.iServices.checkStatusM(data[0],data[1],info).subscribe(data=>{
+        if(data['status'])
+        {
+          
+              this.delete_status=true;
+              this.add_status=false;
+          
+
+        }
+        else{
+          this.delete_status=true;
+              this.add_status=false;
+
+        }
+        
+
+      
+  });
+
+      
+});
+
+  }
+
+
+  deleteFromStore(){
+  
+   
+      
+     
+      let alert = this.alertBox.create({
+        title: 'Delete',
+        message: 'Do you want to delete this music from Store',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+              this.viewCtrl.dismiss({
+                data:false
+              });
+          
+            }
+           
+          },
+          {
+            text: 'Ok',
+            handler: () => {
+              this.credit.check().then(data=>{
+  
+                                                  
+                let info={'music_id': this.music_id}
+                
+                this.iServices.deleteMusic(data[0],data[1],info).subscribe(data=>{
+                    this.stop();
+                      if(data['status'])
+                      {
+                        
+                        this.viewCtrl.dismiss({
+                          data:true
+                        });
+                          
+                       
+                        
+                      }
+                      else{
+                        this.viewCtrl.dismiss({
+                          data:false
+                        });
+                      }
+                     
+                    
+          
+                      
+                });
+            });
+              
+            }
+          }
+        ]
+      });
+      alert.present();
+
+ 
+  }
+
+
+  loadMusicDetail(){
+    const detail=this.modelCtr.create(UplaodmusicPage,{
+      music:this.musicInfo,
+      mode:"detail"
+
+    });
+    
+    detail.present();
+  }
+
 }

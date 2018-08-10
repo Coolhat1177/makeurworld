@@ -20,7 +20,7 @@ export class PersonalChatServices{
 
     loadChat(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/message_new_show";
+        let url="http://coolhat/home/main/message_new_show";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -31,7 +31,7 @@ export class PersonalChatServices{
 
     chatInfo(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/user_profilStatus";
+        let url="http://coolhat/home/main/user_profilStatus";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);
@@ -42,7 +42,7 @@ export class PersonalChatServices{
 
     sendChat(user:any,loged:any,info){
        
-        let url="http://app.makeurworld.com/home/main/mess_l";
+        let url="http://coolhat/home/main/mess_l";
         let info1=JSON.stringify(info);
 
         return this.con.postDataAsked(user,loged,info1,url);

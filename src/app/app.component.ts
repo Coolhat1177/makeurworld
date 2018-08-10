@@ -1,29 +1,32 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, Injectable, ViewChild } from '@angular/core';
+import { Platform, NavController, Nav, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { LandingPage } from '../pages/landing/landing';
-import { MainTabPage } from '../pages/main-tab/main-tab';
-import { MusicStorePage } from '../pages/music-store/music-store';
-import { ImageStorePage } from '../pages/image-store/image-store';
-import { MusicplayerPage } from '../pages/musicplayer/musicplayer';
-import { VideoStorePage } from '../pages/video-store/video-store';
-import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
-import { ChatboxPage } from '../pages/chatbox/chatbox';
-import { UplaodimagePage } from '../pages/uplaodimage/uplaodimage';
-import { UplaodmusicPage } from '../pages/uplaodmusic/uplaodmusic';
-import { UplaodvideoPage } from '../pages/uplaodvideo/uplaodvideo';
-// import { ImageviewerPage } from '../pages/imageviewer/imageviewer';
-import { SignInPage } from '../pages/sign-in/sign-in';
 
+import { ProfileviewPage } from '../pages/profileview/profileview';
+import { ProfileimagePage } from '../pages/profileimage/profileimage';
+import { ProfilmusicPage } from '../pages/profilmusic/profilmusic';
+import { ProfilevideoPage } from '../pages/profilevideo/profilevideo';
+import { FreindsPage } from '../pages/freinds/freinds';
+import { SettingPage } from '../pages/setting/setting';
+import { MainTabPage } from '../pages/main-tab/main-tab';
+import { ImageStorePage } from '../pages/image-store/image-store';
+import { MusicStorePage } from '../pages/music-store/music-store';
+
+
+// @Injectable()
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage= SignInPage;
+  @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  rootPage=MainTabPage;
+
+
+  constructor(platform: Platform, statusBar: StatusBar, 
+    splashScreen: SplashScreen,private menuCtrl:MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -31,5 +34,22 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  loadSetting(){
+    // this.navCtrl.push(SettingPage);
+    this.nav.push(SettingPage);
+    this.menuCtrl.close();
+
+  }
+
+  loadFriends(){
+
+    this.nav.push(FreindsPage);
+    this.menuCtrl.close();
+
+  }
+
+
+
 }
 
